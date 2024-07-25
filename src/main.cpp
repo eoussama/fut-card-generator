@@ -4,8 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-  Player player("John Doe", "Liverpool");
+  Player player("John Doe", "Liverpool", "England");
   std::cout << player.toString() << std::endl;
-  std::cout << "Fut Card Generator" << std::endl;
   return 0;
 }
