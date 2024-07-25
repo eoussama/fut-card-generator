@@ -1,4 +1,4 @@
-#ifndef OSITION_H
+#ifndef POSITION_H
 #define POSITION_H
 
 enum class Position
@@ -19,7 +19,10 @@ enum class Position
   LF,
   CF,
   RF,
-  ST
+  ST,
+  ALL
 };
+
+std::string getPositionName(const Position &position);
 
 #endif
