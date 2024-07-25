@@ -6,7 +6,7 @@ set(PROJECT_NAME fut-card-generator)
 project(${PROJECT_NAME})
 
 # Include directories
-# include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Source files
 file(GLOB_RECURSE SOURCES "src/*.cpp")

@@ -1,2 +1,2 @@
-# fut-card-generator
-Generate custom Fut cards
+# Fut Card Generator
+Generate custom Fut cards.
