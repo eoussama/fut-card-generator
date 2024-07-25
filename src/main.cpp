@@ -8,9 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-  Stats stats(96, 80, 94, 96, 88, 60);
-  Player player("John Doe", "Liverpool", "England", Position::ALL, stats);
-  Card card(player, stats, Language::EN, CardType::RARE_GOLD);
+  Card card = Card::create(CardType::RARE_GOLD, Language::EN, "John Doe", "Liverpool", "England", Position::ALL, 96, 80, 94, 96, 88, 60);
 
   std::cout << card.toString() << std::endl;
 
