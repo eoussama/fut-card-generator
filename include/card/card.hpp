@@ -14,7 +14,6 @@ namespace Card
   {
   public:
     Base(const Player::Base &player, const Player::Stats &stats, const Language &language, Edition const &edition, const TemplateName &templateName);
-    static Base create(Edition const &edition, TemplateName const &templateName, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
 
     Language getLanguage() const;
     Edition getEdition() const;
@@ -31,6 +30,8 @@ namespace Card
     Player::Base player;
     TemplateName templateName;
   };
+
+  Base create(Edition const &edition, TemplateName const &templateName, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
 }
 
 #endif
