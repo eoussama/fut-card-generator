@@ -1,8 +1,11 @@
 #ifndef CARDTYPE_H
 #define CARDTYPE_H
 
+#include <map>
 #include <string>
-#include "card_kind.h"
+
+#include "card_type.h"
+#include "card_edition.h"
 
 enum class CardTemplate
 {
@@ -52,7 +55,15 @@ enum class CardTemplate
   LEGEND
 };
 
+struct CardTemplateOption {
+  CardType kind;
+  CardEdition edition;
+  std::string fileName;
+};
+
+typedef std::map<CardTemplate, CardTemplateOption> CardNameMap;
+
 std::string getCardName(const CardTemplate &type);
-CardKind getCardKind(const CardTemplate &type);
+CardType getCardKind(const CardTemplate &type);
 
 #endif

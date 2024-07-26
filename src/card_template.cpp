@@ -1,4 +1,4 @@
-#include "card_kind.h"
+#include "card_type.h"
 #include "card_template.h"
 
 std::string getCardName(const CardTemplate &card)
@@ -98,7 +98,7 @@ std::string getCardName(const CardTemplate &card)
   }
 }
 
-CardKind getCardKind(const CardTemplate &type)
+CardType getCardKind(const CardTemplate &type)
 {
   switch (type)
   {
@@ -140,8 +140,8 @@ CardKind getCardKind(const CardTemplate &type)
   case CardTemplate::SBC:
   case CardTemplate::SBCP:
   case CardTemplate::LEGEND:
-    return CardKind::STANDARD;
+    return CardType::STANDARD;
   default:
-    return CardKind::UCL;
+    return CardType::UCL;
   }
 }

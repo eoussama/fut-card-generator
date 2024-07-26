@@ -6,9 +6,9 @@ CardDimentions CardDimentions::fromType(CardTemplate type)
 {
   switch (getCardKind(type))
   {
-  case CardKind::STANDARD:
+  case CardType::STANDARD:
     return CardDimentions(CardDimentions19Standard());
-  case CardKind::UCL:
+  case CardType::UCL:
     return CardDimentions(CardDimentions19Ucl());
   default:
     return CardDimentions(CardDimentions());

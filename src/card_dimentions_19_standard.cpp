@@ -2,7 +2,7 @@
 
 CardDimentions19Standard::CardDimentions19Standard()
 {
-  cardKind = CardKind::STANDARD;
+  cardKind = CardType::STANDARD;
 
   left_margin = 85;
   left_margin_club_badge = left_margin + 10;

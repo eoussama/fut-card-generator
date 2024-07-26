@@ -2,7 +2,7 @@
 
 CardDimentions19Ucl::CardDimentions19Ucl()
 {
-  cardKind = CardKind::UCL;
+  cardKind = CardType::UCL;
 
   left_margin = 85;
   left_margin_club_badge = left_margin + 10;

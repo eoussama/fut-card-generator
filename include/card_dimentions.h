@@ -5,7 +5,7 @@
 
 struct CardDimentions
 {
-  CardKind cardKind;
+  CardType cardKind;
 
   int left_margin;
   int left_margin_club_badge;

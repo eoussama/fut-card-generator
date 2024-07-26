@@ -3,12 +3,12 @@
 
 #include <string>
 
-enum class CardKind
+enum class CardType
 {
   STANDARD = 1,
   UCL
 };
 
-std::string getCardKindName(const CardKind &cardKind);
+std::string getCardKindName(const CardType &cardKind);
 
 #endif
