@@ -1,8 +1,12 @@
 #ifndef DIMENTION_H
 #define DIMENTION_H
 
-struct Dimentions
+#include "card_kind.h"
+
+struct CardDimentions
 {
+  CardKind cardKind;
+
   int left_margin;
   int left_margin_club_badge;
   int left_margin_overall;

@@ -1,16 +1,18 @@
-#include "dimentions_19_ucl.h"
+#include "card_dimentions_19_standard.h"
 
-Dimentions19Ucl::Dimentions19Ucl()
+CardDimentions19Standard::CardDimentions19Standard()
 {
+  cardKind = CardKind::STANDARD;
+
   left_margin = 85;
   left_margin_club_badge = left_margin + 10;
-  left_margin_overall = left_margin + 13;
+  left_margin_overall = left_margin + 3;
 
   top_margin_position = 195;
 
-  top_margin_name = 445;
+  top_margin_name = 440;
 
-  top_margin_player_overall = 90;
+  top_margin_player_overall = 80;
 
   top_margin_line_under_position = 255;
   left_point_x_coordinate_line_under_position = left_margin + 20;
@@ -27,17 +29,17 @@ Dimentions19Ucl::Dimentions19Ucl()
   top_margin_line_under_stats = 735;
   margin_line_under_stats = 300;
 
-  attr_value_label_horizontal_gap = 70;
+  attr_value_label_horizontal_gap = 60;
 
-  left_margin_attr_value_col1 = left_margin + 0;
+  left_margin_attr_value_col1 = left_margin + 30;
   left_margin_attr_label_col1 = left_margin_attr_value_col1 + attr_value_label_horizontal_gap;
 
-  left_margin_attr_value_col2 = left_margin_attr_value_col1 + 220;
+  left_margin_attr_value_col2 = left_margin_attr_value_col1 + 190;
   left_margin_attr_label_col2 = left_margin_attr_value_col2 + attr_value_label_horizontal_gap;
 
   stats_row_vertical_gap = 62;
 
-  top_margin_label_offset = 3;
+  top_margin_label_offset = 5;
 
   top_margin_stats_row_1_values = 530;
   top_margin_stats_row_1_labels = top_margin_stats_row_1_values + top_margin_label_offset;
