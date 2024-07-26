@@ -19,6 +19,7 @@ namespace Card
     Edition getEdition() const;
     Player::Stats getStats() const;
     Player::Base getPlayer() const;
+    Template::Base getTemplate() const;
     Template::Code getTemplateCode() const;
 
     std::string toString() const;

@@ -1,3 +1,5 @@
+#include <string>
+
 #include "type.hpp"
 #include "template.hpp"
 
@@ -5,6 +7,15 @@ namespace Card
 {
   namespace Template
   {
+    std::string Base::getBackgroundPath(Edition const &edition)
+    {
+      std::string path;
+      int editionNumber = (int)edition;
+      path = "assets/bgs/" + std::to_string(editionNumber) + "/cards/" + background + ".png";
+
+      return path;
+    }
+
     Templates init()
     {
       Templates templates;

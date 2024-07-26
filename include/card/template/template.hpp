@@ -16,6 +16,8 @@ namespace Card
     {
       Type type;
       std::string background;
+
+      std::string getBackgroundPath(Edition const &edition);
     };
 
     typedef std::map<Code, Base> Templates;

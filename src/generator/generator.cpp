@@ -2,6 +2,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "generator.hpp"
+#include "card/template/template.hpp"
 
 namespace Generator
 {
@@ -9,36 +10,16 @@ namespace Generator
   {
     std::cout << card.toString() << std::endl;
 
-    // Path to the input image
-    std::string inputImagePath = "assets/bgs/19/cards/award_winner.png";
-    // Path to the output image
-    std::string outputImagePath = ".";
+    Card::Template::Base tmplate = card.getTemplate();
+    std::string templatePath = tmplate.getBackgroundPath(Card::Edition::FIFA19);
 
-    // Read the image
-    cv::Mat image = cv::imread(inputImagePath, cv::IMREAD_COLOR);
+    cv::Mat image = cv::imread(templatePath, cv::IMREAD_UNCHANGED);
 
-    // Check if the image was loaded successfully
-    if (image.empty())
-    {
-      std::cerr << "Error: Could not open or find the image at " << inputImagePath << std::endl;
-      return -1;
-    }
+    // cv::imshow("Input Image", image);
+    // cv::waitKey(0);
 
-    // Optionally, display the image
-    cv::imshow("Input Image", image);
-    cv::waitKey(0); // Wait for a key press
-
-    // Save the image to the output path
+    std::string outputImagePath = "./out.png";
     bool result = cv::imwrite(outputImagePath, image);
-
-    // Check if the image was saved successfully
-    if (!result)
-    {
-      std::cerr << "Error: Could not save the image to " << outputImagePath << std::endl;
-      return -1;
-    }
-
-    std::cout << "Image successfully saved to " << outputImagePath << std::endl;
 
     return true;
   }

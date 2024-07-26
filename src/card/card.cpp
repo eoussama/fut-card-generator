@@ -12,6 +12,7 @@ namespace Card
   Player::Base Base::getPlayer() const { return player; }
   Language Base::getLanguage() const { return language; }
   Template::Code Base::getTemplateCode() const { return templateCode; }
+  Template::Base Base::getTemplate() const { return Template::init()[templateCode]; }
 
   std::string Base::toString() const
   {
