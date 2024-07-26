@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../card/card.h"
-#include "../generator.h"
+#include "card.h"
+#include "generator.h"
 
 int main(int argc, char *argv[])
 {

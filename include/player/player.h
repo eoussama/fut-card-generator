@@ -9,10 +9,10 @@
 
 namespace Player
 {
-  class Player
+  class Base
   {
   public:
-    Player(const std::string &name, const std::string &club, const std::string &country, const Position &position, const Stats &stats);
+    Base(const std::string &name, const std::string &club, const std::string &country, const Position &position, const Stats &stats);
 
     Stats getStats() const;
     std::string getName() const;
