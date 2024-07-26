@@ -3,17 +3,18 @@
 #include "card_dimentions_19_ucl.h"
 #include "card_dimentions_19_standard.h"
 
-using namespace Dimentions;
-
-Base Base::fromTemplate(CardTemplate tmplate)
+namespace Dimentions
 {
-  switch (tmplate.kind)
+  Base Base::fromTemplate(CardTemplate tmplate)
   {
-  case CardType::STANDARD:
-    return Standard19();
-  case CardType::UCL:
-    return UCL19();
-  default:
-    return Base();
+    switch (tmplate.kind)
+    {
+    case CardType::STANDARD:
+      return Standard19();
+    case CardType::UCL:
+      return UCL19();
+    default:
+      return Base();
+    }
   }
 }
