@@ -2,7 +2,7 @@
 #include "card_dimentions_19_ucl.h"
 #include "card_dimentions_19_standard.h"
 
-CardDimentions CardDimentions::fromType(CardType type)
+CardDimentions CardDimentions::fromType(CardTemplate type)
 {
   switch (getCardKind(type))
   {

@@ -1,7 +1,7 @@
 #ifndef DIMENTION_H
 #define DIMENTION_H
 
-#include "card_type.h"
+#include "card_template.h"
 
 struct CardDimentions
 {
@@ -57,7 +57,7 @@ struct CardDimentions
   int left_margin_dynamic_player_image;
   int bottom_margin_dynamic_player_image;
 
-  static CardDimentions fromType(CardType type);
+  static CardDimentions fromType(CardTemplate type);
 };
 
 #endif

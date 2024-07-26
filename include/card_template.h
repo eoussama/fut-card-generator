@@ -4,7 +4,7 @@
 #include <string>
 #include "card_kind.h"
 
-enum class CardType
+enum class CardTemplate
 {
   COMMON_BRONZE = 1,
   COMMON_SILVER,
@@ -52,7 +52,7 @@ enum class CardType
   LEGEND
 };
 
-std::string getCardName(const CardType &type);
-CardKind getCardKind(const CardType &type);
+std::string getCardName(const CardTemplate &type);
+CardKind getCardKind(const CardTemplate &type);
 
 #endif
