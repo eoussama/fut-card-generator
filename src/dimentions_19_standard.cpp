@@ -1,6 +1,6 @@
-#include "dimention_19_standard.h"
+#include "dimentions_19_standard.h"
 
-Dimention19Standard::Dimention19Standard()
+Dimentions19Standard::Dimentions19Standard()
 {
   left_margin = 85;
   left_margin_club_badge = left_margin + 10;

@@ -1,6 +1,6 @@
-#include "dimention_19_ucl.h"
+#include "dimentions_19_ucl.h"
 
-Dimention19Ucl::Dimention19Ucl()
+Dimentions19Ucl::Dimentions19Ucl()
 {
   left_margin = 85;
   left_margin_club_badge = left_margin + 10;
