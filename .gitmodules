@@ -1,6 +1,0 @@
-[submodule "dependencies/opencv"]
-	path = dependencies/opencv
-	url = https://github.com/opencv/opencv.git
-[submodule "external/opencv"]
-	path = external/opencv
-	url = https://github.com/opencv/opencv.git
