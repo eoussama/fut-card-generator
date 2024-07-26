@@ -4,9 +4,9 @@
 #include "stats.h"
 #include "player.h"
 #include "language.h"
+#include "dimentions.h"
 #include "card_edition.h"
 #include "card_template.h"
-#include "card_dimentions.h"
 
 class Card
 {

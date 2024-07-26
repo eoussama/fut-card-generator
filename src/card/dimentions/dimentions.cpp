@@ -1,7 +1,7 @@
 #include "card_template.h"
-#include "card_dimentions.h"
-#include "card_dimentions_19_ucl.h"
-#include "card_dimentions_19_standard.h"
+#include "dimentions.h"
+#include "standard.h"
+#include "ucl.h"
 
 namespace Dimentions
 {

@@ -7,6 +7,10 @@ project(${PROJECT_NAME})
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/include/card
+  ${PROJECT_SOURCE_DIR}/include/player
+  ${PROJECT_SOURCE_DIR}/include/card/dimentions
+  ${PROJECT_SOURCE_DIR}/include/card/dimentions/19
 )
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")

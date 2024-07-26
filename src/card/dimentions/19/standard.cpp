@@ -1,4 +1,4 @@
-#include "card_dimentions_19_standard.h"
+#include "standard.h"
 
 namespace Dimentions
 {
