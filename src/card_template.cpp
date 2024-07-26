@@ -1,147 +1,151 @@
 #include "card_type.h"
 #include "card_template.h"
 
-std::string getCardName(const CardTemplate &card)
+std::string getTemplateNameStr(const CardTemplateName &templateName)
 {
-  switch (card)
+  switch (templateName)
   {
-  case CardTemplate::COMMON_BRONZE:
+  case CardTemplateName::COMMON_BRONZE:
     return "Common Bronze";
-  case CardTemplate::COMMON_SILVER:
+  case CardTemplateName::COMMON_SILVER:
     return "Common Silver";
-  case CardTemplate::COMMON_GOLD:
+  case CardTemplateName::COMMON_GOLD:
     return "Common Gold";
-  case CardTemplate::RARE_BRONZE:
+  case CardTemplateName::RARE_BRONZE:
     return "Rare Bronze";
-  case CardTemplate::RARE_SILVER:
+  case CardTemplateName::RARE_SILVER:
     return "Rare Silver";
-  case CardTemplate::RARE_GOLD:
+  case CardTemplateName::RARE_GOLD:
     return "Rare Gold";
-  case CardTemplate::IF_BRONZE:
+  case CardTemplateName::IF_BRONZE:
     return "IF Bronze";
-  case CardTemplate::IF_SILVER:
+  case CardTemplateName::IF_SILVER:
     return "IF Silver";
-  case CardTemplate::IF_GOLD:
+  case CardTemplateName::IF_GOLD:
     return "IF Gold";
-  case CardTemplate::FC_BRONZE:
+  case CardTemplateName::FC_BRONZE:
     return "FC Bronze";
-  case CardTemplate::FC_SILVER:
+  case CardTemplateName::FC_SILVER:
     return "FC Silver";
-  case CardTemplate::FC_GOLD:
+  case CardTemplateName::FC_GOLD:
     return "FC Gold";
-  case CardTemplate::MOTM:
+  case CardTemplateName::MOTM:
     return "MOTM";
-  case CardTemplate::PL_POTM:
+  case CardTemplateName::PL_POTM:
     return "PL POTM";
-  case CardTemplate::BL_POTM:
+  case CardTemplateName::BL_POTM:
     return "BL POTM";
-  case CardTemplate::FUTTIES:
+  case CardTemplateName::FUTTIES:
     return "Futties";
-  case CardTemplate::FUTTIESW:
+  case CardTemplateName::FUTTIESW:
     return "Futties W";
-  case CardTemplate::TOTY:
+  case CardTemplateName::TOTY:
     return "TOTY";
-  case CardTemplate::TOTY_N:
+  case CardTemplateName::TOTY_N:
     return "TOTY N";
-  case CardTemplate::EL:
+  case CardTemplateName::EL:
     return "EL";
-  case CardTemplate::EL_MOTM:
+  case CardTemplateName::EL_MOTM:
     return "EL MOTM";
-  case CardTemplate::EL_LIVE:
+  case CardTemplateName::EL_LIVE:
     return "EL LIVE";
-  case CardTemplate::EL_SBC:
+  case CardTemplateName::EL_SBC:
     return "EL SBC";
-  case CardTemplate::EL_TOTT:
+  case CardTemplateName::EL_TOTT:
     return "EL TOTT";
-  case CardTemplate::COMMON_UCL:
+  case CardTemplateName::COMMON_UCL:
     return "Common UCL";
-  case CardTemplate::RARE_UCL:
-    return  "Rare UCL";
-  case CardTemplate::UCL_MOTM:
+  case CardTemplateName::RARE_UCL:
+    return "Rare UCL";
+  case CardTemplateName::UCL_MOTM:
     return "UCL MOTM";
-  case CardTemplate::UCL_LIVE:
+  case CardTemplateName::UCL_LIVE:
     return "UCL LIVE";
-  case CardTemplate::UCL_SBC:
+  case CardTemplateName::UCL_SBC:
     return "UCL SBC";
-  case CardTemplate::UCL_TOTT:
+  case CardTemplateName::UCL_TOTT:
     return "UCL TOTT";
-  case CardTemplate::FSR:
+  case CardTemplateName::FSR:
     return "FSR";
-  case CardTemplate::FS:
+  case CardTemplateName::FS:
     return "FS";
-  case CardTemplate::FSN:
+  case CardTemplateName::FSN:
     return "FSN";
-  case CardTemplate::PP:
+  case CardTemplateName::PP:
     return "PP";
-  case CardTemplate::CB:
+  case CardTemplateName::CB:
     return "CB";
-  case CardTemplate::RB:
+  case CardTemplateName::RB:
     return "RB";
-  case CardTemplate::HERO:
+  case CardTemplateName::HERO:
     return "HERO";
-  case CardTemplate::AW:
+  case CardTemplateName::AW:
     return "AW";
-  case CardTemplate::FB:
+  case CardTemplateName::FB:
     return "FB";
-  case CardTemplate::HEADLINERS:
+  case CardTemplateName::HEADLINERS:
     return "Headliners";
-  case CardTemplate::CC:
+  case CardTemplateName::CC:
     return "CC";
-  case CardTemplate::SBC:
+  case CardTemplateName::SBC:
     return "SBC";
-  case CardTemplate::SBCP:
+  case CardTemplateName::SBCP:
     return "SBCP";
-  case CardTemplate::LEGEND:
+  case CardTemplateName::LEGEND:
     return "Legend";
   default:
     return "Unknown";
   }
 }
 
-CardType getCardKind(const CardTemplate &type)
+CardTemplates initCardTemplates()
 {
-  switch (type)
-  {
-  case CardTemplate::COMMON_BRONZE:
-  case CardTemplate::COMMON_SILVER:
-  case CardTemplate::COMMON_GOLD:
-  case CardTemplate::RARE_BRONZE:
-  case CardTemplate::RARE_SILVER:
-  case CardTemplate::RARE_GOLD:
-  case CardTemplate::IF_BRONZE:
-  case CardTemplate::IF_SILVER:
-  case CardTemplate::IF_GOLD:
-  case CardTemplate::FC_BRONZE:
-  case CardTemplate::FC_SILVER:
-  case CardTemplate::FC_GOLD:
-  case CardTemplate::MOTM:
-  case CardTemplate::PL_POTM:
-  case CardTemplate::BL_POTM:
-  case CardTemplate::FUTTIES:
-  case CardTemplate::FUTTIESW:
-  case CardTemplate::TOTY:
-  case CardTemplate::TOTY_N:
-  case CardTemplate::EL:
-  case CardTemplate::EL_MOTM:
-  case CardTemplate::EL_LIVE:
-  case CardTemplate::EL_SBC:
-  case CardTemplate::EL_TOTT:
-  case CardTemplate::FSR:
-  case CardTemplate::FS:
-  case CardTemplate::FSN:
-  case CardTemplate::PP:
-  case CardTemplate::CB:
-  case CardTemplate::RB:
-  case CardTemplate::HERO:
-  case CardTemplate::AW:
-  case CardTemplate::FB:
-  case CardTemplate::HEADLINERS:
-  case CardTemplate::CC:
-  case CardTemplate::SBC:
-  case CardTemplate::SBCP:
-  case CardTemplate::LEGEND:
-    return CardType::STANDARD;
-  default:
-    return CardType::UCL;
-  }
+  CardTemplates templates;
+
+  templates[CardTemplateName::COMMON_BRONZE] = {CardType::STANDARD, "common_bronze"};
+  templates[CardTemplateName::COMMON_SILVER] = {CardType::STANDARD, "common_silver"};
+  templates[CardTemplateName::COMMON_GOLD] = {CardType::STANDARD, "common_gold"};
+  templates[CardTemplateName::RARE_BRONZE] = {CardType::STANDARD, "rare_bronze"};
+  templates[CardTemplateName::RARE_SILVER] = {CardType::STANDARD, "rare_silver"};
+  templates[CardTemplateName::RARE_GOLD] = {CardType::STANDARD, "rare_gold"};
+  templates[CardTemplateName::IF_BRONZE] = {CardType::STANDARD, "if_bronze"};
+  templates[CardTemplateName::IF_SILVER] = {CardType::STANDARD, "if_silver"};
+  templates[CardTemplateName::IF_GOLD] = {CardType::STANDARD, "if_gold"};
+  templates[CardTemplateName::FC_BRONZE] = {CardType::STANDARD, "champion_bronze"};
+  templates[CardTemplateName::FC_SILVER] = {CardType::STANDARD, "champion_silver"};
+  templates[CardTemplateName::FC_GOLD] = {CardType::STANDARD, "champion_gold"};
+  templates[CardTemplateName::MOTM] = {CardType::STANDARD, "motm"};
+  templates[CardTemplateName::PL_POTM] = {CardType::STANDARD, "potm_pl"};
+  templates[CardTemplateName::BL_POTM] = {CardType::STANDARD, "potm_bundesliga"};
+  templates[CardTemplateName::FUTTIES] = {CardType::STANDARD, "futties"};
+  templates[CardTemplateName::FUTTIESW] = {CardType::STANDARD, "futties_winner"};
+  templates[CardTemplateName::TOTY] = {CardType::STANDARD, "toty"};
+  templates[CardTemplateName::TOTY_N] = {CardType::STANDARD, "toty_nominees"};
+  templates[CardTemplateName::EL] = {CardType::STANDARD, "europa_league"};
+  templates[CardTemplateName::EL_MOTM] = {CardType::STANDARD, "europa_league_motm"};
+  templates[CardTemplateName::EL_LIVE] = {CardType::STANDARD, "europa_league_live"};
+  templates[CardTemplateName::EL_SBC] = {CardType::STANDARD, "europa_league_sbc"};
+  templates[CardTemplateName::EL_TOTT] = {CardType::STANDARD, "europa_league_tott"};
+  templates[CardTemplateName::COMMON_UCL] = {CardType::UCL, "ucl_common"};
+  templates[CardTemplateName::RARE_UCL] = {CardType::UCL, "ucl_rare"};
+  templates[CardTemplateName::UCL_MOTM] = {CardType::UCL, "ucl_motm"};
+  templates[CardTemplateName::UCL_LIVE] = {CardType::UCL, "ucl_live"};
+  templates[CardTemplateName::UCL_SBC] = {CardType::UCL, "ucl_sbc"};
+  templates[CardTemplateName::UCL_TOTT] = {CardType::UCL, "ucl_tott"};
+  templates[CardTemplateName::FSR] = {CardType::UCL, "fut_swap_rewards"};
+  templates[CardTemplateName::FS] = {CardType::UCL, "future_stars"};
+  templates[CardTemplateName::FSN] = {CardType::UCL, "future_stars_nominees"};
+  templates[CardTemplateName::PP] = {CardType::UCL, "pro_player"};
+  templates[CardTemplateName::CB] = {CardType::UCL, "carniball"};
+  templates[CardTemplateName::RB] = {CardType::UCL, "record_breaker"};
+  templates[CardTemplateName::HERO] = {CardType::UCL, "hero"};
+  templates[CardTemplateName::AW] = {CardType::UCL, "award_winner"};
+  templates[CardTemplateName::FB] = {CardType::UCL, "flashback"};
+  templates[CardTemplateName::HEADLINERS] = {CardType::UCL, "headliners"};
+  templates[CardTemplateName::CC] = {CardType::UCL, "concept"};
+  templates[CardTemplateName::SBC] = {CardType::UCL, "sbc"};
+  templates[CardTemplateName::SBCP] = {CardType::UCL, "sbc_premium"};
+  templates[CardTemplateName::LEGEND] = {CardType::UCL, "legend"};
+
+  return templates;
 }

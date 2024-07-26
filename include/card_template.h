@@ -7,7 +7,7 @@
 #include "card_type.h"
 #include "card_edition.h"
 
-enum class CardTemplate
+enum class CardTemplateName
 {
   COMMON_BRONZE = 1,
   COMMON_SILVER,
@@ -55,15 +55,14 @@ enum class CardTemplate
   LEGEND
 };
 
-struct CardTemplateOption {
+struct CardTemplate {
   CardType kind;
-  CardEdition edition;
   std::string fileName;
 };
 
-typedef std::map<CardTemplate, CardTemplateOption> CardNameMap;
+typedef std::map<CardTemplateName, CardTemplate> CardTemplates;
 
-std::string getCardName(const CardTemplate &type);
-CardType getCardKind(const CardTemplate &type);
+CardTemplates initCardTemplates();
+std::string getTemplateNameStr(const CardTemplateName &templateName);
 
 #endif

@@ -57,7 +57,7 @@ struct CardDimentions
   int left_margin_dynamic_player_image;
   int bottom_margin_dynamic_player_image;
 
-  static CardDimentions fromType(CardTemplate type);
+  static CardDimentions fromTemplate(CardTemplate tmplate);
 };
 
 #endif
