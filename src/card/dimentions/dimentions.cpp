@@ -1,20 +1,23 @@
-#include "card_template.h"
-#include "dimentions.h"
-#include "standard.h"
-#include "ucl.h"
+#include "dimentions.hpp"
+#include "template.hpp"
+#include "standard.hpp"
+#include "ucl.hpp"
 
-namespace Dimentions
+namespace Card
 {
-  Base Base::fromTemplate(CardTemplate tmplate)
+  namespace Dimentions
   {
-    switch (tmplate.kind)
+    Base Base::fromTemplate(Template tmplate)
     {
-    case CardType::STANDARD:
-      return Standard19();
-    case CardType::UCL:
-      return UCL19();
-    default:
-      return Base();
+      switch (tmplate.type)
+      {
+      case Type::STANDARD:
+        return Standard19();
+      case Type::UCL:
+        return UCL19();
+      default:
+        return Base();
+      }
     }
   }
 }

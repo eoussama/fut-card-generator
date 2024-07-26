@@ -3,11 +3,11 @@
 
 #include <string>
 
-#include "card.h"
+#include "card.hpp"
 
 namespace Generator
 {
-  bool generate(Card card);
+  bool generate(Card::Base card);
 }
 
 #endif

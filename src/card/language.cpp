@@ -1,22 +1,25 @@
-#include "language.h"
+#include "language.hpp"
 
-std::string getLanguageCode(const Language &language)
+namespace Card
 {
-  switch (language)
+  std::string getLanguageCode(const Language &language)
   {
-  case Language::EN:
-    return "en";
-  case Language::FR:
-    return "fr";
-  case Language::ES:
-    return "es";
-  case Language::DE:
-    return "de";
-  case Language::IT:
-    return "it";
-  case Language::PT:
-    return "pt";
-  default:
-    return "Unknown";
+    switch (language)
+    {
+    case Language::EN:
+      return "en";
+    case Language::FR:
+      return "fr";
+    case Language::ES:
+      return "es";
+    case Language::DE:
+      return "de";
+    case Language::IT:
+      return "it";
+    case Language::PT:
+      return "pt";
+    default:
+      return "Unknown";
+    }
   }
 }

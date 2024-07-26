@@ -1,14 +1,17 @@
-#include "card_type.h"
+#include "type.hpp"
 
-std::string getCardKindName(const CardType &cardKind)
+namespace Card
 {
-  switch (cardKind)
+  std::string getCardKindName(const Type &type)
   {
-  case CardType::STANDARD:
-    return "Standard";
-  case CardType::UCL:
-    return "UCL";
-  default:
-    return "Unknown";
+    switch (type)
+    {
+    case Type::STANDARD:
+      return "Standard";
+    case Type::UCL:
+      return "UCL";
+    default:
+      return "Unknown";
+    }
   }
 }

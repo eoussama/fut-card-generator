@@ -1,12 +1,15 @@
-#include "card_edition.h"
+#include "edition.hpp"
 
-std::string getCardEditionName(const CardEdition &cardEdition)
+namespace Card
 {
-  switch (cardEdition)
+  std::string getCardEditionName(const Edition &edition)
   {
-  case CardEdition::FIFA19:
-    return "FIFA19";
-  default:
-    return "Unknown";
+    switch (edition)
+    {
+    case Edition::FIFA19:
+      return "FIFA19";
+    default:
+      return "Unknown";
+    }
   }
 }

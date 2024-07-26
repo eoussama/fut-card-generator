@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "card.h"
-#include "generator.h"
+#include "card.hpp"
+#include "generator.hpp"
 
 int main(int argc, char *argv[])
 {
-  Card card = Card::create(CardEdition::FIFA19, CardTemplateName::COMMON_BRONZE, Language::EN, "John Doe", "Liverpool", "England", Player::Position::ALL, 96, 80, 94, 96, 88, 60);
+  Card::Base card = Card::Base::create(Card::Edition::FIFA19, Card::TemplateName::COMMON_BRONZE, Card::Language::EN, "John Doe", "Liverpool", "England", Player::Position::ALL, 96, 80, 94, 96, 88, 60);
   Generator::generate(card);
 
   return 0;

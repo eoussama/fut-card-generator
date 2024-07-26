@@ -3,9 +3,9 @@
 
 #include <string>
 
-#include "stats.h"
-#include "player.h"
-#include "position.h"
+#include "stats.hpp"
+#include "player.hpp"
+#include "position.hpp"
 
 namespace Player
 {

@@ -1,5 +1,5 @@
 #include <string>
-#include "position.h"
+#include "position.hpp"
 
 namespace Player
 {

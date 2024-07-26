@@ -1,9 +1,9 @@
 #include <iostream>
-#include "generator.h"
+#include "generator.hpp"
 
 namespace Generator
 {
-  bool generate(Card card)
+  bool generate(Card::Base card)
   {
     std::cout << card.toString() << std::endl;
     return true;
