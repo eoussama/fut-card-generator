@@ -12,6 +12,9 @@ namespace Card
       Base::Base(Hex hex) : hex(hex), rgb(rgbFromHex(hex)) {}
       Base::Base(RGB rgb) : rgb(rgb), hex(hexFromRGB(rgb)) {}
 
+      RGB Base::getRGB() const { return rgb; }
+      Hex Base::getHex() const { return hex; }
+
       std::string Base::toString()
       {
         return "Color(" + Base::rgbToString() + ", " + Base::hexToString() + ")";

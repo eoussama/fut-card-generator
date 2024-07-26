@@ -17,10 +17,12 @@ namespace Card
       class Base
       {
       public:
-        Base() = default;
-
         Base(RGB rgb);
         Base(Hex hex);
+        Base() = default;
+
+        RGB getRGB() const;
+        Hex getHex() const;
 
         std::string toString();
 

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <tuple>
+
 #include <opencv2/opencv.hpp>
 #include <opencv2/freetype.hpp>
 
@@ -13,10 +15,6 @@ namespace Generator
 
     Card::Template::Base tmplate = card.getTemplate();
     std::string templatePath = tmplate.getBackgroundPath(Card::Edition::FIFA19);
-
-    // auto x = tmplate.colors;
-    // auto y = std::get<0>(x);
-    // std::cout << std::get<0>(y) << std::endl;
 
     cv::Mat image = cv::imread(templatePath, cv::IMREAD_COLOR);
 
@@ -48,7 +46,11 @@ namespace Generator
 
     std::string text = card.getPlayer().getName();
     int fontHeight = 30;
-    cv::Scalar color(255, 255, 255, 255);
+
+    Card::Template::Color::Base primary = tmplate.colors.first;
+    Card::Template::Color::Base secondary = tmplate.colors.second;
+
+    cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
     cv::Point textOrg(50, 50);
 
     try

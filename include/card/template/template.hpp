@@ -19,7 +19,7 @@ namespace Card
 
       Type type;
       std::string background;
-      std::tuple<Color::Base, Color::Base> colors;
+      std::pair<Color::Base, Color::Base> colors;
 
       std::string getBackgroundPath(Edition const &edition);
     };
