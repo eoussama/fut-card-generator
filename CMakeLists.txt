@@ -15,11 +15,10 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/card/dimentions/19
 )
 
-add_subdirectory(external/opencv)
+find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
