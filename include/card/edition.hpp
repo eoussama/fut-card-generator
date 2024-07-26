@@ -1,5 +1,5 @@
-#ifndef CARDEDITION_H
-#define CARDEDITION_H
+#ifndef EDITION_H
+#define EDITION_H
 
 #include <string>
 
@@ -10,7 +10,7 @@ namespace Card
     FIFA19 = 19
   };
 
-  std::string getCardEditionName(const Edition &cardEdition);
+  std::string editionToString(const Edition &edition);
 }
 
 #endif

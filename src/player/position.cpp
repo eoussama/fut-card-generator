@@ -3,7 +3,7 @@
 
 namespace Player
 {
-  std::string getPositionName(const Position &position)
+  std::string positionToString(const Position &position)
   {
     switch (position)
     {

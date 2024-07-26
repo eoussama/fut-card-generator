@@ -2,7 +2,7 @@
 
 namespace Card
 {
-  std::string getCardKindName(const Type &type)
+  std::string typeToString(const Type &type)
   {
     switch (type)
     {

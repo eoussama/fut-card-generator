@@ -25,7 +25,7 @@ namespace Player
     ALL
   };
 
-  std::string getPositionName(const Position &position);
+  std::string positionToString(const Position &position);
 }
 
 #endif

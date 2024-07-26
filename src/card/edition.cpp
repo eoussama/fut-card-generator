@@ -2,7 +2,7 @@
 
 namespace Card
 {
-  std::string getCardEditionName(const Edition &edition)
+  std::string editionToString(const Edition &edition)
   {
     switch (edition)
     {

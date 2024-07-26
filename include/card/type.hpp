@@ -1,5 +1,5 @@
-#ifndef CARDKIND_H
-#define CARDKIND_H
+#ifndef TYPE_H
+#define TYPE_H
 
 #include <string>
 
@@ -11,7 +11,7 @@ namespace Card
     UCL
   };
 
-  std::string getCardKindName(const Type &type);
+  std::string typeToString(const Type &type);
 }
 
 #endif

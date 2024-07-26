@@ -16,6 +16,6 @@ namespace Player
 
   std::string Base::toString() const
   {
-    return "Player(Name: " + name + ", Club: " + club + ", Country: " + country + ", Position: " + getPositionName(position) + ", Stats: " + stats.toString() + ")";
+    return "Player(Name: " + name + ", Club: " + club + ", Country: " + country + ", Position: " + positionToString(position) + ", Stats: " + stats.toString() + ")";
   }
 }

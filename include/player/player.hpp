@@ -26,8 +26,8 @@ namespace Player
     Stats stats;
     std::string name;
     std::string club;
-    std::string country;
     Position position;
+    std::string country;
   };
 }
 

@@ -2,7 +2,7 @@
 
 namespace Card
 {
-  std::string getLanguageCode(const Language &language)
+  std::string languageToString(const Language &language)
   {
     switch (language)
     {

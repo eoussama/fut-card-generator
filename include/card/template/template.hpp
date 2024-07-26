@@ -1,5 +1,5 @@
-#ifndef CARDTYPE_H
-#define CARDTYPE_H
+#ifndef TEMPLATE_H
+#define TEMPLATE_H
 
 #include <map>
 #include <string>

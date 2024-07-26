@@ -15,7 +15,7 @@ namespace Card
     PT
   };
 
-  std::string getLanguageCode(const Language &language);
+  std::string languageToString(const Language &language);
 }
 
 #endif

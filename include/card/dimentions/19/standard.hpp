@@ -1,5 +1,5 @@
-#ifndef DIMENTION_19STANDARD_H
-#define DIMENTION_19STANDARD_H
+#ifndef DIMENTIONS_19_STANDARD_H
+#define DIMENTIONS_19_STANDARD_H
 
 #include "dimentions.hpp"
 
