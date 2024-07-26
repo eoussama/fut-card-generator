@@ -2,6 +2,7 @@
 #define CARDTYPE_H
 
 #include <string>
+#include "card_kind.h"
 
 enum class CardType
 {
@@ -51,6 +52,7 @@ enum class CardType
   LEGEND
 };
 
-std::string getCardName(const CardType &card);
+std::string getCardName(const CardType &type);
+CardKind getCardKind(const CardType &type);
 
 #endif

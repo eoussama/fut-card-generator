@@ -15,21 +15,21 @@ public:
   static Card create(CardEdition const &cardEdition, CardType const &cardType, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
 
   Stats getStats() const;
+  CardType getType() const;
   Player getPlayer() const;
   Language getLanguage() const;
-  CardType getCardType() const;
+  CardEdition getEdition() const;
   CardDimentions getDimentions() const;
-  CardEdition getCardEdition() const;
 
   std::string toString() const;
 
 private:
   Stats stats;
   Player player;
-  CardType cardType;
+  CardType type;
   Language language;
-  CardDimentions dimention;
-  CardEdition cardEdition;
+  CardEdition edition;
+  CardDimentions dimentions;
 };
 
 #endif

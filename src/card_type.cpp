@@ -1,4 +1,5 @@
 #include "card_type.h"
+#include "card_kind.h"
 
 std::string getCardName(const CardType &card)
 {
@@ -94,5 +95,53 @@ std::string getCardName(const CardType &card)
     return "Legend";
   default:
     return "Unknown";
+  }
+}
+
+CardKind getCardKind(const CardType &type)
+{
+  switch (type)
+  {
+  case CardType::COMMON_BRONZE:
+  case CardType::COMMON_SILVER:
+  case CardType::COMMON_GOLD:
+  case CardType::RARE_BRONZE:
+  case CardType::RARE_SILVER:
+  case CardType::RARE_GOLD:
+  case CardType::IF_BRONZE:
+  case CardType::IF_SILVER:
+  case CardType::IF_GOLD:
+  case CardType::FC_BRONZE:
+  case CardType::FC_SILVER:
+  case CardType::FC_GOLD:
+  case CardType::MOTM:
+  case CardType::PL_POTM:
+  case CardType::BL_POTM:
+  case CardType::FUTTIES:
+  case CardType::FUTTIESW:
+  case CardType::TOTY:
+  case CardType::TOTY_N:
+  case CardType::EL:
+  case CardType::EL_MOTM:
+  case CardType::EL_LIVE:
+  case CardType::EL_SBC:
+  case CardType::EL_TOTT:
+  case CardType::FSR:
+  case CardType::FS:
+  case CardType::FSN:
+  case CardType::PP:
+  case CardType::CB:
+  case CardType::RB:
+  case CardType::HERO:
+  case CardType::AW:
+  case CardType::FB:
+  case CardType::HEADLINERS:
+  case CardType::CC:
+  case CardType::SBC:
+  case CardType::SBCP:
+  case CardType::LEGEND:
+    return CardKind::STANDARD;
+  default:
+    return CardKind::UCL;
   }
 }

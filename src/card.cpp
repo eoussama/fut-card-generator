@@ -1,8 +1,9 @@
 #include "card.h"
 
 Card::Card(const Player &player, const Stats &stats, const Language &language, const CardEdition &cardEdition, const CardType &cardType)
-    : stats(stats), player(player), language(language), cardEdition(cardEdition), cardType(cardType)
+    : stats(stats), player(player), language(language), edition(cardEdition), type(cardType)
 {
+  dimentions = CardDimentions::fromType(type);
 }
 
 Card Card::create(CardEdition const &cardEdition, CardType const &cardType, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending)
@@ -16,10 +17,11 @@ Card Card::create(CardEdition const &cardEdition, CardType const &cardType, Lang
 
 Stats Card::getStats() const { return stats; }
 Player Card::getPlayer() const { return player; }
-CardType Card::getCardType() const { return cardType; }
+CardType Card::getType() const { return type; }
 Language Card::getLanguage() const { return language; }
+CardDimentions Card::getDimentions() const { return dimentions; }
 
 std::string Card::toString() const
 {
-  return "Card(Player: " + player.toString() + ", Stats: " + stats.toString() + ", Language: " + getLanguageCode(language) + ", Cardedition: " + getCardEditionName(cardEdition) + ", CardType: " + getCardName(cardType) + ")";
+  return "Card(Player: " + player.toString() + ", Stats: " + stats.toString() + ", Language: " + getLanguageCode(language) + ", Cardedition: " + getCardEditionName(edition) + ", CardType: " + getCardName(type) + ")";
 }
