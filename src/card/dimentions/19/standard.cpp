@@ -1,6 +1,8 @@
 #include "card_dimentions_19_standard.h"
 
-CardDimentions19Standard::CardDimentions19Standard()
+using namespace Dimentions;
+
+Standard19::Standard19()
 {
   cardKind = CardType::STANDARD;
 

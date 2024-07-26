@@ -3,10 +3,13 @@
 
 #include "card_dimentions.h"
 
-class CardDimentions19Standard : public CardDimentions
+namespace Dimentions
 {
-public:
-  CardDimentions19Standard();
-};
+  class Standard19 : public Base
+  {
+  public:
+    Standard19();
+  };
+}
 
 #endif

@@ -1,6 +1,7 @@
 #include "card_dimentions_19_ucl.h"
 
-CardDimentions19Ucl::CardDimentions19Ucl()
+using namespace Dimentions;
+UCL19::UCL19()
 {
   cardKind = CardType::UCL;
 

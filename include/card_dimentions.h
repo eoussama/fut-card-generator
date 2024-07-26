@@ -3,61 +3,64 @@
 
 #include "card_template.h"
 
-struct CardDimentions
+namespace Dimentions
 {
-  CardType cardKind;
+  struct Base
+  {
+    CardType cardKind;
 
-  int leftMargin;
-  int leftMarginClubBadge;
-  int leftMarginOverall;
+    int leftMargin;
+    int leftMarginClubBadge;
+    int leftMarginOverall;
 
-  int topMarginPosition;
+    int topMarginPosition;
 
-  int topMarginName;
+    int topMarginName;
 
-  int topMarginPlayerOverall;
+    int topMarginPlayerOverall;
 
-  int topMarginLineUnderPosition;
-  int leftPointXCoordinateLineUnderPosition;
-  int rightPointXCoordinateLineUnderPosition;
+    int topMarginLineUnderPosition;
+    int leftPointXCoordinateLineUnderPosition;
+    int rightPointXCoordinateLineUnderPosition;
 
-  int topMarginLineUnderCountryFlag;
+    int topMarginLineUnderCountryFlag;
 
-  int topMarginLineUnderName;
-  int marginLineUnderName;
+    int topMarginLineUnderName;
+    int marginLineUnderName;
 
-  int topMarginVerticalLineBetweenStatsColumns;
-  int bottomPointVerticalLineBetweenStatsColumns;
+    int topMarginVerticalLineBetweenStatsColumns;
+    int bottomPointVerticalLineBetweenStatsColumns;
 
-  int topMarginLineUnderStats;
-  int marginLineUnderStats;
+    int topMarginLineUnderStats;
+    int marginLineUnderStats;
 
-  int attrValueLabelHorizontalGap;
+    int attrValueLabelHorizontalGap;
 
-  int leftMarginAttrValueCol1;
-  int leftMarginAttrLabelCol1;
+    int leftMarginAttrValueCol1;
+    int leftMarginAttrLabelCol1;
 
-  int leftMarginAttrValueCol2;
-  int leftMarginAttrLabelCol2;
+    int leftMarginAttrValueCol2;
+    int leftMarginAttrLabelCol2;
 
-  int statsRowVerticalGap;
+    int statsRowVerticalGap;
 
-  int topmarginLabelOffset;
+    int topmarginLabelOffset;
 
-  int topMarginStatsRow1Values;
-  int topMarginStatsRow1Labels;
+    int topMarginStatsRow1Values;
+    int topMarginStatsRow1Labels;
 
-  int topMarginStatRow2Values;
-  int topMarginStatsRow2Labels;
+    int topMarginStatRow2Values;
+    int topMarginStatsRow2Labels;
 
-  int topMarginStatsRow3Values;
-  int topMarginStatsRow3Labels;
+    int topMarginStatsRow3Values;
+    int topMarginStatsRow3Labels;
 
-  int leftMarginPlayerImage;
-  int leftMarginDynamicPlayerImage;
-  int bottomMarginDynamicPlayerImage;
+    int leftMarginPlayerImage;
+    int leftMarginDynamicPlayerImage;
+    int bottomMarginDynamicPlayerImage;
 
-  static CardDimentions fromTemplate(CardTemplate tmplate);
-};
+    static Base fromTemplate(CardTemplate tmplate);
+  };
+}
 
 #endif
