@@ -10,6 +10,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/card
   ${PROJECT_SOURCE_DIR}/include/player
   ${PROJECT_SOURCE_DIR}/include/generator
+  ${PROJECT_SOURCE_DIR}/include/card/template
   ${PROJECT_SOURCE_DIR}/include/card/dimentions
   ${PROJECT_SOURCE_DIR}/include/card/dimentions/19
 )

@@ -61,7 +61,7 @@ namespace Card
       int leftMarginDynamicPlayerImage;
       int bottomMarginDynamicPlayerImage;
 
-      static Base fromTemplate(Template tmplate);
+      static Base fromTemplate(Template::Base tmplate);
     };
   }
 }

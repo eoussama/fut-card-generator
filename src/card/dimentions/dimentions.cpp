@@ -7,7 +7,7 @@ namespace Card
 {
   namespace Dimentions
   {
-    Base Base::fromTemplate(Template tmplate)
+    Base Base::fromTemplate(Template::Base tmplate)
     {
       switch (tmplate.type)
       {
