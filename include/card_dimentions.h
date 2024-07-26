@@ -7,55 +7,55 @@ struct CardDimentions
 {
   CardType cardKind;
 
-  int left_margin;
-  int left_margin_club_badge;
-  int left_margin_overall;
+  int leftMargin;
+  int leftMarginClubBadge;
+  int leftMarginOverall;
 
-  int top_margin_position;
+  int topMarginPosition;
 
-  int top_margin_name;
+  int topMarginName;
 
-  int top_margin_player_overall;
+  int topMarginPlayerOverall;
 
-  int top_margin_line_under_position;
-  int left_point_x_coordinate_line_under_position;
-  int right_point_x_coordinate_line_under_position;
+  int topMarginLineUnderPosition;
+  int leftPointXCoordinateLineUnderPosition;
+  int rightPointXCoordinateLineUnderPosition;
 
-  int top_margin_line_under_country_flag;
+  int topMarginLineUnderCountryFlag;
 
-  int top_margin_line_under_name;
-  int margin_line_under_name;
+  int topMarginLineUnderName;
+  int marginLineUnderName;
 
-  int top_margin_vertical_line_between_stats_columns;
-  int bottom_point_vertical_line_between_stats_columns;
+  int topMarginVerticalLineBetweenStatsColumns;
+  int bottomPointVerticalLineBetweenStatsColumns;
 
-  int top_margin_line_under_stats;
-  int margin_line_under_stats;
+  int topMarginLineUnderStats;
+  int marginLineUnderStats;
 
-  int attr_value_label_horizontal_gap;
+  int attrValueLabelHorizontalGap;
 
-  int left_margin_attr_value_col1;
-  int left_margin_attr_label_col1;
+  int leftMarginAttrValueCol1;
+  int leftMarginAttrLabelCol1;
 
-  int left_margin_attr_value_col2;
-  int left_margin_attr_label_col2;
+  int leftMarginAttrValueCol2;
+  int leftMarginAttrLabelCol2;
 
-  int stats_row_vertical_gap;
+  int statsRowVerticalGap;
 
-  int top_margin_label_offset;
+  int topmarginLabelOffset;
 
-  int top_margin_stats_row_1_values;
-  int top_margin_stats_row_1_labels;
+  int topMarginStatsRow1Values;
+  int topMarginStatsRow1Labels;
 
-  int top_margin_stats_row_2_values;
-  int top_margin_stats_row_2_labels;
+  int topMarginStatRow2Values;
+  int topMarginStatsRow2Labels;
 
-  int top_margin_stats_row_3_values;
-  int top_margin_stats_row_3_labels;
+  int topMarginStatsRow3Values;
+  int topMarginStatsRow3Labels;
 
-  int left_margin_player_image;
-  int left_margin_dynamic_player_image;
-  int bottom_margin_dynamic_player_image;
+  int leftMarginPlayerImage;
+  int leftMarginDynamicPlayerImage;
+  int bottomMarginDynamicPlayerImage;
 
   static CardDimentions fromTemplate(CardTemplate tmplate);
 };
