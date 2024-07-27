@@ -1,5 +1,5 @@
-#ifndef CARD_H
-#define CARD_H
+#ifndef CARD_HPP
+#define CARD_HPP
 
 #include "stats.hpp"
 #include "player.hpp"

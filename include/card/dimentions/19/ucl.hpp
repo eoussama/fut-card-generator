@@ -1,5 +1,5 @@
-#ifndef DIMENTIONS_19_UCL_H
-#define DIMENTIONS_19_UCL_H
+#ifndef DIMENTIONS_19_UCL_HPP
+#define DIMENTIONS_19_UCL_HPP
 
 #include "dimentions.hpp"
 

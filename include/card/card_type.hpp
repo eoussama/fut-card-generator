@@ -1,5 +1,5 @@
-#ifndef CARD_TYPE_H
-#define CARD_TYPE_H
+#ifndef CARD_TYPE_HPP
+#define CARD_TYPE_HPP
 
 #include <string>
 

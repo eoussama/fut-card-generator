@@ -1,5 +1,5 @@
-#ifndef COLORS_H
-#define COLORS_H
+#ifndef COLORS_HPP
+#define COLORS_HPP
 
 #define COLOR_OTW 0xff4782
 #define COLOR_BLACK 0x0c0c0c

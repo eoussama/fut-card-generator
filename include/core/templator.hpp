@@ -1,5 +1,5 @@
-#ifndef TEMPLATOR_H
-#define TEMPLATOR_H
+#ifndef TEMPLATOR_HPP
+#define TEMPLATOR_HPP
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/freetype.hpp>

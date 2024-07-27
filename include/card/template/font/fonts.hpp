@@ -1,5 +1,5 @@
-#ifndef FONTS_H
-#define FONTS_H
+#ifndef FONTS_HPP
+#define FONTS_HPP
 
 #include <string>
 

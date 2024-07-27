@@ -1,5 +1,5 @@
-#ifndef FONT_BUFFERS_H
-#define FONT_BUFFERS_H
+#ifndef FONT_BUFFERS_HPP
+#define FONT_BUFFERS_HPP
 
 #include <string>
 #include <vector>

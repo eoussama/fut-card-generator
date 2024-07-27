@@ -1,5 +1,5 @@
-#ifndef STATS_H
-#define STATS_H
+#ifndef STATS_HPP
+#define STATS_HPP
 
 #include <string>
 

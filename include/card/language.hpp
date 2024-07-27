@@ -1,5 +1,5 @@
-#ifndef LANGUAGE_H
-#define LANGUAGE_H
+#ifndef LANGUAGE_HPP
+#define LANGUAGE_HPP
 
 #include <string>
 

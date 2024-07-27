@@ -1,5 +1,5 @@
-#ifndef FONT_BUFFER_H
-#define FONT_BUFFER_H
+#ifndef FONT_BUFFER_HPP
+#define FONT_BUFFER_HPP
 
 #include <opencv2/freetype.hpp>
 

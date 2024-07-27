@@ -1,5 +1,5 @@
-#ifndef TEMPLATE_CODE_H
-#define TEMPLATE_CODE_H
+#ifndef TEMPLATE_CODE_HPP
+#define TEMPLATE_CODE_HPP
 
 #include <string>
 

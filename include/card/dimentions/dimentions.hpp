@@ -1,5 +1,5 @@
-#ifndef DIMENTIONS_H
-#define DIMENTIONS_H
+#ifndef DIMENTIONS_HPP
+#define DIMENTIONS_HPP
 
 #include "template.hpp"
 

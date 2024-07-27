@@ -1,5 +1,5 @@
-#ifndef EDITION_H
-#define EDITION_H
+#ifndef EDITION_HPP
+#define EDITION_HPP
 
 #include <string>
 
