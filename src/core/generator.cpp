@@ -18,6 +18,7 @@ namespace Core
 
       Card::Template::Base tmplate = card.getTemplate();
       cv::Mat image = Templator::loadBackground(tmplate);
+      Templator::loadFont(tmplate);
 
       std::string fontPath = "assets/bgs/19/fonts/DINPro-CondMedium.otf";
       cv::Ptr<cv::freetype::FreeType2> ft2;

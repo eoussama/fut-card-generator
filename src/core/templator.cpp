@@ -23,5 +23,42 @@ namespace Core
 
       return image;
     }
+
+    void loadFont(Card::Template::Base tmplate)
+    {
+      using namespace Card::Template;
+
+      Font::Fonts fonts = Font::init();
+      Font::Target target = fonts[tmplate.fonts];
+
+
+      // std::string fontPath = "assets/bgs/19/fonts/DINPro-CondMedium.otf";
+      // cv::Ptr<cv::freetype::FreeType2> ft2;
+      // try
+      // {
+      //   ft2 = cv::freetype::createFreeType2();
+      //   ft2->loadFontData(fontPath, 0);
+      // }
+      // catch (const cv::Exception &e)
+      // {
+      //   std::cerr << "Error: Could not load font from " << fontPath << std::endl;
+      //   std::cerr << e.what() << std::endl;
+      //   return -1;
+      // }
+
+      // std::string text = card.getPlayer().getName();
+      // int fontHeight = 30;
+
+      // Card::Template::Color::Base primary = tmplate.colors.first;
+      // Card::Template::Color::Base secondary = tmplate.colors.second;
+
+      // cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
+      // cv::Point textOrg(50, 50);
+
+      // try
+      // {
+      //   ft2->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
+      // }
+    }
   }
 }

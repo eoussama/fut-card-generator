@@ -16,7 +16,7 @@ namespace Card
   {
     namespace Font
     {
-      typedef uint8_t Size;
+      typedef short int Size;
 
       struct Base
       {
