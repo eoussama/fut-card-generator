@@ -2,24 +2,29 @@
 #define TEMPLATE_H
 
 #include <map>
+#include <tuple>
 #include <string>
 
-#include "type.hpp"
+#include "font.hpp"
 #include "color.hpp"
+#include "card_type.hpp"
 #include "edition.hpp"
-#include "template_name.hpp"
+#include "template_code.hpp"
 
 namespace Card
 {
   namespace Template
   {
+    typedef std::pair<Color::Base, Color::Base> Colors;
+
     struct Base
     {
       Base() = default;
 
       Type type;
+      Colors colors;
+      Font::Code fonts;
       std::string background;
-      std::pair<Color::Base, Color::Base> colors;
 
       std::string getBackgroundPath(Edition const &edition);
     };
