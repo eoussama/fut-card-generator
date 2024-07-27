@@ -14,11 +14,13 @@ namespace Core
   {
     bool generate(Card::Base card)
     {
-      std::cout << card.toString() << std::endl;
+      using namespace Card;
 
-      Card::Template::Base tmplate = card.getTemplate();
+      Template::Base tmplate = card.getTemplate();
+      Dimentions::Base dimentions = Dimentions::Base::fromTemplate(tmplate);
+
       cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
-      Card::Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
+      Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
 
       try
       {
@@ -29,7 +31,7 @@ namespace Core
         Card::Template::Color::Base secondary = tmplate.colors.second;
 
         cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
-        cv::Point textOrg(50, 50);
+        cv::Point textOrg(dimentions.leftMargin, dimentions.topMarginName);
 
         fonts.name.buffer->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
       }
@@ -47,7 +49,7 @@ namespace Core
 
       std::vector<int> compression_params;
       compression_params.push_back(cv::IMWRITE_PNG_COMPRESSION);
-      compression_params.push_back(0); // Max compression level
+      compression_params.push_back(9);
 
       bool result = cv::imwrite(outputImagePath, image, compression_params);
 
