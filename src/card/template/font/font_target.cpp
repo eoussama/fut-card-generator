@@ -1,3 +1,4 @@
+#include "edition.hpp"
 #include "font_target.hpp"
 
 namespace Card
@@ -9,6 +10,16 @@ namespace Card
       Target::Target(Base overall, Base position, Base name, Base value, Base label)
           : overall(overall), position(position), name(name), value(value), label(label)
       {
+      }
+
+      std::string getPath(Base font, Edition const &edition)
+      {
+        std::string path;
+        int editionNumber = (int)edition;
+        std::string type = typeToString(font.type);
+        path = "assets/bgs/" + std::to_string(editionNumber) + "/fonts/" + font.name + "." + type;
+
+        return path;
       }
 
       Fonts init()

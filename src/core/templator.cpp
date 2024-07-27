@@ -24,41 +24,42 @@ namespace Core
       return image;
     }
 
-    void loadFont(Card::Template::Base tmplate)
+    Card::Template::Font::Buffers loadFonts(Card::Template::Base tmplate, Card::Edition const &edition)
     {
       using namespace Card::Template;
 
+      Font::Buffers buffer;
       Font::Fonts fonts = Font::init();
       Font::Target target = fonts[tmplate.fonts];
 
+      buffer.name = loadFont(target.name, edition);
+      buffer.value = loadFont(target.value, edition);
+      buffer.label = loadFont(target.label, edition);
+      buffer.overall = loadFont(target.overall, edition);
+      buffer.position = loadFont(target.position, edition);
 
-      // std::string fontPath = "assets/bgs/19/fonts/DINPro-CondMedium.otf";
-      // cv::Ptr<cv::freetype::FreeType2> ft2;
-      // try
-      // {
-      //   ft2 = cv::freetype::createFreeType2();
-      //   ft2->loadFontData(fontPath, 0);
-      // }
-      // catch (const cv::Exception &e)
-      // {
-      //   std::cerr << "Error: Could not load font from " << fontPath << std::endl;
-      //   std::cerr << e.what() << std::endl;
-      //   return -1;
-      // }
+      return buffer;
+    }
 
-      // std::string text = card.getPlayer().getName();
-      // int fontHeight = 30;
+    Card::Template::Font::Buffer loadFont(Card::Template::Font::Base font, Card::Edition const &edition)
+    {
+      using namespace Card::Template;
 
-      // Card::Template::Color::Base primary = tmplate.colors.first;
-      // Card::Template::Color::Base secondary = tmplate.colors.second;
+      std::string fontPath = Font::getPath(font, edition);
+      cv::Ptr<cv::freetype::FreeType2> ft2;
 
-      // cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
-      // cv::Point textOrg(50, 50);
+      try
+      {
+        ft2 = cv::freetype::createFreeType2();
+        ft2->loadFontData(fontPath, 0);
+      }
+      catch (const cv::Exception &e)
+      {
+        std::cerr << "Error: Could not load font from " << fontPath << std::endl;
+        std::cerr << e.what() << std::endl;
+      }
 
-      // try
-      // {
-      //   ft2->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
-      // }
+      return ft2;
     }
   }
 }

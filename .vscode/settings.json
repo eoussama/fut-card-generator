@@ -69,6 +69,8 @@
     "semaphore": "cpp",
     "stop_token": "cpp",
     "thread": "cpp",
-    "typeindex": "cpp"
+    "typeindex": "cpp",
+    "buffer": "cpp",
+    "netfwd": "cpp"
   }
 }

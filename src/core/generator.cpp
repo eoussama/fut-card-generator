@@ -18,21 +18,7 @@ namespace Core
 
       Card::Template::Base tmplate = card.getTemplate();
       cv::Mat image = Templator::loadBackground(tmplate);
-      Templator::loadFont(tmplate);
-
-      std::string fontPath = "assets/bgs/19/fonts/DINPro-CondMedium.otf";
-      cv::Ptr<cv::freetype::FreeType2> ft2;
-      try
-      {
-        ft2 = cv::freetype::createFreeType2();
-        ft2->loadFontData(fontPath, 0);
-      }
-      catch (const cv::Exception &e)
-      {
-        std::cerr << "Error: Could not load font from " << fontPath << std::endl;
-        std::cerr << e.what() << std::endl;
-        return -1;
-      }
+      Card::Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
 
       std::string text = card.getPlayer().getName();
       int fontHeight = 30;
@@ -45,7 +31,8 @@ namespace Core
 
       try
       {
-        ft2->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
+        fonts.overall->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
+        std::cout << "here" << std::endl;
       }
       catch (const cv::Exception &e)
       {

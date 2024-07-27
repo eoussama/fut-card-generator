@@ -25,6 +25,7 @@ namespace Card
       typedef std::map<Code, Target> Fonts;
 
       Fonts init();
+      std::string getPath(Base font, Edition const &edition);
     }
   }
 }
