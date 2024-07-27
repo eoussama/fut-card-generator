@@ -5,9 +5,12 @@
 
 #include "card.hpp"
 
-namespace Generator
+namespace Core
 {
-  bool generate(Card::Base card);
+  namespace Generator
+  {
+    bool generate(Card::Base card);
+  }
 }
 
 #endif
