@@ -12,8 +12,8 @@ namespace Core
 {
   namespace Templator
   {
-    cv::Mat loadBackground(Card::Template::Base tmplate);
-    Card::Template::Font::Buffers loadFonts(Card::Template::Base tmplate, Card::Edition const &edition); 
+    cv::Mat loadBackground(Card::Template::Base tmplate, Card::Edition const &edition);
+    Card::Template::Font::Buffers loadFonts(Card::Template::Base tmplate, Card::Edition const &edition);
     Card::Template::Font::Buffer loadFont(Card::Template::Font::Base font, Card::Edition const &edition);
   }
 }

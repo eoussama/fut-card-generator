@@ -17,22 +17,21 @@ namespace Core
       std::cout << card.toString() << std::endl;
 
       Card::Template::Base tmplate = card.getTemplate();
-      cv::Mat image = Templator::loadBackground(tmplate);
+      cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
       Card::Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
-
-      std::string text = card.getPlayer().getName();
-      int fontHeight = 30;
-
-      Card::Template::Color::Base primary = tmplate.colors.first;
-      Card::Template::Color::Base secondary = tmplate.colors.second;
-
-      cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
-      cv::Point textOrg(50, 50);
 
       try
       {
-        fonts.overall->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
-        std::cout << "here" << std::endl;
+        int fontHeight = fonts.name.size;
+        std::string text = card.getPlayer().getName();
+
+        Card::Template::Color::Base primary = tmplate.colors.first;
+        Card::Template::Color::Base secondary = tmplate.colors.second;
+
+        cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
+        cv::Point textOrg(50, 50);
+
+        fonts.name.buffer->putText(image, text, textOrg, fontHeight, color, cv::FILLED, cv::LINE_AA, true);
       }
       catch (const cv::Exception &e)
       {

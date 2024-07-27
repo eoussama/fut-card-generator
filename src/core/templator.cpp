@@ -4,9 +4,9 @@ namespace Core
 {
   namespace Templator
   {
-    cv::Mat loadBackground(Card::Template::Base tmplate)
+    cv::Mat loadBackground(Card::Template::Base tmplate, Card::Edition const &edition)
     {
-      std::string templatePath = tmplate.getBackgroundPath(Card::Edition::FIFA19);
+      std::string templatePath = tmplate.getBackgroundPath(edition);
       cv::Mat image = cv::imread(templatePath, cv::IMREAD_COLOR);
 
       if (image.empty())
@@ -59,7 +59,7 @@ namespace Core
         std::cerr << e.what() << std::endl;
       }
 
-      return ft2;
+      return {font.size, ft2};
     }
   }
 }

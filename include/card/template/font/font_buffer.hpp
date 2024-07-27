@@ -9,7 +9,12 @@ namespace Card
   {
     namespace Font
     {
-      typedef cv::Ptr<cv::freetype::FreeType2> Buffer;
+      typedef cv::Ptr<cv::freetype::FreeType2> FontBuffer;
+
+      struct Buffer {
+        Size size;
+        FontBuffer buffer;
+      };
     }
   }
 }
