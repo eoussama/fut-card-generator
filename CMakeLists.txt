@@ -14,6 +14,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/card/template
   ${PROJECT_SOURCE_DIR}/include/card/dimentions
   ${PROJECT_SOURCE_DIR}/include/card/dimentions/19
+  ${PROJECT_SOURCE_DIR}/include/card/template/font
   ${PROJECT_SOURCE_DIR}/include/card/template/color
 )
 
