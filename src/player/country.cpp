@@ -163,13 +163,13 @@ namespace Player
     case Country::GA:
       return "ga";
     case Country::GBNG:
-      return "gb-ng";
+      return "gb-eng";
     case Country::GBIR:
-      return "gb-ir";
+      return "gb-nir";
     case Country::GBCT:
-      return "gb-ct";
+      return "gb-sct";
     case Country::GBLS:
-      return "gb-ls";
+      return "gb-wls";
     case Country::GB:
       return "gb";
     case Country::GD:
