@@ -48,10 +48,10 @@ namespace Template
       topMarginStatsRow1Values = 530;
       topMarginStatsRow1Labels = topMarginStatsRow1Values + topmarginLabelOffset;
 
-      topMarginStatRow2Values = topMarginStatsRow1Values + statsRowVerticalGap;
-      topMarginStatsRow2Labels = topMarginStatRow2Values + topmarginLabelOffset;
+      topMarginStatsRow2Values = topMarginStatsRow1Values + statsRowVerticalGap;
+      topMarginStatsRow2Labels = topMarginStatsRow2Values + topmarginLabelOffset;
 
-      topMarginStatsRow3Values = topMarginStatRow2Values + statsRowVerticalGap;
+      topMarginStatsRow3Values = topMarginStatsRow2Values + statsRowVerticalGap;
       topMarginStatsRow3Labels = topMarginStatsRow3Values + topmarginLabelOffset;
 
       leftMarginPlayerImage = 165;

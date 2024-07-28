@@ -8,9 +8,9 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/freetype.hpp>
 
-#include "draw.hpp"
 #include "card.hpp"
 #include "templator.hpp"
+#include "draw/draw.hpp"
 #include "template/template.hpp"
 
 namespace Core

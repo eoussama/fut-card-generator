@@ -51,7 +51,7 @@ namespace Template
       int topMarginStatsRow1Values;
       int topMarginStatsRow1Labels;
 
-      int topMarginStatRow2Values;
+      int topMarginStatsRow2Values;
       int topMarginStatsRow2Labels;
 
       int topMarginStatsRow3Values;
