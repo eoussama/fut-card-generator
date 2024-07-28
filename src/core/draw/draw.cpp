@@ -4,21 +4,43 @@ namespace Core
 {
   namespace Draw
   {
-    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat image)
+    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat &image)
         : image(image), card(card), tmplate(tmplate), fonts(fonts), dimentions(dimentions), clublogo(clublogo)
     {
     }
 
-    void Base::player()
+    void Base::convertToBGR()
     {
-      this->playerName();
-      this->playerImage();
-      this->playerCountry();
-      this->playerPosition();
+      this->hasAlphaChannel = this->image.channels() == 4;
+      if (this->hasAlphaChannel)
+      {
+        std::vector<cv::Mat> bgraChannels;
+        cv::split(this->image, bgraChannels);
+        this->alphaChannel = bgraChannels[3];
+        cv::cvtColor(this->image, this->image, cv::COLOR_BGRA2BGR);
+      }
     }
 
-    void Base::stats()
+    void Base::restoreAlphaChannel()
     {
+      if (this->hasAlphaChannel)
+      {
+        cv::Mat imageBgra;
+        cv::cvtColor(this->image, imageBgra, cv::COLOR_BGR2BGRA);
+        std::vector<cv::Mat> bgraChannels;
+        cv::split(imageBgra, bgraChannels);
+        bgraChannels[3] = this->alphaChannel;
+        cv::merge(bgraChannels, this->image);
+      }
+    }
+
+    void Base::text()
+    {
+      this->convertToBGR();
+
+      this->playerName();
+      this->playerPosition();
+
       this->statsPace();
       this->statsOverall();
       this->statsPassing();
@@ -26,6 +48,15 @@ namespace Core
       this->statsPhysical();
       this->statsDribbling();
       this->statsDefending();
+
+      this->restoreAlphaChannel();
+    }
+
+    void Base::images()
+    {
+      this->playerClub();
+      this->playerImage();
+      this->playerCountry();
     }
 
     void Base::lines()
@@ -56,7 +87,7 @@ namespace Core
       Ink::line(image, start, end, this->tmplate.colors.second);
     }
 
-    void Base::club()
+    void Base::playerClub()
     {
       int width = 140 * 0.55;
       int height = 140 * 0.55;
@@ -88,7 +119,7 @@ namespace Core
       int y = this->dimentions.topMarginName + size.height;
       cv::Point position = {x, y};
 
-      Ink::write(text, color, font, position, image);
+      Ink::write(text, color, font, position, this->image);
     }
 
     void Base::playerPosition()
@@ -103,7 +134,7 @@ namespace Core
       int y = this->dimentions.topMarginPosition + size.height;
       cv::Point position = {x, y};
 
-      Ink::write(text, color, font, position, image);
+      Ink::write(text, color, font, position, this->image);
     }
 
     void Base::statsOverall()
@@ -118,7 +149,7 @@ namespace Core
       int y = this->dimentions.topMarginPlayerOverall + size.height;
       cv::Point position = {x, y};
 
-      Ink::write(text, color, font, position, image);
+      Ink::write(text, color, font, position, this->image);
     }
 
     void Base::statsPace()
@@ -133,7 +164,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow1Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "PAC";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -145,7 +176,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow1Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::statsShooting()
@@ -160,7 +191,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow2Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "SHO";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -172,7 +203,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow2Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::statsPassing()
@@ -187,7 +218,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow3Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "PAS";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -199,7 +230,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow3Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::statsDribbling()
@@ -214,7 +245,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow1Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "PAS";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -226,7 +257,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow1Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::statsDefending()
@@ -241,7 +272,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow2Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "DEF";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -253,7 +284,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow2Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::statsPhysical()
@@ -268,7 +299,7 @@ namespace Core
       int valueY = this->dimentions.topMarginStatsRow3Values + valueSize.height;
       cv::Point valuePosition = {valueX, valueY};
 
-      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+      Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
       std::string labelText = "PHY";
       Template::Color::Base labelColor = this->tmplate.colors.second;
@@ -280,7 +311,7 @@ namespace Core
       int labelY = this->dimentions.topMarginStatsRow3Labels + labelSize.height;
       cv::Point labelPosition = {labelX, labelY};
 
-      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+      Ink::write(labelText, labelColor, labelFont, labelPosition, this->image);
     }
 
     void Base::playerCountry()

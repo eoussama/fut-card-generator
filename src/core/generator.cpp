@@ -14,10 +14,9 @@ namespace Core
 
       Draw::Base draw(card, tmplate, fonts, dimentions, clubLogo, image);
 
-      draw.club();
+      draw.text();
       draw.lines();
-      draw.stats();
-      draw.player();
+      draw.images();
 
       return image;
     }

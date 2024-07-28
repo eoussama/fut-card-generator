@@ -13,21 +13,24 @@ namespace Core
     class Base
     {
     public:
-      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat image);
+      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat &image);
 
-      void club();
+      void text();
       void lines();
-      void stats();
-      void player();
+      void images();
 
     private:
-      cv::Mat image;
+      cv::Mat &image;
       Card::Base card;
       cv::Mat clublogo;
       Template::Base tmplate;
       Template::Font::Buffers fonts;
       Template::Dimentions::Base dimentions;
 
+      cv::Mat alphaChannel;
+      bool hasAlphaChannel;
+
+      void playerClub();
       void playerName();
       void playerImage();
       void playerCountry();
@@ -40,6 +43,9 @@ namespace Core
       void statsPhysical();
       void statsDribbling();
       void statsDefending();
+
+      void convertToBGR();
+      void restoreAlphaChannel();
     };
   }
 }

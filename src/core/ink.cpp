@@ -4,7 +4,7 @@ namespace Core
 {
   namespace Ink
   {
-    void write(std::string text, Template::Color::Base color, Template::Font::Buffer font, cv::Point position, cv::Mat image)
+    void write(std::string text, Template::Color::Base color, Template::Font::Buffer font, cv::Point position, cv::Mat &image)
     {
       try
       {
@@ -13,28 +13,7 @@ namespace Core
         Template::Color::Channel b = std::get<2>(color.getRGB());
         cv::Scalar fontColor(r, g, b, 255);
 
-        cv::Mat image_bgr;
-        std::vector<cv::Mat> bgra_channels;
-        if (image.channels() == 4)
-        {
-          cv::cvtColor(image, image_bgr, cv::COLOR_BGRA2BGR);
-          cv::split(image, bgra_channels);
-        }
-        else
-        {
-          image_bgr = image;
-        }
-
-        font.buffer->putText(image_bgr, text, position, font.size, fontColor, cv::FILLED, cv::LINE_AA, true);
-
-        if (image.channels() == 4)
-        {
-          cv::cvtColor(image_bgr, image, cv::COLOR_BGR2BGRA);
-          std::vector<cv::Mat> bgr_channels;
-          cv::split(image, bgr_channels);
-          bgr_channels.push_back(bgra_channels[3]);
-          cv::merge(bgr_channels, image);
-        }
+        font.buffer->putText(image, text, position, font.size, fontColor, cv::FILLED, cv::LINE_AA, true);
       }
       catch (const cv::Exception &e)
       {
