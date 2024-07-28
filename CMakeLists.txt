@@ -11,11 +11,11 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/card
   ${PROJECT_SOURCE_DIR}/include/player
   ${PROJECT_SOURCE_DIR}/include/generator
-  ${PROJECT_SOURCE_DIR}/include/card/template
-  ${PROJECT_SOURCE_DIR}/include/card/dimentions
-  ${PROJECT_SOURCE_DIR}/include/card/dimentions/19
-  ${PROJECT_SOURCE_DIR}/include/card/template/font
-  ${PROJECT_SOURCE_DIR}/include/card/template/color
+  ${PROJECT_SOURCE_DIR}/include/template
+  ${PROJECT_SOURCE_DIR}/include/template/font
+  ${PROJECT_SOURCE_DIR}/include/template/color
+  ${PROJECT_SOURCE_DIR}/include/template/dimentions
+  ${PROJECT_SOURCE_DIR}/include/template/dimentions/19
 )
 
 find_package(OpenCV REQUIRED)

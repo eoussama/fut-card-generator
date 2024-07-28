@@ -4,7 +4,7 @@ namespace Core
 {
   namespace Templator
   {
-    cv::Mat loadBackground(Card::Template::Base tmplate, Card::Edition const &edition)
+    cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition)
     {
       std::string templatePath = tmplate.getBackgroundPath(edition);
       cv::Mat image = cv::imread(templatePath, cv::IMREAD_COLOR);
@@ -24,13 +24,11 @@ namespace Core
       return image;
     }
 
-    Card::Template::Font::Buffers loadFonts(Card::Template::Base tmplate, Card::Edition const &edition)
+    Template::Font::Buffers loadFonts(Template::Base tmplate, Card::Edition const &edition)
     {
-      using namespace Card::Template;
-
-      Font::Buffers buffer;
-      Font::Fonts fonts = Font::init();
-      Font::Target target = fonts[tmplate.fonts];
+      Template::Font::Buffers buffer;
+      Template::Font::Fonts fonts = Template::Font::init();
+      Template::Font::Target target = fonts[tmplate.fonts];
 
       buffer.name = loadFont(target.name, edition);
       buffer.value = loadFont(target.value, edition);
@@ -41,11 +39,9 @@ namespace Core
       return buffer;
     }
 
-    Card::Template::Font::Buffer loadFont(Card::Template::Font::Base font, Card::Edition const &edition)
+    Template::Font::Buffer loadFont(Template::Font::Base font, Card::Edition const &edition)
     {
-      using namespace Card::Template;
-
-      std::string fontPath = Font::getPath(font, edition);
+      std::string fontPath = Template::Font::getPath(font, edition);
       cv::Ptr<cv::freetype::FreeType2> ft2;
 
       try

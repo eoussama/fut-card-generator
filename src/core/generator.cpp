@@ -6,7 +6,7 @@
 
 #include "generator.hpp"
 #include "templator.hpp"
-#include "card/template/template.hpp"
+#include "template/template.hpp"
 
 namespace Core
 {
@@ -14,10 +14,8 @@ namespace Core
   {
     bool generate(Card::Base card)
     {
-      using namespace Card;
-
       Template::Base tmplate = card.getTemplate();
-      Dimentions::Base dimentions = Dimentions::Base::fromTemplate(tmplate);
+      Template::Dimentions::Base dimentions = Template::Dimentions::Base::fromTemplate(tmplate);
 
       cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
       Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
@@ -27,8 +25,8 @@ namespace Core
         int fontHeight = fonts.name.size;
         std::string text = card.getPlayer().getName();
 
-        Card::Template::Color::Base primary = tmplate.colors.first;
-        Card::Template::Color::Base secondary = tmplate.colors.second;
+        Template::Color::Base primary = tmplate.colors.first;
+        Template::Color::Base secondary = tmplate.colors.second;
 
         cv::Scalar color(std::get<0>(primary.getRGB()), std::get<1>(primary.getRGB()), std::get<2>(primary.getRGB()), 255);
         cv::Point textOrg(dimentions.leftMargin, dimentions.topMarginName);
