@@ -12,6 +12,7 @@ namespace Core
 {
   namespace Assets
   {
+    cv::Mat loadImage(std::string path);
     cv::Mat loadFlag(Player::Country const &country);
     cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition);
     Template::Font::Buffers loadFonts(Template::Base tmplate, Card::Edition const &edition);

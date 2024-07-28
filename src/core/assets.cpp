@@ -4,14 +4,13 @@ namespace Core
 {
   namespace Assets
   {
-    cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition)
+    cv::Mat loadImage(std::string path)
     {
-      std::string templatePath = tmplate.getBackgroundPath(edition);
-      cv::Mat image = cv::imread(templatePath, cv::IMREAD_COLOR);
+      cv::Mat image = cv::imread(path, cv::IMREAD_COLOR);
 
       if (image.empty())
       {
-        std::cerr << "Error: Could not load image from " << templatePath << std::endl;
+        std::cerr << "Error: Could not load image from " << path << std::endl;
         return cv::Mat();
       }
 
@@ -24,22 +23,18 @@ namespace Core
       return image;
     }
 
+    cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition)
+    {
+      std::string templatePath = tmplate.getBackgroundPath(edition);
+      cv::Mat image = loadImage(templatePath);
+
+      return image;
+    }
+
     cv::Mat loadFlag(Player::Country const &country)
     {
       std::string templatePath = "assets/nations/flags/" + countryToString(country) + ".png";
-      cv::Mat image = cv::imread(templatePath, cv::IMREAD_COLOR);
-
-      if (image.empty())
-      {
-        std::cerr << "Error: Could not load image from " << templatePath << std::endl;
-        return cv::Mat();
-      }
-
-      if (image.type() != CV_8UC3 || image.channels() != 3 || image.dims != 2)
-      {
-        std::cerr << "Error: Image does not meet the required properties" << std::endl;
-        return cv::Mat();
-      }
+      cv::Mat image = loadImage(templatePath);
 
       return image;
     }
