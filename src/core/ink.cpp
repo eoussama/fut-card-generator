@@ -4,16 +4,14 @@ namespace Core
 {
   namespace Ink
   {
-    void write(std::string text, Template::Color::Base color, Template::Font::Buffer font, cv::Mat image)
+    void write(std::string text, Template::Color::Base color, Template::Font::Buffer font, cv::Point position, cv::Mat image)
     {
       try
       {
         Template::Color::Channel r = std::get<0>(color.getRGB());
         Template::Color::Channel g = std::get<1>(color.getRGB());
         Template::Color::Channel b = std::get<2>(color.getRGB());
-
         cv::Scalar color(r, g, b, 255);
-        cv::Point position(0, 0);
 
         font.buffer->putText(image, text, position, font.size, color, cv::FILLED, cv::LINE_AA, true);
       }

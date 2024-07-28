@@ -1,13 +1,4 @@
-#include <iostream>
-#include <tuple>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/freetype.hpp>
-
-#include "ink.hpp"
 #include "generator.hpp"
-#include "templator.hpp"
-#include "template/template.hpp"
 
 namespace Core
 {
@@ -21,26 +12,33 @@ namespace Core
       cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
       Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
 
-      Ink::write(card.getPlayer().getName(), tmplate.colors.first, fonts.name, image);
+      Ink::write(card.getPlayer().getName(), tmplate.colors.first, fonts.name, {100, 100}, image);
 
-      cv::imshow("Input Image", image);
+      show(image);
+      save(image, "./out.png");
+
+      return true;
+    }
+
+    void show(cv::Mat image)
+    {
+      cv::imshow("Preview", image);
       cv::waitKey(0);
+    }
 
-      std::string outputImagePath = "./out.png";
-
+    void save(cv::Mat image, std::string path)
+    {
       std::vector<int> compression_params;
+
       compression_params.push_back(cv::IMWRITE_PNG_COMPRESSION);
       compression_params.push_back(9);
 
-      bool result = cv::imwrite(outputImagePath, image, compression_params);
+      bool result = cv::imwrite(path, image, compression_params);
 
       if (!result)
       {
-        std::cerr << "Error: Could not save the image to " << outputImagePath << std::endl;
-        return -1;
+        std::cerr << "Error: Could not save the image to " << path << std::endl;
       }
-
-      return true;
     }
   }
 }
