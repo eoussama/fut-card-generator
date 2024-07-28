@@ -58,8 +58,8 @@ namespace Core
 
     void Base::club()
     {
-      int width = this->clublogo.cols * 0.55;
-      int height = this->clublogo.rows * 0.55;
+      int width = 140 * 0.55;
+      int height = 140 * 0.55;
 
       cv::Size size(width, height);
       cv::resize(this->clublogo, this->clublogo, size);
