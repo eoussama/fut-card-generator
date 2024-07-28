@@ -16,6 +16,7 @@ namespace Core
 
       void player();
       void stats();
+      void lines();
 
     private:
       cv::Mat image;

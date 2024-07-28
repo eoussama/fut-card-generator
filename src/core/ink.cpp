@@ -21,5 +21,15 @@ namespace Core
         std::cerr << e.what() << std::endl;
       }
     }
+
+    void line(cv::Mat image, cv::Point start, cv::Point end, Template::Color::Base color)
+    {
+      Template::Color::Channel r = std::get<0>(color.getRGB());
+      Template::Color::Channel g = std::get<1>(color.getRGB());
+      Template::Color::Channel b = std::get<2>(color.getRGB());
+      cv::Scalar lineColor(r, g, b, 255);
+
+      cv::line(image, start, end, lineColor, 1);
+    }
   }
 }

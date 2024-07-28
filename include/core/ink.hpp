@@ -11,6 +11,7 @@ namespace Core
 {
   namespace Ink
   {
+    void line(cv::Mat image, cv::Point start, cv::Point end, Template::Color::Base color);
     void write(std::string text, Template::Color::Base color, Template::Font::Buffer font, cv::Point position, cv::Mat image);
   }
 }

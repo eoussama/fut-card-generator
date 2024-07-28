@@ -16,6 +16,7 @@ namespace Core
 
       draw.player();
       draw.stats();
+      draw.lines();
 
       return image;
     }

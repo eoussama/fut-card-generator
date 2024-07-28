@@ -26,6 +26,34 @@ namespace Core
       this->statsDefending();
     }
 
+    void Base::lines()
+    {
+      cv::Point start(this->dimentions.leftPointXCoordinateLineUnderPosition, this->dimentions.topMarginLineUnderPosition);
+      cv::Point end(this->dimentions.rightPointXCoordinateLineUnderPosition, this->dimentions.topMarginLineUnderPosition);
+
+      Ink::line(image, start, end, this->tmplate.colors.first);
+
+      start = cv::Point(this->dimentions.leftPointXCoordinateLineUnderPosition, this->dimentions.topMarginLineUnderCountryFlag);
+      end = cv::Point(this->dimentions.rightPointXCoordinateLineUnderPosition, this->dimentions.topMarginLineUnderCountryFlag);
+
+      Ink::line(image, start, end, this->tmplate.colors.first);
+
+      start = cv::Point(this->dimentions.marginLineUnderName, this->dimentions.topMarginLineUnderName);
+      end = cv::Point(this->dimentions.marginLineUnderName, this->dimentions.topMarginLineUnderName);
+
+      Ink::line(image, start, end, this->tmplate.colors.second);
+
+      start = cv::Point(this->dimentions.marginLineUnderStats, this->dimentions.topMarginLineUnderStats);
+      end = cv::Point(this->dimentions.marginLineUnderStats, this->dimentions.topMarginLineUnderStats);
+
+      Ink::line(image, start, end, this->tmplate.colors.second);
+
+      start = cv::Point(this->image.cols / 2, this->dimentions.topMarginVerticalLineBetweenStatsColumns);
+      end = cv::Point(this->image.cols / 2, this->dimentions.bottomPointVerticalLineBetweenStatsColumns);
+
+      Ink::line(image, start, end, this->tmplate.colors.second);
+    }
+
     void Base::playerName()
     {
       std::string text = this->card.getPlayer().getName();
