@@ -130,7 +130,7 @@ namespace Core
       Template::Font::Buffer font = this->fonts.position;
       cv::Size size = font.buffer->getTextSize(text, font.size, -1, nullptr);
 
-      int x = this->dimentions.leftMargin + 50 - (size.width / 2);
+      int x = this->dimentions.leftMargin + 45 - (size.width / 2);
       int y = this->dimentions.topMarginPosition + size.height;
       cv::Point position = {x, y};
 

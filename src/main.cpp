@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
   cv::Mat image = Core::Assets::loadImage("person.png");
   cv::Mat clubLogo = Core::Assets::loadImage("assets/clubs/1.png");
-  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::FC_GOLD, "John Doe", Player::Country::MA, Player::Position::CB, image, 46, 60, 91, 83, 65, 78);
+  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::LEGEND, "John Doe", Player::Country::MA, Player::Position::CB, image, 46, 60, 91, 83, 65, 78);
 
   cv::Mat out = Core::Generator::generate(card, clubLogo);
 
