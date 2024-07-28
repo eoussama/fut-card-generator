@@ -12,7 +12,8 @@ namespace Core
       cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
       Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
 
-      Ink::write(card.getPlayer().getName(), tmplate.colors.first, fonts.name, {100, 100}, image);
+      Draw::player(card, tmplate, fonts, dimentions, image);
+      Draw::stats();
 
       return image;
     }
