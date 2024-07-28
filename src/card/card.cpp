@@ -19,7 +19,7 @@ namespace Card
     return "Card(Player: " + player.toString() + ", Stats: " + stats.toString() + ", Language: " + languageToString(language) + ", Edition: " + editionToString(edition) + ", Template: " + Template::toString(templateCode) + ")";
   }
 
-  Base create(Edition const &edition, Template::Code const &templateName, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending)
+  Base create(Edition const &edition, Template::Code const &templateName, Language const &language, const std::string &name, const std::string &club, const Player::Country &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending)
   {
     Player::Stats stats(pace, passing, physical, shooting, dribbling, defending);
     Player::Base player(name, club, country, position, stats);

@@ -32,7 +32,7 @@ namespace Card
     Template::Code templateCode;
   };
 
-  Base create(Edition const &edition, Template::Code const &templateCode, Language const &language, const std::string &name, const std::string &club, const std::string &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
+  Base create(Edition const &edition, Template::Code const &templateCode, Language const &language, const std::string &name, const std::string &club, const Player::Country &country, const Player::Position &position, unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
 }
 
 #endif
