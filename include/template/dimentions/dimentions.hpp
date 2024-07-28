@@ -15,16 +15,15 @@ namespace Template
       int leftMarginClubBadge;
       int leftMarginOverall;
 
-      int topMarginPosition;
-
       int topMarginName;
-
+      int topMarginPosition;
       int topMarginPlayerOverall;
 
       int topMarginLineUnderPosition;
       int leftPointXCoordinateLineUnderPosition;
       int rightPointXCoordinateLineUnderPosition;
 
+      int topMarginFlag;
       int topMarginLineUnderCountryFlag;
 
       int topMarginLineUnderName;
