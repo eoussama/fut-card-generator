@@ -9,8 +9,8 @@ namespace Core
       Template::Base tmplate = card.getTemplate();
       Template::Dimentions::Base dimentions = Template::Dimentions::Base::fromTemplate(tmplate);
 
-      cv::Mat image = Templator::loadBackground(tmplate, card.getEdition());
-      Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
+      cv::Mat image = Assets::loadBackground(tmplate, card.getEdition());
+      Template::Font::Buffers fonts = Assets::loadFonts(tmplate, card.getEdition());
 
       Draw::Base draw(card, tmplate, fonts, dimentions, image);
 
