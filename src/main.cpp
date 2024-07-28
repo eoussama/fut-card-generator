@@ -12,13 +12,14 @@ int main(int argc, char *argv[])
   // TODO: download image
   // TODO: translation
 
-  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, "John Doe", Player::Country::VI, Player::Position::RB, 46, 60, 91, 83, 65, 78);
+  cv::Mat image = Core::Assets::loadImage("person.png");
+  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, "John Doe", Player::Country::VI, Player::Position::RB, image, 46, 60, 91, 83, 65, 78);
 
   cv::Mat clubLogo = Core::Assets::loadImage("assets/clubs/1.png");
-  cv::Mat image = Core::Generator::generate(card, clubLogo);
+  cv::Mat out = Core::Generator::generate(card, clubLogo);
 
-  Core::Generator::show(image);
-  Core::Generator::save(image, "./out.png");
+  Core::Generator::show(out);
+  Core::Generator::save(out, "./out.png");
 
   // TODO: Cleanup
 

@@ -2,12 +2,13 @@
 
 namespace Player
 {
-  Base::Base(const std::string &name, Country const &country, const Position &position, const Stats &stats)
-      : name(name), country(country), position(position), stats(stats)
+  Base::Base(const std::string &name, Country const &country, const Position &position, const Stats &stats, const cv::Mat &image)
+      : name(name), country(country), position(position), stats(stats), image(image)
   {
   }
 
   Stats Base::getStats() const { return stats; }
+  cv::Mat Base::getImage() const { return image; }
   std::string Base::getName() const { return name; }
   Country Base::getCountry() const { return country; }
   Position Base::getPosition() const { return position; }
