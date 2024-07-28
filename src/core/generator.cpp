@@ -13,7 +13,7 @@ namespace Core
       Template::Font::Buffers fonts = Templator::loadFonts(tmplate, card.getEdition());
 
       Draw::player(card, tmplate, fonts, dimentions, image);
-      Draw::stats();
+      Draw::stats(card, tmplate, fonts, dimentions, image);
 
       return image;
     }
