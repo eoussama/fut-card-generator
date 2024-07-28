@@ -73,8 +73,7 @@ namespace Core
         std::cerr << "The club image does not fit within the card at the specified position" << std::endl;
       }
 
-      cv::Mat region = this->image(cv::Rect(position.x, position.y, this->clublogo.cols, this->clublogo.rows));
-      this->clublogo.copyTo(region);
+      Ink::add(this->image, this->clublogo, position);
     }
 
     void Base::playerName()
@@ -303,8 +302,7 @@ namespace Core
         std::cerr << "The flag image does not fit within the card at the specified position" << std::endl;
       }
 
-      cv::Mat region = this->image(cv::Rect(position.x, position.y, flag.cols, flag.rows));
-      flag.copyTo(region);
+      Ink::add(this->image, flag, position);
     }
 
     void Base::playerImage()
@@ -326,8 +324,7 @@ namespace Core
         std::cerr << "The player image does not fit within the card at the specified position" << std::endl;
       }
 
-      cv::Mat region = this->image(cv::Rect(position.x, position.y, size.width, size.height));
-      image.copyTo(region);
+      Ink::add(this->image, image, position);
     }
   }
 }

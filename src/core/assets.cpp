@@ -6,7 +6,7 @@ namespace Core
   {
     cv::Mat loadImage(std::string path)
     {
-      cv::Mat image = cv::imread(path, cv::IMREAD_COLOR);
+      cv::Mat image = cv::imread(path, cv::IMREAD_UNCHANGED);
 
       if (image.empty())
       {
@@ -14,7 +14,7 @@ namespace Core
         return cv::Mat();
       }
 
-      if (image.type() != CV_8UC3 || image.channels() != 3 || image.dims != 2)
+      if (image.type() != CV_8UC4 || image.channels() != 4 || image.dims != 2)
       {
         std::cerr << "Error: Image does not meet the required properties" << std::endl;
         return cv::Mat();

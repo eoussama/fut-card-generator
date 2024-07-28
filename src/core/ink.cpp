@@ -31,5 +31,27 @@ namespace Core
 
       cv::line(image, start, end, lineColor, 1);
     }
+
+    void add(cv::Mat image1, cv::Mat image2, cv::Point position)
+    {
+      cv::Mat region = image1(cv::Rect(position.x, position.y, image2.cols, image2.rows));
+
+      for (int y = 0; y < image2.rows; ++y)
+      {
+        for (int x = 0; x < image2.cols; ++x)
+        {
+          cv::Vec4b &bgra1 = region.at<cv::Vec4b>(y, x);
+          cv::Vec4b &bgra2 = image2.at<cv::Vec4b>(y, x);
+          float alpha = bgra2[3] / 255.0;
+
+          for (int c = 0; c < 3; ++c)
+          {
+            bgra1[c] = bgra1[c] * (1 - alpha) + bgra2[c] * alpha;
+          }
+
+          bgra1[3] = std::max(bgra1[3], bgra2[3]);
+        }
+      }
+    }
   }
 }
