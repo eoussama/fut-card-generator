@@ -13,15 +13,17 @@ namespace Core
     class Base
     {
     public:
-      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat image);
+      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat image);
 
-      void player();
-      void stats();
+      void club();
       void lines();
+      void stats();
+      void player();
 
     private:
       cv::Mat image;
       Card::Base card;
+      cv::Mat clublogo;
       Template::Base tmplate;
       Template::Font::Buffers fonts;
       Template::Dimentions::Base dimentions;

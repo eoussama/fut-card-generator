@@ -4,8 +4,8 @@ namespace Core
 {
   namespace Draw
   {
-    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat image)
-        : image(image), card(card), tmplate(tmplate), fonts(fonts), dimentions(dimentions)
+    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat image)
+        : image(image), card(card), tmplate(tmplate), fonts(fonts), dimentions(dimentions), clublogo(clublogo)
     {
     }
 
@@ -53,6 +53,27 @@ namespace Core
       end = cv::Point(this->image.cols / 2, this->dimentions.bottomPointVerticalLineBetweenStatsColumns);
 
       Ink::line(image, start, end, this->tmplate.colors.second);
+    }
+
+    void Base::club()
+    {
+      int width = this->clublogo.cols * 0.55;
+      int height = this->clublogo.rows * 0.55;
+
+      cv::Size size(width, height);
+      cv::resize(this->clublogo, this->clublogo, size);
+
+      int x = this->dimentions.leftMarginClubBadge;
+      int y = this->dimentions.topMarginClubBadge;
+      cv::Point position(x, y);
+
+      if (position.x + this->clublogo.cols > this->image.cols || position.y + this->clublogo.rows > this->image.rows)
+      {
+        std::cerr << "The club image does not fit within the card at the specified position" << std::endl;
+      }
+
+      cv::Mat region = this->image(cv::Rect(position.x, position.y, this->clublogo.cols, this->clublogo.rows));
+      this->clublogo.copyTo(region);
     }
 
     void Base::playerName()
@@ -272,9 +293,9 @@ namespace Core
       cv::Size size(width, height);
       cv::resize(flag, flag, size);
 
-      int x = 0;
-      int y = 0;
-      cv::Point position(this->dimentions.leftMarginClubBadge, this->dimentions.topMarginFlag);
+      int x = this->dimentions.leftMarginClubBadge;
+      int y = this->dimentions.topMarginFlag;
+      cv::Point position(x, y);
 
       if (position.x + flag.cols > this->image.cols || position.y + flag.rows > this->image.rows)
       {

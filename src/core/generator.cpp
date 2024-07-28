@@ -4,7 +4,7 @@ namespace Core
 {
   namespace Generator
   {
-    cv::Mat generate(Card::Base card)
+    cv::Mat generate(Card::Base card, cv::Mat clubLogo)
     {
       Template::Base tmplate = card.getTemplate();
       Template::Dimentions::Base dimentions = Template::Dimentions::Base::fromTemplate(tmplate);
@@ -12,11 +12,12 @@ namespace Core
       cv::Mat image = Assets::loadBackground(tmplate, card.getEdition());
       Template::Font::Buffers fonts = Assets::loadFonts(tmplate, card.getEdition());
 
-      Draw::Base draw(card, tmplate, fonts, dimentions, image);
+      Draw::Base draw(card, tmplate, fonts, dimentions, clubLogo, image);
 
-      draw.player();
-      draw.stats();
+      draw.club();
       draw.lines();
+      draw.stats();
+      draw.player();
 
       return image;
     }
