@@ -12,11 +12,11 @@ namespace Template
       leftMarginClubBadge = leftMargin + 10;
       leftMarginOverall = leftMargin + 3;
 
-      topMarginPosition = 195;
+      topMarginPosition = 205;
 
       topMarginName = 448;
 
-      topMarginPlayerOverall = 80;
+      topMarginPlayerOverall = 105;
 
       topMarginLineUnderPosition = 255;
       leftPointXCoordinateLineUnderPosition = leftMargin + 20;
