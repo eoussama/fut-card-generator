@@ -3,6 +3,8 @@
 
 #include <opencv2/freetype.hpp>
 
+#include "template/font/font.hpp"
+
 namespace Template
 {
   namespace Font
