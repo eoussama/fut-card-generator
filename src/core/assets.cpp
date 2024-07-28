@@ -72,5 +72,58 @@ namespace Core
 
       return {font.size, ft2};
     }
+
+    cv::Mat downloadImage(const std::string &url)
+    {
+      CURL *curl;
+      CURLcode res;
+      std::vector<char> buffer;
+
+      curl_global_init(CURL_GLOBAL_DEFAULT);
+
+      curl = curl_easy_init();
+      if (curl)
+      {
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, _WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
+
+        res = curl_easy_perform(curl);
+        if (res != CURLE_OK)
+        {
+          std::cerr << "Error: " << curl_easy_strerror(res) << std::endl;
+
+          curl_easy_cleanup(curl);
+          curl_global_cleanup();
+
+          return cv::Mat();
+        }
+
+        curl_easy_cleanup(curl);
+      }
+
+      curl_global_cleanup();
+
+      cv::Mat image = cv::imdecode(buffer, cv::IMREAD_COLOR);
+      if (image.empty())
+      {
+        std::cerr << "Error: Could not decode image from buffer" << std::endl;
+        return cv::Mat();
+      }
+
+      if (image.type() != CV_8UC3 || image.channels() != 3 || image.dims != 2)
+      {
+        std::cerr << "Error: Image does not meet the required properties" << std::endl;
+        return cv::Mat();
+      }
+
+      return image;
+    }
+
+    size_t _WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
+    {
+      ((std::vector<char> *)userp)->insert(((std::vector<char> *)userp)->end(), (char *)contents, (char *)contents + size * nmemb);
+      return size * nmemb;
+    }
   }
 }
