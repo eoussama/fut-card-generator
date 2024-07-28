@@ -9,7 +9,7 @@
 #include <opencv2/freetype.hpp>
 
 #include "card.hpp"
-#include "templator.hpp"
+#include "assets.hpp"
 #include "draw/draw.hpp"
 #include "template/template.hpp"
 

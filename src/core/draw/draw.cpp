@@ -12,6 +12,7 @@ namespace Core
     void Base::player()
     {
       this->playerName();
+      this->playerCountry();
       this->playerPosition();
     }
 
@@ -259,6 +260,29 @@ namespace Core
       cv::Point labelPosition = {labelX, labelY};
 
       Ink::write(labelText, labelColor, labelFont, labelPosition, image);
+    }
+
+    void Base::playerCountry()
+    {
+      cv::Mat flag = Assets::loadFlag(this->card.getPlayer().getCountry());
+
+      int width = 166 * 0.48;
+      int height = 99 * 0.48;
+
+      cv::Size size(width, height);
+      cv::resize(flag, flag, size);
+
+      int x = 0;
+      int y = 0;
+      cv::Point position(this->dimentions.leftMarginClubBadge, this->dimentions.topMarginFlag);
+
+      if (position.x + flag.cols > this->image.cols || position.y + flag.rows > this->image.rows)
+      {
+        std::cerr << "The flag image does not fit within the card at the specified position" << std::endl;
+      }
+
+      cv::Mat region = this->image(cv::Rect(position.x, position.y, flag.cols, flag.rows));
+      flag.copyTo(region);
     }
   }
 }

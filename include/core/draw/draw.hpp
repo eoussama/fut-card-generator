@@ -3,6 +3,7 @@
 
 #include "ink.hpp"
 #include "card.hpp"
+#include "assets.hpp"
 #include "template/font/font_buffers.hpp"
 
 namespace Core
@@ -26,6 +27,7 @@ namespace Core
       Template::Dimentions::Base dimentions;
 
       void playerName();
+      void playerCountry();
       void playerPosition();
 
       void statsPace();
