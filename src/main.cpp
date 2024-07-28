@@ -7,7 +7,6 @@
 int main(int argc, char *argv[])
 {
   // TODO: Add a CLI parser
-  // TODO: Fix low res / corrupt png loading
   // TODO: player pic
   // TODO: translation
 

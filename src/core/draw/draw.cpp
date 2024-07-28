@@ -40,12 +40,12 @@ namespace Core
       Ink::line(image, start, end, this->tmplate.colors.first);
 
       start = cv::Point(this->dimentions.marginLineUnderName, this->dimentions.topMarginLineUnderName);
-      end = cv::Point(this->dimentions.marginLineUnderName, this->dimentions.topMarginLineUnderName);
+      end = cv::Point(this->image.cols - this->dimentions.marginLineUnderName, this->dimentions.topMarginLineUnderName);
 
       Ink::line(image, start, end, this->tmplate.colors.second);
 
       start = cv::Point(this->dimentions.marginLineUnderStats, this->dimentions.topMarginLineUnderStats);
-      end = cv::Point(this->dimentions.marginLineUnderStats, this->dimentions.topMarginLineUnderStats);
+      end = cv::Point(this->image.cols - this->dimentions.marginLineUnderStats, this->dimentions.topMarginLineUnderStats);
 
       Ink::line(image, start, end, this->tmplate.colors.second);
 
