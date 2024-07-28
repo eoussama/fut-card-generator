@@ -4,7 +4,7 @@ namespace Core
 {
   namespace Generator
   {
-    bool generate(Card::Base card)
+    cv::Mat generate(Card::Base card)
     {
       Template::Base tmplate = card.getTemplate();
       Template::Dimentions::Base dimentions = Template::Dimentions::Base::fromTemplate(tmplate);
@@ -14,10 +14,7 @@ namespace Core
 
       Ink::write(card.getPlayer().getName(), tmplate.colors.first, fonts.name, {100, 100}, image);
 
-      show(image);
-      save(image, "./out.png");
-
-      return true;
+      return image;
     }
 
     void show(cv::Mat image)

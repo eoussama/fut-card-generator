@@ -18,7 +18,7 @@ namespace Core
   namespace Generator
   {
     void show(cv::Mat image);
-    bool generate(Card::Base card);
+    cv::Mat generate(Card::Base card);
     void save(cv::Mat image, std::string path);
   }
 }
