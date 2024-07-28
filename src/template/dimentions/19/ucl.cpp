@@ -26,13 +26,13 @@ namespace Template
       topMarginClubBadge = 350;
       topMarginLineUnderCountryFlag = 335;
 
-      topMarginLineUnderName = 525;
+      topMarginLineUnderName = 510;
       marginLineUnderName = 90;
 
       topMarginVerticalLineBetweenStatsColumns = topMarginLineUnderName + 20;
       bottomPointVerticalLineBetweenStatsColumns = topMarginVerticalLineBetweenStatsColumns + 165;
 
-      topMarginLineUnderStats = 735;
+      topMarginLineUnderStats = 720;
       marginLineUnderStats = 300;
 
       attrValueLabelHorizontalGap = 70;

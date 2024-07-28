@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
 {
   // TODO: Add a CLI parser
   // TODO: player pic
+  // TODO: capitalization of names and labels
   // TODO: translation
 
   Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, "Kcag", Player::Country::MA, Player::Position::ST, 96, 80, 94, 96, 88, 60);
