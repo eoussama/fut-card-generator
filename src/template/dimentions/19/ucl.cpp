@@ -22,7 +22,8 @@ namespace Template
       leftPointXCoordinateLineUnderPosition = leftMargin + 20;
       rightPointXCoordinateLineUnderPosition = leftPointXCoordinateLineUnderPosition + 55;
 
-      topMarginFlag = 350;
+      topMarginFlag = 272;
+      topMarginClubBadge = 350;
       topMarginLineUnderCountryFlag = 335;
 
       topMarginLineUnderName = 525;

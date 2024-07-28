@@ -24,6 +24,7 @@ namespace Template
       int rightPointXCoordinateLineUnderPosition;
 
       int topMarginFlag;
+      int topMarginClubBadge;
       int topMarginLineUnderCountryFlag;
 
       int topMarginLineUnderName;
