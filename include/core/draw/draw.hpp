@@ -29,6 +29,7 @@ namespace Core
       Template::Dimentions::Base dimentions;
 
       void playerName();
+      void playerImage();
       void playerCountry();
       void playerPosition();
 

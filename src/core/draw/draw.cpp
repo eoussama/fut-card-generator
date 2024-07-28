@@ -12,6 +12,7 @@ namespace Core
     void Base::player()
     {
       this->playerName();
+      this->playerImage();
       this->playerCountry();
       this->playerPosition();
     }
@@ -304,6 +305,29 @@ namespace Core
 
       cv::Mat region = this->image(cv::Rect(position.x, position.y, flag.cols, flag.rows));
       flag.copyTo(region);
+    }
+
+    void Base::playerImage()
+    {
+      cv::Mat image = this->card.getPlayer().getImage();
+
+      int width = 320;
+      int height = 320;
+
+      cv::Size size(width, height);
+      cv::resize(image, image, size);
+
+      int x = this->dimentions.leftMarginPlayerImage;
+      int y = this->image.rows - size.height - 383;
+      cv::Point position(x, y);
+
+      if (position.x + size.width > this->image.cols || position.y + size.height > this->image.rows)
+      {
+        std::cerr << "The player image does not fit within the card at the specified position" << std::endl;
+      }
+
+      cv::Mat region = this->image(cv::Rect(position.x, position.y, size.width, size.height));
+      image.copyTo(region);
     }
   }
 }
