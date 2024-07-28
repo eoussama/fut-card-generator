@@ -42,6 +42,7 @@ namespace Core
 
     void stats(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat image)
     {
+      statsPace(card, tmplate, fonts, dimentions, image);
       statsOverall(card, tmplate, fonts, dimentions, image);
     }
 
@@ -58,10 +59,31 @@ namespace Core
       cv::Point position = {x, y};
 
       Ink::write(text, color, font, position, image);
+    }
 
-      // draw.text((card_obj.dimensions.left_margin_overall, card_obj.dimensions.top_margin_player_overall), str(player.overall), fill=font_colour_top, font=overallfont)
-      // draw.text((card_obj.dimensions.left_margin_attr_value_col1, card_obj.dimensions.top_margin_stats_row_1_values), str(player.pac), fill=font_colour, font=attribute_value_font)
-      // draw.text((card_obj.dimensions.left_margin_attr_label_col1, card_obj.dimensions.top_margin_stats_row_1_labels), atr1_label, fill=font_colour, font=attribute_label_font)
+    void statsPace(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat image)
+    {
+      std::string valueText = std::to_string(card.getStats().getPace());
+      Template::Color::Base valueColor = tmplate.colors.second;
+
+      Template::Font::Buffer valueFont = fonts.value;
+
+      int valueX = dimentions.leftMarginAttrValueCol1;
+      int valueY = dimentions.topMarginStatsRow1Values;
+      cv::Point valuePosition = {valueX, valueY};
+
+      Ink::write(valueText, valueColor, valueFont, valuePosition, image);
+
+      std::string labelText = "PAC";
+      Template::Color::Base labelColor = tmplate.colors.second;
+
+      Template::Font::Buffer labelFont = fonts.label;
+
+      int labelX = dimentions.leftMarginAttrLabelCol1;
+      int labelY = dimentions.topMarginStatsRow1Labels;
+      cv::Point labelPosition = {labelX, labelY};
+
+      Ink::write(labelText, labelColor, labelFont, labelPosition, image);
     }
   }
 }
