@@ -50,20 +50,20 @@ namespace Template
     templates[Code::UCL_LIVE] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::CHAMPIONS, "ucl_live"};
     templates[Code::UCL_SBC] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::CHAMPIONS, "ucl_sbc"};
     templates[Code::UCL_TOTT] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::CHAMPIONS, "ucl_tott"};
-    templates[Code::FSR] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_rewards"};
-    templates[Code::FS] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_FUTURE_STARS), Color::Base(COLOR_FUTURE_STARS)), Font::Code::DIN_PRO_COND, "future_stars"};
-    templates[Code::FSN] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_FUTURE_STARS), Color::Base(COLOR_FUTURE_STARS)), Font::Code::DIN_PRO_COND, "future_stars_nominees"};
-    templates[Code::PP] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::DIN_PRO_COND, "pro_player"};
-    templates[Code::CB] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_BRAZILIAN_YELLOW), Color::Base(COLOR_BRAZILIAN_YELLOW)), Font::Code::DIN_PRO_COND, "carniball"};
-    templates[Code::RB] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_SPRING_BUD), Color::Base(COLOR_SPRING_BUD)), Font::Code::DIN_PRO_COND, "record_breaker"};
-    templates[Code::HERO] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_PHOCA), Color::Base(COLOR_PHOCA)), Font::Code::DIN_PRO_COND, "hero"};
-    templates[Code::AW] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_AWARD_WINNER), Color::Base(COLOR_AWARD_WINNER)), Font::Code::DIN_PRO_COND, "award_winner"};
-    templates[Code::FB] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_FLASHBACK), Color::Base(COLOR_FLASHBACK)), Font::Code::DIN_PRO_COND, "flashback"};
-    templates[Code::HEADLINERS] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::DIN_PRO_COND, "headliners"};
-    templates[Code::CC] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_CONCEPT), Color::Base(COLOR_CONCEPT)), Font::Code::DIN_PRO_COND, "concept"};
-    templates[Code::SBC] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_SQUAD_BUILDER), Color::Base(COLOR_SQUAD_BUILDER)), Font::Code::DIN_PRO_COND, "sbc"};
-    templates[Code::SBCP] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_SQUAD_BUILDER_PREMIUM), Color::Base(COLOR_SQUAD_BUILDER_PREMIUM)), Font::Code::DIN_PRO_COND, "sbc_premium"};
-    templates[Code::LEGEND] = {Card::Type::UCL, std::make_pair(Color::Base(COLOR_LEGEND), Color::Base(COLOR_LEGEND)), Font::Code::DIN_PRO_COND, "legend"};
+    templates[Code::FSR] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_rewards"};
+    templates[Code::FS] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUTURE_STARS), Color::Base(COLOR_FUTURE_STARS)), Font::Code::DIN_PRO_COND, "future_stars"};
+    templates[Code::FSN] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUTURE_STARS), Color::Base(COLOR_FUTURE_STARS)), Font::Code::DIN_PRO_COND, "future_stars_nominees"};
+    templates[Code::PP] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::DIN_PRO_COND, "pro_player"};
+    templates[Code::CB] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_BRAZILIAN_YELLOW), Color::Base(COLOR_BRAZILIAN_YELLOW)), Font::Code::DIN_PRO_COND, "carniball"};
+    templates[Code::RB] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_SPRING_BUD), Color::Base(COLOR_SPRING_BUD)), Font::Code::DIN_PRO_COND, "record_breaker"};
+    templates[Code::HERO] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_PHOCA), Color::Base(COLOR_PHOCA)), Font::Code::DIN_PRO_COND, "hero"};
+    templates[Code::AW] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_AWARD_WINNER), Color::Base(COLOR_AWARD_WINNER)), Font::Code::DIN_PRO_COND, "award_winner"};
+    templates[Code::FB] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FLASHBACK), Color::Base(COLOR_FLASHBACK)), Font::Code::DIN_PRO_COND, "flashback"};
+    templates[Code::HEADLINERS] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_WHISPER)), Font::Code::DIN_PRO_COND, "headliners"};
+    templates[Code::CC] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_CONCEPT), Color::Base(COLOR_CONCEPT)), Font::Code::DIN_PRO_COND, "concept"};
+    templates[Code::SBC] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_SQUAD_BUILDER), Color::Base(COLOR_SQUAD_BUILDER)), Font::Code::DIN_PRO_COND, "sbc"};
+    templates[Code::SBCP] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_SQUAD_BUILDER_PREMIUM), Color::Base(COLOR_SQUAD_BUILDER_PREMIUM)), Font::Code::DIN_PRO_COND, "sbc_premium"};
+    templates[Code::LEGEND] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_LEGEND), Color::Base(COLOR_LEGEND)), Font::Code::DIN_PRO_COND, "legend"};
 
     return templates;
   }
