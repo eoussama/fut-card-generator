@@ -250,7 +250,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "PAS";
+      std::string labelText = "DRI";
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
