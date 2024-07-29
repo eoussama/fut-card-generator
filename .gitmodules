@@ -1,6 +1,3 @@
 [submodule "external/json"]
 	path = external/json
 	url = https://github.com/nlohmann/json.git
-[submodule "external/i18n_keyval"]
-	path = external/i18n_keyval
-	url = https://github.com/stefandevai/i18n_keyval.git

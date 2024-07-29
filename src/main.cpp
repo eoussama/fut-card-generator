@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+
+#include <nlohmann/json.hpp>
 
 #include "card.hpp"
 #include "player.hpp"
@@ -6,9 +9,6 @@
 
 int main(int argc, char *argv[])
 {
-  // TODO: Add a CLI parser
-  // TODO: translation
-
   // cv::Mat image = Core::Assets::downloadImage("https://static.wefut.com/assets/images/fut22/playeravatars/custom/167792961.png");
   // cv::Mat clubLogo = Core::Assets::downloadImage("https://e1.pngegg.com/pngimages/565/268/png-clipart-real-madrid-logo-real-madrid-logo-thumbnail.png");
 
