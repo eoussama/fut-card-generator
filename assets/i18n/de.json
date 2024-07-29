@@ -1,8 +1,10 @@
 {
-  "pac": "TEM",
-  "sho": "SCH",
-  "def": "DEF",
-  "phy": "PHY",
-  "dri": "DRI",
-  "pas": "PAS"
+  "stats": {
+    "pac": "TEM",
+    "sho": "SCH",
+    "def": "DEF",
+    "phy": "PHY",
+    "dri": "DRI",
+    "pas": "PAS"
+  }
 }

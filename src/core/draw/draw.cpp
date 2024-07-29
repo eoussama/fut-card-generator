@@ -169,7 +169,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().pace;
+      std::string labelText = this->translator.getDictionary().stats.pace;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -196,7 +196,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().shooting;
+      std::string labelText = this->translator.getDictionary().stats.shooting;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -223,7 +223,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().passing;
+      std::string labelText = this->translator.getDictionary().stats.passing;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -250,7 +250,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().dribbling;
+      std::string labelText = this->translator.getDictionary().stats.dribbling;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -277,7 +277,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().defending;
+      std::string labelText = this->translator.getDictionary().stats.defending;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -304,7 +304,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = this->translator.getDictionary().physical;
+      std::string labelText = this->translator.getDictionary().stats.physical;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;

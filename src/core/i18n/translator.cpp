@@ -21,12 +21,12 @@ namespace Core
       nlohmann::json data;
       stream >> data;
 
-      this->dictionary.pace = data["pac"];
-      this->dictionary.passing = data["pas"];
-      this->dictionary.physical = data["phy"];
-      this->dictionary.shooting = data["sho"];
-      this->dictionary.dribbling = data["dri"];
-      this->dictionary.defending = data["def"];
+      this->dictionary.stats.pace = data["stats"]["pac"];
+      this->dictionary.stats.passing = data["stats"]["pas"];
+      this->dictionary.stats.physical = data["stats"]["phy"];
+      this->dictionary.stats.shooting = data["stats"]["sho"];
+      this->dictionary.stats.dribbling = data["stats"]["dri"];
+      this->dictionary.stats.defending = data["stats"]["def"];
     }
   }
 }

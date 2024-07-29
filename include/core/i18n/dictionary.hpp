@@ -7,7 +7,7 @@ namespace Core
 {
   namespace I18N
   {
-    struct Dictionary
+    struct DictionaryStats
     {
       std::string pace;
       std::string passing;
@@ -15,6 +15,11 @@ namespace Core
       std::string shooting;
       std::string dribbling;
       std::string defending;
+    };
+
+    struct Dictionary
+    {
+      DictionaryStats stats;
     };
   }
 }

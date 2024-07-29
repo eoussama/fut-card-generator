@@ -1,8 +1,10 @@
 {
-  "pac": "VEL",
-  "sho": "TIR",
-  "def": "DIF",
-  "phy": "FIS",
-  "dri": "DRI",
-  "pas": "PAS"
+  "stats": {
+    "pac": "VEL",
+    "sho": "TIR",
+    "def": "DIF",
+    "phy": "FIS",
+    "dri": "DRI",
+    "pas": "PAS"
+  }
 }

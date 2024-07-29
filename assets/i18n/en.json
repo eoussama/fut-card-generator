@@ -1,8 +1,10 @@
 {
-  "pac": "PAC",
-  "sho": "SHO",
-  "def": "DEF",
-  "phy": "PHY",
-  "dri": "DRI",
-  "pas": "PAS"
+  "stats": {
+    "pac": "PAC",
+    "sho": "SHO",
+    "def": "DEF",
+    "phy": "PHY",
+    "dri": "DRI",
+    "pas": "PAS"
+  }
 }

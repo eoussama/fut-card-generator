@@ -1,8 +1,10 @@
 {
-  "pac": "RIT",
-  "sho": "FIN",
-  "def": "DEF",
-  "phy": "FIS",
-  "dri": "DRI",
-  "pas": "PAS"
+  "stats": {
+    "pac": "RIT",
+    "sho": "FIN",
+    "def": "DEF",
+    "phy": "FIS",
+    "dri": "DRI",
+    "pas": "PAS"
+  }
 }

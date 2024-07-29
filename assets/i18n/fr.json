@@ -1,8 +1,10 @@
 {
-  "pac": "VIT",
-  "sho": "TIR",
-  "def": "DÉF",
-  "phy": "PHY",
-  "dri": "DRI",
-  "pas": "PAS"
+  "stats": {
+    "pac": "VIT",
+    "sho": "TIR",
+    "def": "DÉF",
+    "phy": "PHY",
+    "dri": "DRI",
+    "pas": "PAS"
+  }
 }
