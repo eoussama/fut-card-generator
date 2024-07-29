@@ -16,12 +16,20 @@ int main(int argc, char *argv[])
 
   cv::Mat image = Core::Assets::loadImage("person.png");
   cv::Mat clubLogo = Core::Assets::loadImage("assets/clubs/1.png");
-  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::LEGEND, "John Doe", Player::Country::MA, Player::Position::CB, image, 46, 60, 91, 83, 65, 78);
 
-  cv::Mat out = Core::Generator::generate(card, clubLogo);
+  int i = 1;
 
-  Core::Generator::show(out);
-  Core::Generator::save(out, "./out.png");
+  while (true)
+  {
+    i %= (int)Template::Code::LEGEND;
+    i++;
+
+    Card::Base card = Card::create(Card::Edition::FIFA19, (Template::Code)i, "John Doe", Player::Country::MA, Player::Position::CB, image, 46, 60, 91, 83, 65, 78);
+    cv::Mat out = Core::Generator::generate(card, clubLogo);
+
+    Core::Generator::show(out);
+    Core::Generator::save(out, "./out.png");
+  }
 
   // TODO: Cleanup
 
