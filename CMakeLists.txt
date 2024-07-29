@@ -15,6 +15,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/template/font
   ${PROJECT_SOURCE_DIR}/include/template/color
   ${PROJECT_SOURCE_DIR}/include/generator/draw
+  ${PROJECT_SOURCE_DIR}/include/generator/i18n
   ${PROJECT_SOURCE_DIR}/include/template/dimentions
   ${PROJECT_SOURCE_DIR}/include/template/dimentions/19
 )
