@@ -4,8 +4,8 @@ namespace Core
 {
   namespace Draw
   {
-    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat &image)
-        : image(image), card(card), tmplate(tmplate), fonts(fonts), dimentions(dimentions), clublogo(clublogo)
+    Base::Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, I18N::Translator translator, cv::Mat &image)
+        : image(image), card(card), tmplate(tmplate), fonts(fonts), dimentions(dimentions), clublogo(clublogo), translator(translator)
     {
     }
 
@@ -169,7 +169,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "PAC";
+      std::string labelText = this->translator.getDictionary().pace;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -196,7 +196,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "SHO";
+      std::string labelText = this->translator.getDictionary().shooting;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -223,7 +223,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "PAS";
+      std::string labelText = this->translator.getDictionary().passing;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -250,7 +250,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "DRI";
+      std::string labelText = this->translator.getDictionary().dribbling;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -277,7 +277,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "DEF";
+      std::string labelText = this->translator.getDictionary().defending;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;
@@ -304,7 +304,7 @@ namespace Core
 
       Ink::write(valueText, valueColor, valueFont, valuePosition, this->image);
 
-      std::string labelText = "PHY";
+      std::string labelText = this->translator.getDictionary().physical;
       Template::Color::Base labelColor = this->tmplate.colors.second;
 
       Template::Font::Buffer labelFont = this->fonts.label;

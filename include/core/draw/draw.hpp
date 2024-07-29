@@ -4,6 +4,7 @@
 #include "ink.hpp"
 #include "card.hpp"
 #include "assets.hpp"
+#include "i18n/translator.hpp"
 #include "template/font/font_buffers.hpp"
 
 namespace Core
@@ -13,7 +14,7 @@ namespace Core
     class Base
     {
     public:
-      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, cv::Mat &image);
+      Base(Card::Base card, Template::Base tmplate, Template::Font::Buffers fonts, Template::Dimentions::Base dimentions, cv::Mat clublogo, I18N::Translator translator, cv::Mat &image);
 
       void text();
       void lines();
@@ -24,6 +25,7 @@ namespace Core
       Card::Base card;
       cv::Mat clublogo;
       Template::Base tmplate;
+      I18N::Translator translator;
       Template::Font::Buffers fonts;
       Template::Dimentions::Base dimentions;
 

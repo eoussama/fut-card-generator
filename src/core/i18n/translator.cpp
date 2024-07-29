@@ -1,29 +1,32 @@
 #include "core/i18n/translator.hpp"
-
+#include <iostream>
 namespace Core
 {
   namespace I18N
   {
-    Base::Base(const Language &language)
+    Translator::Translator(const Language &language)
     {
       this->language = language;
       this->loadDictionary();
     }
 
-    Language Base::getLanguage() const { return language; }
-    Dictionary Base::getDictionary() const { return dictionary; }
+    Language Translator::getLanguage() const { return language; }
+    Dictionary Translator::getDictionary() const { return dictionary; }
 
-    void Base::loadDictionary()
+    void Translator::loadDictionary()
     {
       std::string path = "assets/i18n/" + languageToString(language) + ".json";
-      nlohmann::json json = nlohmann::json::parse(path);
+      std::ifstream stream(path);
 
-      this->dictionary.pace = json["pac"];
-      this->dictionary.passing = json["pas"];
-      this->dictionary.physical = json["phy"];
-      this->dictionary.shooting = json["sho"];
-      this->dictionary.dribbling = json["dri"];
-      this->dictionary.defending = json["def"];
+      nlohmann::json data;
+      stream >> data;
+
+      this->dictionary.pace = data["pac"];
+      this->dictionary.passing = data["pas"];
+      this->dictionary.physical = data["phy"];
+      this->dictionary.shooting = data["sho"];
+      this->dictionary.dribbling = data["dri"];
+      this->dictionary.defending = data["def"];
     }
   }
 }

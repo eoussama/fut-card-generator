@@ -11,6 +11,8 @@
 #include "card.hpp"
 #include "assets.hpp"
 #include "draw/draw.hpp"
+#include "i18n/language.hpp"
+#include "i18n/translator.hpp"
 #include "template/template.hpp"
 
 namespace Core
@@ -19,7 +21,7 @@ namespace Core
   {
     void show(cv::Mat image);
     void save(cv::Mat image, std::string path);
-    cv::Mat generate(Card::Base card, cv::Mat clubLogo);
+    cv::Mat generate(Card::Base card, cv::Mat clubLogo, I18N::Language language);
   }
 }
 

@@ -1,6 +1,7 @@
 #ifndef I18N_HPP
 #define I18N_HPP
 
+#include <fstream>
 #include <nlohmann/json.hpp>
 
 #include "language.hpp"
@@ -10,10 +11,10 @@ namespace Core
 {
   namespace I18N
   {
-    class Base
+    class Translator
     {
     public:
-      Base(const Language &language);
+      Translator(const Language &language);
 
       Language getLanguage() const;
       Dictionary getDictionary() const;
