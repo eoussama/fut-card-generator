@@ -27,8 +27,8 @@ namespace Core
       Template::Font::Buffers fonts;
       Template::Dimentions::Base dimentions;
 
-      cv::Mat alphaChannel;
-      bool hasAlphaChannel;
+      cv::Mat alpha;
+      bool hasAlpha;
 
       void playerClub();
       void playerName();
@@ -44,8 +44,8 @@ namespace Core
       void statsDribbling();
       void statsDefending();
 
-      void convertToBGR();
-      void restoreAlphaChannel();
+      void removeAlpha();
+      void restoreAlpha();
     };
   }
 }

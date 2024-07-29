@@ -9,34 +9,37 @@ namespace Core
     {
     }
 
-    void Base::convertToBGR()
+    void Base::removeAlpha()
     {
-      this->hasAlphaChannel = this->image.channels() == 4;
-      if (this->hasAlphaChannel)
+      this->hasAlpha = this->image.channels() == 4;
+
+      if (this->hasAlpha)
       {
         std::vector<cv::Mat> bgraChannels;
+
         cv::split(this->image, bgraChannels);
-        this->alphaChannel = bgraChannels[3];
+        this->alpha = bgraChannels[3];
         cv::cvtColor(this->image, this->image, cv::COLOR_BGRA2BGR);
       }
     }
 
-    void Base::restoreAlphaChannel()
+    void Base::restoreAlpha()
     {
-      if (this->hasAlphaChannel)
+      if (this->hasAlpha)
       {
         cv::Mat imageBgra;
-        cv::cvtColor(this->image, imageBgra, cv::COLOR_BGR2BGRA);
         std::vector<cv::Mat> bgraChannels;
+
+        cv::cvtColor(this->image, imageBgra, cv::COLOR_BGR2BGRA);
         cv::split(imageBgra, bgraChannels);
-        bgraChannels[3] = this->alphaChannel;
+        bgraChannels[3] = this->alpha;
         cv::merge(bgraChannels, this->image);
       }
     }
 
     void Base::text()
     {
-      this->convertToBGR();
+      this->removeAlpha();
 
       this->playerName();
       this->playerPosition();
@@ -49,7 +52,7 @@ namespace Core
       this->statsDribbling();
       this->statsDefending();
 
-      this->restoreAlphaChannel();
+      this->restoreAlpha();
     }
 
     void Base::images()
