@@ -30,7 +30,11 @@ set(LIB_JSON nlohmann_json::nlohmann_json)
 add_subdirectory(external/json)
 include_directories(external/json/include)
 
+set(LIB_ARGPARSE nlohmann_json::nlohmann_json)
+add_subdirectory(external/argparse)
+include_directories(external/argparse/include)
+
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${CURL_LIBRARIES} ${LIB_JSON} ${LIB_I18N})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${CURL_LIBRARIES} ${LIB_JSON} ${LIB_ARGPARSE})
