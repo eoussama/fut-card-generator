@@ -7,6 +7,7 @@ namespace Player
 {
   enum class Country
   {
+    UNKNOWN = 0,
     AD = 1,
     AE,
     AF,
@@ -266,6 +267,7 @@ namespace Player
   };
 
   std::string countryToString(const Country &country);
+  Country stringToCountry(const std::string &country);
 }
 
 #endif

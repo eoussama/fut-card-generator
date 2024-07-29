@@ -522,4 +522,522 @@ namespace Player
       return "Unknown";
     }
   }
+
+  Country stringToCountry(const std::string &country)
+  {
+    if (country == "ad")
+      return Country::AD;
+    else if (country == "ae")
+      return Country::AE;
+    else if (country == "af")
+      return Country::AF;
+    else if (country == "ag")
+      return Country::AG;
+    else if (country == "ai")
+      return Country::AI;
+    else if (country == "al")
+      return Country::AL;
+    else if (country == "am")
+      return Country::AM;
+    else if (country == "an")
+      return Country::AN;
+    else if (country == "ao")
+      return Country::AO;
+    else if (country == "aq")
+      return Country::AQ;
+    else if (country == "ar")
+      return Country::AR;
+    else if (country == "as")
+      return Country::AS;
+    else if (country == "at")
+      return Country::AT;
+    else if (country == "au")
+      return Country::AU;
+    else if (country == "aw")
+      return Country::AW;
+    else if (country == "ax")
+      return Country::AX;
+    else if (country == "az")
+      return Country::AZ;
+    else if (country == "ba")
+      return Country::BA;
+    else if (country == "bb")
+      return Country::BB;
+    else if (country == "bd")
+      return Country::BD;
+    else if (country == "be")
+      return Country::BE;
+    else if (country == "bf")
+      return Country::BF;
+    else if (country == "bg")
+      return Country::BG;
+    else if (country == "bh")
+      return Country::BH;
+    else if (country == "bi")
+      return Country::BI;
+    else if (country == "bj")
+      return Country::BJ;
+    else if (country == "bl")
+      return Country::BL;
+    else if (country == "bm")
+      return Country::BM;
+    else if (country == "bn")
+      return Country::BN;
+    else if (country == "bo")
+      return Country::BO;
+    else if (country == "bq")
+      return Country::BQ;
+    else if (country == "br")
+      return Country::BR;
+    else if (country == "bs")
+      return Country::BS;
+    else if (country == "bt")
+      return Country::BT;
+    else if (country == "bv")
+      return Country::BV;
+    else if (country == "bw")
+      return Country::BW;
+    else if (country == "by")
+      return Country::BY;
+    else if (country == "bz")
+      return Country::BZ;
+    else if (country == "ca")
+      return Country::CA;
+    else if (country == "cc")
+      return Country::CC;
+    else if (country == "cd")
+      return Country::CD;
+    else if (country == "cf")
+      return Country::CF;
+    else if (country == "cg")
+      return Country::CG;
+    else if (country == "ch")
+      return Country::CH;
+    else if (country == "ci")
+      return Country::CI;
+    else if (country == "ck")
+      return Country::CK;
+    else if (country == "cl")
+      return Country::CL;
+    else if (country == "cm")
+      return Country::CM;
+    else if (country == "cn")
+      return Country::CN;
+    else if (country == "co")
+      return Country::CO;
+    else if (country == "cr")
+      return Country::CR;
+    else if (country == "cu")
+      return Country::CU;
+    else if (country == "cv")
+      return Country::CV;
+    else if (country == "cw")
+      return Country::CW;
+    else if (country == "cx")
+      return Country::CX;
+    else if (country == "cy")
+      return Country::CY;
+    else if (country == "cz")
+      return Country::CZ;
+    else if (country == "de")
+      return Country::DE;
+    else if (country == "dj")
+      return Country::DJ;
+    else if (country == "dk")
+      return Country::DK;
+    else if (country == "dm")
+      return Country::DM;
+    else if (country == "do")
+      return Country::DO;
+    else if (country == "dz")
+      return Country::DZ;
+    else if (country == "ec")
+      return Country::EC;
+    else if (country == "ee")
+      return Country::EE;
+    else if (country == "eg")
+      return Country::EG;
+    else if (country == "eh")
+      return Country::EH;
+    else if (country == "er")
+      return Country::ER;
+    else if (country == "es")
+      return Country::ES;
+    else if (country == "et")
+      return Country::ET;
+    else if (country == "eu")
+      return Country::EU;
+    else if (country == "fi")
+      return Country::FI;
+    else if (country == "fj")
+      return Country::FJ;
+    else if (country == "fk")
+      return Country::FK;
+    else if (country == "fm")
+      return Country::FM;
+    else if (country == "fo")
+      return Country::FO;
+    else if (country == "fr")
+      return Country::FR;
+    else if (country == "ga")
+      return Country::GA;
+    else if (country == "gb-eng")
+      return Country::GBNG;
+    else if (country == "gb-nir")
+      return Country::GBIR;
+    else if (country == "gb-sct")
+      return Country::GBCT;
+    else if (country == "gb-wls")
+      return Country::GBLS;
+    else if (country == "gb")
+      return Country::GB;
+    else if (country == "gd")
+      return Country::GD;
+    else if (country == "ge")
+      return Country::GE;
+    else if (country == "gf")
+      return Country::GF;
+    else if (country == "gg")
+      return Country::GG;
+    else if (country == "gh")
+      return Country::GH;
+    else if (country == "gi")
+      return Country::GI;
+    else if (country == "gl")
+      return Country::GL;
+    else if (country == "gm")
+      return Country::GM;
+    else if (country == "gn")
+      return Country::GN;
+    else if (country == "gp")
+      return Country::GP;
+    else if (country == "gq")
+      return Country::GQ;
+    else if (country == "gr")
+      return Country::GR;
+    else if (country == "gs")
+      return Country::GS;
+    else if (country == "gt")
+      return Country::GT;
+    else if (country == "gu")
+      return Country::GU;
+    else if (country == "gw")
+      return Country::GW;
+    else if (country == "gy")
+      return Country::GY;
+    else if (country == "hk")
+      return Country::HK;
+    else if (country == "hm")
+      return Country::HM;
+    else if (country == "hn")
+      return Country::HN;
+    else if (country == "hr")
+      return Country::HR;
+    else if (country == "ht")
+      return Country::HT;
+    else if (country == "hu")
+      return Country::HU;
+    else if (country == "id")
+      return Country::ID;
+    else if (country == "ie")
+      return Country::IE;
+    else if (country == "il")
+      return Country::IL;
+    else if (country == "im")
+      return Country::IM;
+    else if (country == "in")
+      return Country::IN;
+    else if (country == "io")
+      return Country::IO;
+    else if (country == "iq")
+      return Country::IQ;
+    else if (country == "ir")
+      return Country::IR;
+    else if (country == "is")
+      return Country::IS;
+    else if (country == "it")
+      return Country::IT;
+    else if (country == "je")
+      return Country::JE;
+    else if (country == "jm")
+      return Country::JM;
+    else if (country == "jo")
+      return Country::JO;
+    else if (country == "jp")
+      return Country::JP;
+    else if (country == "ke")
+      return Country::KE;
+    else if (country == "kg")
+      return Country::KG;
+    else if (country == "kh")
+      return Country::KH;
+    else if (country == "ki")
+      return Country::KI;
+    else if (country == "km")
+      return Country::KM;
+    else if (country == "kn")
+      return Country::KN;
+    else if (country == "kp")
+      return Country::KP;
+    else if (country == "kr")
+      return Country::KR;
+    else if (country == "kw")
+      return Country::KW;
+    else if (country == "ky")
+      return Country::KY;
+    else if (country == "kz")
+      return Country::KZ;
+    else if (country == "la")
+      return Country::LA;
+    else if (country == "lb")
+      return Country::LB;
+    else if (country == "lc")
+      return Country::LC;
+    else if (country == "li")
+      return Country::LI;
+    else if (country == "lk")
+      return Country::LK;
+    else if (country == "lr")
+      return Country::LR;
+    else if (country == "ls")
+      return Country::LS;
+    else if (country == "lt")
+      return Country::LT;
+    else if (country == "lu")
+      return Country::LU;
+    else if (country == "lv")
+      return Country::LV;
+    else if (country == "ly")
+      return Country::LY;
+    else if (country == "ma")
+      return Country::MA;
+    else if (country == "mc")
+      return Country::MC;
+    else if (country == "md")
+      return Country::MD;
+    else if (country == "me")
+      return Country::ME;
+    else if (country == "mf")
+      return Country::MF;
+    else if (country == "mg")
+      return Country::MG;
+    else if (country == "mh")
+      return Country::MH;
+    else if (country == "mk")
+      return Country::MK;
+    else if (country == "ml")
+      return Country::ML;
+    else if (country == "mm")
+      return Country::MM;
+    else if (country == "mn")
+      return Country::MN;
+    else if (country == "mo")
+      return Country::MO;
+    else if (country == "mp")
+      return Country::MP;
+    else if (country == "mq")
+      return Country::MQ;
+    else if (country == "mr")
+      return Country::MR;
+    else if (country == "ms")
+      return Country::MS;
+    else if (country == "mt")
+      return Country::MT;
+    else if (country == "mu")
+      return Country::MU;
+    else if (country == "mv")
+      return Country::MV;
+    else if (country == "mw")
+      return Country::MW;
+    else if (country == "mx")
+      return Country::MX;
+    else if (country == "my")
+      return Country::MY;
+    else if (country == "mz")
+      return Country::MZ;
+    else if (country == "na")
+      return Country::NA;
+    else if (country == "nc")
+      return Country::NC;
+    else if (country == "ne")
+      return Country::NE;
+    else if (country == "nf")
+      return Country::NF;
+    else if (country == "ng")
+      return Country::NG;
+    else if (country == "ni")
+      return Country::NI;
+    else if (country == "nl")
+      return Country::NL;
+    else if (country == "no")
+      return Country::NO;
+    else if (country == "np")
+      return Country::NP;
+    else if (country == "nr")
+      return Country::NR;
+    else if (country == "nu")
+      return Country::NU;
+    else if (country == "nz")
+      return Country::NZ;
+    else if (country == "om")
+      return Country::OM;
+    else if (country == "pa")
+      return Country::PA;
+    else if (country == "pe")
+      return Country::PE;
+    else if (country == "pf")
+      return Country::PF;
+    else if (country == "pg")
+      return Country::PG;
+    else if (country == "ph")
+      return Country::PH;
+    else if (country == "pk")
+      return Country::PK;
+    else if (country == "pl")
+      return Country::PL;
+    else if (country == "pm")
+      return Country::PM;
+    else if (country == "pn")
+      return Country::PN;
+    else if (country == "pr")
+      return Country::PR;
+    else if (country == "ps")
+      return Country::PS;
+    else if (country == "pt")
+      return Country::PT;
+    else if (country == "pw")
+      return Country::PW;
+    else if (country == "py")
+      return Country::PY;
+    else if (country == "qa")
+      return Country::QA;
+    else if (country == "re")
+      return Country::RE;
+    else if (country == "ro")
+      return Country::RO;
+    else if (country == "rs")
+      return Country::RS;
+    else if (country == "ru")
+      return Country::RU;
+    else if (country == "rw")
+      return Country::RW;
+    else if (country == "sa")
+      return Country::SA;
+    else if (country == "sb")
+      return Country::SB;
+    else if (country == "sc")
+      return Country::SC;
+    else if (country == "sd")
+      return Country::SD;
+    else if (country == "se")
+      return Country::SE;
+    else if (country == "sg")
+      return Country::SG;
+    else if (country == "sh")
+      return Country::SH;
+    else if (country == "si")
+      return Country::SI;
+    else if (country == "sj")
+      return Country::SJ;
+    else if (country == "sk")
+      return Country::SK;
+    else if (country == "sl")
+      return Country::SL;
+    else if (country == "sm")
+      return Country::SM;
+    else if (country == "sn")
+      return Country::SN;
+    else if (country == "so")
+      return Country::SO;
+    else if (country == "sr")
+      return Country::SR;
+    else if (country == "ss")
+      return Country::SS;
+    else if (country == "st")
+      return Country::ST;
+    else if (country == "sv")
+      return Country::SV;
+    else if (country == "sx")
+      return Country::SX;
+    else if (country == "sy")
+      return Country::SY;
+    else if (country == "sz")
+      return Country::SZ;
+    else if (country == "tc")
+      return Country::TC;
+    else if (country == "td")
+      return Country::TD;
+    else if (country == "tf")
+      return Country::TF;
+    else if (country == "tg")
+      return Country::TG;
+    else if (country == "th")
+      return Country::TH;
+    else if (country == "tj")
+      return Country::TJ;
+    else if (country == "tk")
+      return Country::TK;
+    else if (country == "tl")
+      return Country::TL;
+    else if (country == "tm")
+      return Country::TM;
+    else if (country == "tn")
+      return Country::TN;
+    else if (country == "to")
+      return Country::TO;
+    else if (country == "tr")
+      return Country::TR;
+    else if (country == "tt")
+      return Country::TT;
+    else if (country == "tv")
+      return Country::TV;
+    else if (country == "tw")
+      return Country::TW;
+    else if (country == "tz")
+      return Country::TZ;
+    else if (country == "ua")
+      return Country::UA;
+    else if (country == "ug")
+      return Country::UG;
+    else if (country == "um")
+      return Country::UM;
+    else if (country == "us")
+      return Country::US;
+    else if (country == "uy")
+      return Country::UY;
+    else if (country == "uz")
+      return Country::UZ;
+    else if (country == "va")
+      return Country::VA;
+    else if (country == "vc")
+      return Country::VC;
+    else if (country == "ve")
+      return Country::VE;
+    else if (country == "vg")
+      return Country::VG;
+    else if (country == "vi")
+      return Country::VI;
+    else if (country == "vn")
+      return Country::VN;
+    else if (country == "vu")
+      return Country::VU;
+    else if (country == "wf")
+      return Country::WF;
+    else if (country == "xk")
+      return Country::XK;
+    else if (country == "ws")
+      return Country::WS;
+    else if (country == "ye")
+      return Country::YE;
+    else if (country == "yt")
+      return Country::YT;
+    else if (country == "za")
+      return Country::ZA;
+    else if (country == "zm")
+      return Country::ZM;
+    else if (country == "zw")
+      return Country::ZW;
+    else
+      return Country::UNKNOWN;
+  }
 }
