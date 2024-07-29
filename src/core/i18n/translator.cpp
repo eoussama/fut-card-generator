@@ -21,6 +21,7 @@ namespace Core
       nlohmann::json data;
       stream >> data;
 
+      this->dictionary.positions = data["positions"];
       this->dictionary.stats.pace = data["stats"]["pac"];
       this->dictionary.stats.passing = data["stats"]["pas"];
       this->dictionary.stats.physical = data["stats"]["phy"];

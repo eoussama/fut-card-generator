@@ -6,5 +6,25 @@
     "phy": "FIS",
     "dri": "DRI",
     "pas": "PAS"
+  },
+  "positions": {
+    "gk": "GOL",
+    "lb": "LE",
+    "lwb": "ADE",
+    "cb": "ZAG",
+    "rb": "LD",
+    "rwb": "ADD",
+    "lm": "ME",
+    "cdm": "VOL",
+    "cm": "MC",
+    "cam": "MEI",
+    "rm": "MD",
+    "lw": "PE",
+    "rw": "PD",
+    "lf": "MAE",
+    "cf": "SA",
+    "rf": "MAD",
+    "st": "ATA",
+    "all": "TODOS"
   }
 }

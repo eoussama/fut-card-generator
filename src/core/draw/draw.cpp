@@ -127,7 +127,8 @@ namespace Core
 
     void Base::playerPosition()
     {
-      std::string text = positionToString(this->card.getPlayer().getPosition());
+      std::string playerPosition = positionToString(this->card.getPlayer().getPosition());
+      std::string text = this->translator.getDictionary().positions[playerPosition];
       Template::Color::Base color = this->tmplate.colors.first;
 
       Template::Font::Buffer font = this->fonts.position;

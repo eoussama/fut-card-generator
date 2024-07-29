@@ -6,5 +6,25 @@
     "phy": "PHY",
     "dri": "DRI",
     "pas": "PAS"
+  },
+  "positions": {
+    "gk": "POR",
+    "lb": "TS",
+    "lwb": "ASA",
+    "cb": "DC",
+    "rb": "TD",
+    "rwb": "ADA",
+    "lm": "ES",
+    "cdm": "CDC",
+    "cm": "CC",
+    "cam": "COC",
+    "rm": "ED",
+    "lw": "AS",
+    "rw": "AD",
+    "lf": "ATS",
+    "cf": "AT",
+    "rf": "ATD",
+    "st": "ATT",
+    "all": "ALLE"
   }
 }

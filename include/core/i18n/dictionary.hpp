@@ -17,9 +17,12 @@ namespace Core
       std::string defending;
     };
 
+    typedef std::map<std::string, std::string> DictionaryPositions;
+
     struct Dictionary
     {
       DictionaryStats stats;
+      DictionaryPositions positions;
     };
   }
 }

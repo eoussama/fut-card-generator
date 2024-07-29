@@ -6,5 +6,25 @@
     "phy": "FÍS",
     "dri": "REG",
     "pas": "PAS"
+  },
+  "positions": {
+    "gk": "POR",
+    "lb": "LTI",
+    "lwb": "CAI",
+    "cb": "DFC",
+    "rb": "LTD",
+    "rwb": "CAD",
+    "lm": "MI",
+    "cdm": "MCD",
+    "cm": "MC",
+    "cam": "MCO",
+    "rm": "MD",
+    "lw": "EI",
+    "rw": "ED",
+    "lf": "SDI",
+    "cf": "MP",
+    "rf": "SDD",
+    "st": "DC",
+    "all": "TODO"
   }
 }

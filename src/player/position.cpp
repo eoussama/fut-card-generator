@@ -8,41 +8,41 @@ namespace Player
     switch (position)
     {
     case Position::GK:
-      return "GK";
+      return "gk";
     case Position::LB:
-      return "LB";
+      return "lb";
     case Position::LWB:
-      return "LWB";
+      return "lwb";
     case Position::CB:
-      return "CB";
+      return "cb";
     case Position::RB:
-      return "RB";
+      return "rb";
     case Position::RWB:
-      return "RWB";
+      return "rwb";
     case Position::LM:
-      return "LM";
+      return "lm";
     case Position::CDM:
-      return "CDM";
+      return "cdm";
     case Position::CM:
-      return "CM";
+      return "cm";
     case Position::CAM:
-      return "CAM";
+      return "cam";
     case Position::RM:
-      return "RM";
+      return "rm";
     case Position::LW:
-      return "LW";
+      return "lw";
     case Position::RW:
-      return "RW";
+      return "rw";
     case Position::LF:
-      return "LF";
+      return "lf";
     case Position::CF:
-      return "CF";
+      return "cf";
     case Position::RF:
-      return "RF";
+      return "rf";
     case Position::ST:
-      return "ST";
+      return "st";
     case Position::ALL:
-      return "ALL";
+      return "all";
     default:
       return "Unknown";
     }
