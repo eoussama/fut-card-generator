@@ -2,6 +2,8 @@
 #define INK_HPP
 
 #include <string>
+#include <cctype>
+#include <algorithm>
 #include <opencv2/opencv.hpp>
 
 #include "template/color/color.hpp"

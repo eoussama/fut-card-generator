@@ -7,7 +7,6 @@
 int main(int argc, char *argv[])
 {
   // TODO: Add a CLI parser
-  // TODO: capitalization of names and labels
   // TODO: translation
 
   // cv::Mat image = Core::Assets::downloadImage("https://static.wefut.com/assets/images/fut22/playeravatars/custom/167792961.png");

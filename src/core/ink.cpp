@@ -11,7 +11,9 @@ namespace Core
         Template::Color::Channel r = std::get<0>(color.getRGB());
         Template::Color::Channel g = std::get<1>(color.getRGB());
         Template::Color::Channel b = std::get<2>(color.getRGB());
+
         cv::Scalar fontColor(r, g, b, 255);
+        std::transform(text.begin(), text.end(), text.begin(), ::toupper);
 
         font.buffer->putText(image, text, position, font.size, fontColor, cv::FILLED, cv::LINE_AA, true);
       }
