@@ -6,6 +6,11 @@
 
 int main(int argc, char *argv[])
 {
+  // TODO: download image
+  // TODO: Cleanup
+  // TODO: CLI
+  // TODO: GUI
+
   // cv::Mat image = Core::Assets::downloadImage("https://static.wefut.com/assets/images/fut22/playeravatars/custom/167792961.png");
   // cv::Mat clubLogo = Core::Assets::downloadImage("https://e1.pngegg.com/pngimages/565/268/png-clipart-real-madrid-logo-real-madrid-logo-thumbnail.png");
 
@@ -26,7 +31,6 @@ int main(int argc, char *argv[])
     Core::Generator::save(out, "./out.png");
   }
 
-  // TODO: Cleanup
 
   return 0;
 }
