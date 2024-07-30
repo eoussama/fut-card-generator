@@ -4,6 +4,7 @@
 #include <string>
 
 #include "stats.hpp"
+#include "country.hpp"
 #include "position.hpp"
 
 namespace Cli
@@ -16,6 +17,7 @@ namespace Cli
     std::string logo;
     std::string image;
     Player::Stats stats;
+    Player::Country country;
     Player::Position position;
 
     std::string toString() const;

@@ -34,6 +34,11 @@ namespace Cli
         .choices("gk", "lb", "lwb", "cb", "rb", "rwb", "lm", "cdm", "cm", "cam", "rm", "lw", "rw", "lf", "cf", "rf", "st", "all");
 
     program
+        .add_argument("-c", "--country")
+        .default_value("ma")
+        .help("Country code of the player");
+
+    program
         .add_argument("-pac", "--pace")
         .default_value(50)
         .scan<'d', int>()
@@ -69,27 +74,16 @@ namespace Cli
         .scan<'d', int>()
         .help("Defending of the player");
 
-    // std::string imagePath = program.get<std::string>("image_path");
-    // std::string countryCode = program.get<std::string>("country_code");
-    // std::string positionCode = program.get<std::string>("position_code");
-    // std::string clubLogoPath = program.get<std::string>("club_logo_path");
-
     try
     {
       program.parse_args(argc, argv);
 
-      params.name = program.get<std::string>("name");
-      params.logo = program.get<std::string>("logo");
-      params.image = program.get<std::string>("image");
-      params.position = Player::stringToPosition(program.get<std::string>("position"));
-
-      int pace = program.get<int>("pac");
-      int passing = program.get<int>("pas");
-      int physical = program.get<int>("phy");
-      int shooting = program.get<int>("sho");
-      int dribbling = program.get<int>("dri");
-      int defending = program.get<int>("def");
-      params.stats = Player::Stats(pace, passing, physical, shooting, dribbling, defending);
+      readName(program, params);
+      readLogo(program, params);
+      readImage(program, params);
+      readStats(program, params);
+      readCountry(program, params);
+      readPosition(program, params);
     }
     catch (const std::runtime_error &err)
     {
@@ -99,5 +93,103 @@ namespace Cli
     }
 
     return params;
+  }
+
+  void readName(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      params.name = program.get<std::string>("name");
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readLogo(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      params.logo = program.get<std::string>("logo");
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readImage(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      params.image = program.get<std::string>("image");
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readStats(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      int pace = program.get<int>("pac");
+      int passing = program.get<int>("pas");
+      int physical = program.get<int>("phy");
+      int shooting = program.get<int>("sho");
+      int dribbling = program.get<int>("dri");
+      int defending = program.get<int>("def");
+
+      params.stats = Player::Stats(pace, passing, physical, shooting, dribbling, defending);
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readCountry(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      std::string countryCode = program.get<std::string>("country");
+      params.country = Player::stringToCountry(countryCode);
+
+      if (params.country == Player::Country::UNKNOWN)
+      {
+        throw std::runtime_error("Invalid country code");
+      }
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readPosition(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      std::string positionCode = program.get<std::string>("position");
+      params.position = Player::stringToPosition(positionCode);
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
   }
 }

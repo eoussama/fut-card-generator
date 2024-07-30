@@ -8,7 +8,7 @@ namespace Player
   enum class Country
   {
     UNKNOWN = 0,
-    AD = 1,
+    AD,
     AE,
     AF,
     AG,
