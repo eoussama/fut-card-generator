@@ -10,6 +10,7 @@ namespace Cli
 {
   Params init(int argc, char *argv[]);
 
+  void readOut(argparse::ArgumentParser &program, Params &params);
   void readName(argparse::ArgumentParser &program, Params &params);
   void readLogo(argparse::ArgumentParser &program, Params &params);
   void readImage(argparse::ArgumentParser &program, Params &params);

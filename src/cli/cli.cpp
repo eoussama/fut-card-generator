@@ -12,6 +12,11 @@ namespace Cli
         .help("Name of the player")
         .required();
 
+    program
+        .add_argument("-o", "--out")
+        .help("Path to the output image")
+        .default_value("./out.png");
+
     program.add_argument("-t", "--translation")
         .default_value("en")
         .choices("en", "fr", "es", "pt", "it", "de")
@@ -83,6 +88,7 @@ namespace Cli
     {
       program.parse_args(argc, argv);
 
+      readOut(program, params);
       readName(program, params);
       readLogo(program, params);
       readImage(program, params);
@@ -190,6 +196,20 @@ namespace Cli
     {
       std::string positionCode = program.get<std::string>("position");
       params.position = Player::stringToPosition(positionCode);
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readOut(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      params.out = program.get<std::string>("out");
     }
     catch (const std::runtime_error &err)
     {

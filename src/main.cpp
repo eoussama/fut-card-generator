@@ -8,7 +8,6 @@
 int main(int argc, char *argv[])
 {
   // TODO: Clean up
-  // TODO: Read version
   // TODO: Small letter name positioning problem
 
   Cli::Params params = Cli::init(argc, argv);
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
   cv::Mat out = Core::Generator::generate(card, clubLogo, params.language);
 
   Core::Generator::show(out);
-  Core::Generator::save(out, "./out.png");
+  Core::Generator::save(out, params.out);
 
   return 0;
 }
