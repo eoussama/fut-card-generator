@@ -26,6 +26,7 @@ namespace Player
   };
 
   std::string positionToString(const Position &position);
+  Position stringToPosition(const std::string &position);
 }
 
 #endif

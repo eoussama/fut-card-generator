@@ -47,4 +47,44 @@ namespace Player
       return "Unknown";
     }
   }
+
+  Position stringToPosition(const std::string &position)
+  {
+    if (position == "gk")
+      return Position::GK;
+    else if (position == "lb")
+      return Position::LB;
+    else if (position == "lwb")
+      return Position::LWB;
+    else if (position == "cb")
+      return Position::CB;
+    else if (position == "rb")
+      return Position::RB;
+    else if (position == "rwb")
+      return Position::RWB;
+    else if (position == "lm")
+      return Position::LM;
+    else if (position == "cdm")
+      return Position::CDM;
+    else if (position == "cm")
+      return Position::CM;
+    else if (position == "cam")
+      return Position::CAM;
+    else if (position == "rm")
+      return Position::RM;
+    else if (position == "lw")
+      return Position::LW;
+    else if (position == "rw")
+      return Position::RW;
+    else if (position == "lf")
+      return Position::LF;
+    else if (position == "cf")
+      return Position::CF;
+    else if (position == "rf")
+      return Position::RF;
+    else if (position == "st")
+      return Position::ST;
+    else
+      return Position::ALL;
+  }
 }
