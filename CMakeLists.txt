@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_NAME fut-card-generator)
 
 project(${PROJECT_NAME})
+include(${CMAKE_SOURCE_DIR}/version.cmake)
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/include
@@ -38,4 +39,6 @@ include_directories(external/argparse/include)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+target_compile_definitions(${PROJECT_NAME} PRIVATE PROJECT_NAME="${PROJECT_NAME}")
+target_compile_definitions(${PROJECT_NAME} PRIVATE GLOBAL_VERSION="${GLOBAL_VERSION}")
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${CURL_LIBRARIES} ${LIB_JSON} ${LIB_ARGPARSE})

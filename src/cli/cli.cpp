@@ -5,9 +5,9 @@ namespace Cli
   Params init(int argc, char *argv[])
   {
     Params params;
-    argparse::ArgumentParser program("fut-card-generator", "0.1.0");
+    argparse::ArgumentParser program(PROJECT_NAME, GLOBAL_VERSION);
 
-    program.add_argument("name").help("Name of the player");
+    program.add_argument("name").help("Name of the player").required();
     // program.add_argument("image_path").help("Path to the player's image");
     // program.add_argument("club_logo_path").help("Path to the club logo image");
     // program.add_argument("country_code").default_value("MA").help("Country code of the player");
