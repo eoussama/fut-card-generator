@@ -116,6 +116,7 @@ namespace Core
       Template::Color::Base color = this->tmplate.colors.second;
 
       Template::Font::Buffer font = this->fonts.name;
+      std::transform(text.begin(), text.end(), text.begin(), ::toupper);
       cv::Size size = font.buffer->getTextSize(text, font.size, -1, nullptr);
 
       int x = (this->image.cols - size.width) / 2;
