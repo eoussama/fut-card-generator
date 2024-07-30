@@ -12,6 +12,11 @@ namespace Cli
         .help("Name of the player")
         .required();
 
+    program.add_argument("-t", "--translation")
+        .default_value("en")
+        .choices("en", "fr", "es", "pt", "it", "de")
+        .help("Transaltion of the text on the card");
+
     program
         .add_argument("-c", "--country")
         .default_value("ma")
@@ -84,6 +89,7 @@ namespace Cli
       readStats(program, params);
       readCountry(program, params);
       readPosition(program, params);
+      readLanguage(program, params);
     }
     catch (const std::runtime_error &err)
     {
@@ -184,6 +190,21 @@ namespace Cli
     {
       std::string positionCode = program.get<std::string>("position");
       params.position = Player::stringToPosition(positionCode);
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readLanguage(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      std::string languageCode = program.get<std::string>("translation");
+      params.language = Core::I18N::stringToLanguage(languageCode);
     }
     catch (const std::runtime_error &err)
     {

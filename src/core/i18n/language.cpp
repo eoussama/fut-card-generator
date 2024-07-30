@@ -24,5 +24,23 @@ namespace Core
         return "Unknown";
       }
     }
+
+    Language stringToLanguage(const std::string &language)
+    {
+      if (language == "en")
+        return Language::EN;
+      else if (language == "fr")
+        return Language::FR;
+      else if (language == "es")
+        return Language::ES;
+      else if (language == "de")
+        return Language::DE;
+      else if (language == "it")
+        return Language::IT;
+      else if (language == "pt")
+        return Language::PT;
+      else
+        return Language::EN;
+    }
   }
 }

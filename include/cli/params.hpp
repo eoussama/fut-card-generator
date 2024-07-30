@@ -6,6 +6,7 @@
 #include "stats.hpp"
 #include "country.hpp"
 #include "position.hpp"
+#include "core/i18n/language.hpp"
 
 namespace Cli
 {
@@ -19,6 +20,7 @@ namespace Cli
     Player::Stats stats;
     Player::Country country;
     Player::Position position;
+    Core::I18N::Language language;
 
     std::string toString() const;
   };

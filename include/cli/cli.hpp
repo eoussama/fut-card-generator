@@ -16,6 +16,7 @@ namespace Cli
   void readStats(argparse::ArgumentParser &program, Params &params);
   void readCountry(argparse::ArgumentParser &program, Params &params);
   void readPosition(argparse::ArgumentParser &program, Params &params);
+  void readLanguage(argparse::ArgumentParser &program, Params &params);
 }
 
 #endif

@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
   cv::Mat clubLogo = Core::Assets::loadImage(params.logo);
 
   Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, params.name, params.country, params.position, image, params.stats.getPace(), params.stats.getPassing(), params.stats.getPhysical(), params.stats.getShooting(), params.stats.getDribbling(), params.stats.getDefending());
-  cv::Mat out = Core::Generator::generate(card, clubLogo, Core::I18N::Language::IT);
+  cv::Mat out = Core::Generator::generate(card, clubLogo, params.language);
 
   Core::Generator::show(out);
   Core::Generator::save(out, "./out.png");

@@ -18,6 +18,7 @@ namespace Core
     };
 
     std::string languageToString(const Language &language);
+    Language stringToLanguage(const std::string &language);
   }
 }
 
