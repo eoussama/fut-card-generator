@@ -8,6 +8,8 @@ namespace Cli
   struct Params
   {
     std::string name;
+    std::string logo;
+    std::string image;
 
     std::string toString() const;
   };

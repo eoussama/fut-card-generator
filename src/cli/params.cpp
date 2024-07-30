@@ -4,6 +4,6 @@ namespace Cli
 {
   std::string Params::toString() const
   {
-    return "Params(Name: " + name + ")";
+    return "Params(Name: " + name + ", Logo: " + logo + ", Image: " + image + ")";
   }
 }
