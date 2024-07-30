@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
 
   Cli::Params params = Cli::init(argc, argv);
 
+  std::cout << params.toString() << std::endl;
+
   // cv::Mat image = Core::Assets::loadImage(imagePath);
   // cv::Mat clubLogo = Core::Assets::loadImage(clubLogoPath);
   // Player::Country country = Player::stringToCountry(countryCode);
