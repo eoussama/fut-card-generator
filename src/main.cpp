@@ -8,7 +8,6 @@
 int main(int argc, char *argv[])
 {
   // TODO: Clean up
-  // TODO: Account for accents
 
   Cli::Params params = Cli::init(argc, argv);
   std::cout << params.toString() << std::endl;

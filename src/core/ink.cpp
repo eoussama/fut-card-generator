@@ -15,6 +15,9 @@ namespace Core
         cv::Scalar fontColor(r, g, b, 255);
         std::transform(text.begin(), text.end(), text.begin(), ::toupper);
 
+        if (text.find_first_of("ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ") != std::string::npos)
+          position.y -= 8;
+
         font.buffer->putText(image, text, position, font.size, fontColor, cv::FILLED, cv::LINE_AA, true);
       }
       catch (const cv::Exception &e)
