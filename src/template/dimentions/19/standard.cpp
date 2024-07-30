@@ -45,7 +45,7 @@ namespace Template
 
       statsRowVerticalGap = 62;
 
-      topmarginLabelOffset = 5;
+      topmarginLabelOffset = 3;
 
       topMarginStatsRow1Values = 530;
       topMarginStatsRow1Labels = topMarginStatsRow1Values + topmarginLabelOffset;

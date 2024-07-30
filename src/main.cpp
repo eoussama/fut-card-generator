@@ -1,16 +1,12 @@
 #include <iostream>
 
 #include "cli.hpp"
-#include "card.hpp"
-#include "player.hpp"
 #include "generator.hpp"
 
 int main(int argc, char *argv[])
 {
   // TODO: Clean up
-
   Cli::Params params = Cli::init(argc, argv);
-  std::cout << params.toString() << std::endl;
 
   cv::Mat image = Core::Assets::loadImage(params.image);
   cv::Mat clubLogo = Core::Assets::loadImage(params.logo);
