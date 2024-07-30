@@ -6,7 +6,9 @@
 #include "stats.hpp"
 #include "country.hpp"
 #include "position.hpp"
+#include "card_type.hpp"
 #include "core/i18n/language.hpp"
+#include "template/template_code.hpp"
 
 namespace Cli
 {
@@ -19,6 +21,7 @@ namespace Cli
     std::string logo;
     std::string image;
     Player::Stats stats;
+    Template::Code type;
     Player::Country country;
     Player::Position position;
     Core::I18N::Language language;

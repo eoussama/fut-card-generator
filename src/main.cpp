@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
   // TODO: Clean up
+  // TODO: Account for accents
 
   Cli::Params params = Cli::init(argc, argv);
   std::cout << params.toString() << std::endl;
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
   cv::Mat image = Core::Assets::loadImage(params.image);
   cv::Mat clubLogo = Core::Assets::loadImage(params.logo);
 
-  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, params.name, params.country, params.position, image, params.stats.getPace(), params.stats.getPassing(), params.stats.getPhysical(), params.stats.getShooting(), params.stats.getDribbling(), params.stats.getDefending());
+  Card::Base card = Card::create(Card::Edition::FIFA19, params.type, params.name, params.country, params.position, image, params.stats.getPace(), params.stats.getPassing(), params.stats.getPhysical(), params.stats.getShooting(), params.stats.getDribbling(), params.stats.getDefending());
   cv::Mat out = Core::Generator::generate(card, clubLogo, params.language);
 
   Core::Generator::show(out);

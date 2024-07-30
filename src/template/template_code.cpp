@@ -98,4 +98,98 @@ namespace Template
       return "Unknown";
     }
   }
+
+  Code stringToCode(const std::string &code)
+  {
+    if (code == "COMMON_BRONZE")
+      return Code::COMMON_BRONZE;
+    else if (code == "COMMON_SILVER")
+      return Code::COMMON_SILVER;
+    else if (code == "COMMON_GOLD")
+      return Code::COMMON_GOLD;
+    else if (code == "RARE_BRONZE")
+      return Code::RARE_BRONZE;
+    else if (code == "RARE_SILVER")
+      return Code::RARE_SILVER;
+    else if (code == "RARE_GOLD")
+      return Code::RARE_GOLD;
+    else if (code == "IF_BRONZE")
+      return Code::IF_BRONZE;
+    else if (code == "IF_SILVER")
+      return Code::IF_SILVER;
+    else if (code == "IF_GOLD")
+      return Code::IF_GOLD;
+    else if (code == "FC_BRONZE")
+      return Code::FC_BRONZE;
+    else if (code == "FC_SILVER")
+      return Code::FC_SILVER;
+    else if (code == "FC_GOLD")
+      return Code::FC_GOLD;
+    else if (code == "MOTM")
+      return Code::MOTM;
+    else if (code == "PL_POTM")
+      return Code::PL_POTM;
+    else if (code == "BL_POTM")
+      return Code::BL_POTM;
+    else if (code == "FUTTIES")
+      return Code::FUTTIES;
+    else if (code == "FUTTIESW")
+      return Code::FUTTIESW;
+    else if (code == "TOTY")
+      return Code::TOTY;
+    else if (code == "TOTY_N")
+      return Code::TOTY_N;
+    else if (code == "EL")
+      return Code::EL;
+    else if (code == "EL_MOTM")
+      return Code::EL_MOTM;
+    else if (code == "EL_LIVE")
+      return Code::EL_LIVE;
+    else if (code == "EL_SBC")
+      return Code::EL_SBC;
+    else if (code == "EL_TOTT")
+      return Code::EL_TOTT;
+    else if (code == "COMMON_UCL")
+      return Code::COMMON_UCL;
+    else if (code == "RARE_UCL")
+      return Code::RARE_UCL;
+    else if (code == "UCL_MOTM")
+      return Code::UCL_MOTM;
+    else if (code == "UCL_LIVE")
+      return Code::UCL_LIVE;
+    else if (code == "UCL_SBC")
+      return Code::UCL_SBC;
+    else if (code == "UCL_TOTT")
+      return Code::UCL_TOTT;
+    else if (code == "FSR")
+      return Code::FSR;
+    else if (code == "FS")
+      return Code::FS;
+    else if (code == "FSN")
+      return Code::FSN;
+    else if (code == "PP")
+      return Code::PP;
+    else if (code == "CB")
+      return Code::CB;
+    else if (code == "RB")
+      return Code::RB;
+    else if (code == "HERO")
+      return Code::HERO;
+    else if (code == "AW")
+      return Code::AW;
+    else if (code == "FB")
+      return Code::FB;
+    else if (code == "HEADLINERS")
+      return Code::HEADLINERS;
+    else if (code == "CC")
+      return Code::CC;
+    else if (code == "SBC")
+      return Code::SBC;
+    else if (code == "SBCP")
+      return Code::SBCP;
+    else if (code == "LEGEND")
+      return Code::LEGEND;
+    else
+      return Code::UNKNOWN;
+  }
 }

@@ -13,6 +13,7 @@ namespace Cli
   void readOut(argparse::ArgumentParser &program, Params &params);
   void readName(argparse::ArgumentParser &program, Params &params);
   void readLogo(argparse::ArgumentParser &program, Params &params);
+  void readType(argparse::ArgumentParser &program, Params &params);
   void readImage(argparse::ArgumentParser &program, Params &params);
   void readStats(argparse::ArgumentParser &program, Params &params);
   void readCountry(argparse::ArgumentParser &program, Params &params);

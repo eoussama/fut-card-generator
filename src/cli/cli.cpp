@@ -17,6 +17,12 @@ namespace Cli
         .help("Path to the output image")
         .default_value("./out.png");
 
+    program
+        .add_argument("-k", "--kind")
+        .default_value("COMMON_BRONZE")
+        .choices("COMMON_BRONZE", "COMMON_SILVER", "COMMON_GOLD", "RARE_BRONZE", "RARE_SILVER", "RARE_GOLD", "IF_BRONZE", "IF_SILVER", "IF_GOLD", "FC_BRONZE", "FC_SILVER", "FC_GOLD", "MOTM", "PL_POTM", "BL_POTM", "FUTTIES", "FUTTIESW", "TOTY", "TOTY_N", "EL", "EL_MOTM", "EL_LIVE", "EL_SBC", "EL_TOTT", "COMMON_UCL", "RARE_UCL", "UCL_MOTM", "UCL_LIVE", "UCL_SBC", "UCL_TOTT", "FSR", "FS", "FSN", "PP", "CB", "RB", "HERO", "AW", "FB", "HEADLINERS", "CC", "SBC", "SBCP", "LEGEND")
+        .help("Code for the template of the card");
+
     program.add_argument("-t", "--translation")
         .default_value("en")
         .choices("en", "fr", "es", "pt", "it", "de")
@@ -91,6 +97,7 @@ namespace Cli
       readOut(program, params);
       readName(program, params);
       readLogo(program, params);
+      readType(program, params);
       readImage(program, params);
       readStats(program, params);
       readCountry(program, params);
@@ -225,6 +232,26 @@ namespace Cli
     {
       std::string languageCode = program.get<std::string>("translation");
       params.language = Core::I18N::stringToLanguage(languageCode);
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readType(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      std::string typeCode = program.get<std::string>("kind");
+      params.type = Template::stringToCode(typeCode);
+
+      if (params.type == Template::Code::UNKNOWN)
+      {
+        throw std::runtime_error("Invalid template code");
+      }
     }
     catch (const std::runtime_error &err)
     {

@@ -7,7 +7,8 @@ namespace Template
 {
   enum class Code
   {
-    COMMON_BRONZE = 1,
+    UNKNOWN = 0,
+    COMMON_BRONZE,
     COMMON_SILVER,
     COMMON_GOLD,
     RARE_BRONZE,
@@ -54,6 +55,7 @@ namespace Template
   };
 
   std::string toString(const Code &code);
+  Code stringToCode(const std::string &code);
 }
 
 #endif

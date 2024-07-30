@@ -4,6 +4,6 @@ namespace Cli
 {
   std::string Params::toString() const
   {
-    return "Params(Name: " + name + ", Language: " + languageToString(language) + ", Logo: " + logo + ", Image: " + image + " Out: " + out + ", Position: " + positionToString(position) + ", Country: " + countryToString(country) + ", Stats: " + stats.toString() + ")";
+    return "Params(Name: " + name + ", Language: " + languageToString(language) + ", Type: " + Template::toString(type) + ", Logo: " + logo + ", Image: " + image + " Out: " + out + ", Position: " + positionToString(position) + ", Country: " + countryToString(country) + ", Stats: " + stats.toString() + ")";
   }
 }
