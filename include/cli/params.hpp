@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "position.hpp"
+
 namespace Cli
 {
   struct Params
@@ -10,6 +12,7 @@ namespace Cli
     std::string name;
     std::string logo;
     std::string image;
+    Player::Position position;
 
     std::string toString() const;
   };

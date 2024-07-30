@@ -7,11 +7,31 @@ namespace Cli
     Params params;
     argparse::ArgumentParser program(PROJECT_NAME, GLOBAL_VERSION);
 
-    program.add_argument("-n", "--name").help("Name of the player").required();
-    program.add_argument("-c", "--country").default_value("ma").help("Country code of the player");
-    program.add_argument("-l", "--logo").help("Path to the club logo image").default_value("./assets/clubs/1.png");
-    program.add_argument("-i", "--image").help("Path to the player's image").default_value("./assets/defaults/person.png");
-    // program.add_argument("-p", "--position").default_value("ALL").help("Position of the player (ALL, GK, LB, LWB, CB, RB, RWB, LM, CDM, CM, CAM, RM, LW, RW, LF, CF, RF, ST)");
+    program
+        .add_argument("-n", "--name")
+        .help("Name of the player")
+        .required();
+
+    program
+        .add_argument("-c", "--country")
+        .default_value("ma")
+        .help("Country code of the player");
+
+    program
+        .add_argument("-l", "--logo")
+        .help("Path to the club logo image")
+        .default_value("./assets/clubs/1.png");
+
+    program
+        .add_argument("-i", "--image")
+        .help("Path to the player's image")
+        .default_value("./assets/defaults/person.png");
+
+    program
+        .add_argument("-p", "--position")
+        .default_value("all")
+        .help("Position of the player")
+        .choices("gk", "lb", "lwb", "cb", "rb", "rwb", "lm", "cdm", "cm", "cam", "rm", "lw", "rw", "lf", "cf", "rf", "st", "all");
     // program.add_argument("stats").nargs(6).default_value(std::vector<int>{50, 50, 50, 50, 50, 50}).help("Stats of the player");
 
     // auto stats = program.get<std::vector<int>>("stats");
@@ -27,6 +47,7 @@ namespace Cli
       params.name = program.get<std::string>("name");
       params.logo = program.get<std::string>("logo");
       params.image = program.get<std::string>("image");
+      params.position = Player::stringToPosition(program.get<std::string>("position"));
     }
     catch (const std::runtime_error &err)
     {
