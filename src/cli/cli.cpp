@@ -17,6 +17,11 @@ namespace Cli
         .help("Path to the output image")
         .default_value("./out.png");
 
+    program.add_argument("-e", "--edition")
+        .default_value("fifa19")
+        .choices("fifa19")
+        .help("Code for the edition of the card");
+
     program
         .add_argument("-k", "--kind")
         .default_value("COMMON_BRONZE")
@@ -100,6 +105,7 @@ namespace Cli
       readType(program, params);
       readImage(program, params);
       readStats(program, params);
+      readEdition(program, params);
       readCountry(program, params);
       readPosition(program, params);
       readLanguage(program, params);
@@ -251,6 +257,26 @@ namespace Cli
       if (params.type == Template::Code::UNKNOWN)
       {
         throw std::runtime_error("Invalid template code");
+      }
+    }
+    catch (const std::runtime_error &err)
+    {
+      std::cerr << err.what() << std::endl;
+      std::cerr << program;
+      exit(1);
+    }
+  }
+
+  void readEdition(argparse::ArgumentParser &program, Params &params)
+  {
+    try
+    {
+      std::string editionCode = program.get<std::string>("edition");
+      params.edition = Card::stringToEdition(editionCode);
+
+      if (params.edition == Card::Edition::UNKNOWN)
+      {
+        throw std::runtime_error("Invalid edition code");
       }
     }
     catch (const std::runtime_error &err)

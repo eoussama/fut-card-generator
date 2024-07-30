@@ -12,4 +12,12 @@ namespace Card
       return "Unknown";
     }
   }
+
+  Edition stringToEdition(const std::string &edition)
+  {
+    if (edition == "fifa19")
+      return Edition::FIFA19;
+    else
+      return Edition::UNKNOWN;
+  }
 }

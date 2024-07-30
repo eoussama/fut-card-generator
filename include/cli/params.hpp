@@ -5,6 +5,7 @@
 
 #include "stats.hpp"
 #include "country.hpp"
+#include "edition.hpp"
 #include "position.hpp"
 #include "card_type.hpp"
 #include "core/i18n/language.hpp"
@@ -23,6 +24,7 @@ namespace Cli
     Player::Stats stats;
     Template::Code type;
     Player::Country country;
+    Card::Edition edition;
     Player::Position position;
     Core::I18N::Language language;
 
