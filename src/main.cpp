@@ -12,19 +12,16 @@ int main(int argc, char *argv[])
   // TODO: Small letter name positioning problem
 
   Cli::Params params = Cli::init(argc, argv);
-
   std::cout << params.toString() << std::endl;
 
-  // cv::Mat image = Core::Assets::loadImage(imagePath);
-  // cv::Mat clubLogo = Core::Assets::loadImage(clubLogoPath);
-  // Player::Country country = Player::stringToCountry(countryCode);
-  // Player::Position position = Player::stringToPosition(positionCode);
+  cv::Mat image = Core::Assets::loadImage(params.image);
+  cv::Mat clubLogo = Core::Assets::loadImage(params.logo);
 
-  // Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, name, country, position, image, stats.at(0), stats.at(1), stats.at(2), stats.at(3), stats.at(4), stats.at(5));
-  // cv::Mat out = Core::Generator::generate(card, clubLogo, Core::I18N::Language::IT);
+  Card::Base card = Card::create(Card::Edition::FIFA19, Template::Code::COMMON_BRONZE, params.name, params.country, params.position, image, params.stats.getPace(), params.stats.getPassing(), params.stats.getPhysical(), params.stats.getShooting(), params.stats.getDribbling(), params.stats.getDefending());
+  cv::Mat out = Core::Generator::generate(card, clubLogo, Core::I18N::Language::IT);
 
-  // Core::Generator::show(out);
-  // Core::Generator::save(out, "./out.png");
+  Core::Generator::show(out);
+  Core::Generator::save(out, "./out.png");
 
   return 0;
 }

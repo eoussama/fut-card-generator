@@ -48,6 +48,8 @@ namespace Core
 
       void removeAlpha();
       void restoreAlpha();
+
+      std::string formatStat(unsigned short int stat);
     };
   }
 }

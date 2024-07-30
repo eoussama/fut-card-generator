@@ -143,7 +143,7 @@ namespace Core
 
     void Base::statsOverall()
     {
-      std::string text = std::to_string(this->card.getStats().getOverall());
+      std::string text = this->formatStat(this->card.getStats().getOverall());
       Template::Color::Base color = this->tmplate.colors.first;
 
       Template::Font::Buffer font = this->fonts.overall;
@@ -158,7 +158,7 @@ namespace Core
 
     void Base::statsPace()
     {
-      std::string valueText = std::to_string(this->card.getStats().getPace());
+      std::string valueText = this->formatStat(this->card.getStats().getPace());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -185,7 +185,7 @@ namespace Core
 
     void Base::statsShooting()
     {
-      std::string valueText = std::to_string(this->card.getStats().getShooting());
+      std::string valueText = this->formatStat(this->card.getStats().getShooting());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -212,7 +212,7 @@ namespace Core
 
     void Base::statsPassing()
     {
-      std::string valueText = std::to_string(this->card.getStats().getPassing());
+      std::string valueText = this->formatStat(this->card.getStats().getPassing());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -239,7 +239,7 @@ namespace Core
 
     void Base::statsDribbling()
     {
-      std::string valueText = std::to_string(this->card.getStats().getDribbling());
+      std::string valueText = this->formatStat(this->card.getStats().getDribbling());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -266,7 +266,7 @@ namespace Core
 
     void Base::statsDefending()
     {
-      std::string valueText = std::to_string(this->card.getStats().getDefending());
+      std::string valueText = this->formatStat(this->card.getStats().getDefending());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -293,7 +293,7 @@ namespace Core
 
     void Base::statsPhysical()
     {
-      std::string valueText = std::to_string(this->card.getStats().getPhysical());
+      std::string valueText = this->formatStat(this->card.getStats().getPhysical());
       Template::Color::Base valueColor = this->tmplate.colors.second;
 
       Template::Font::Buffer valueFont = this->fonts.value;
@@ -360,6 +360,16 @@ namespace Core
       }
 
       Ink::add(this->image, image, position);
+    }
+
+    std::string Base::formatStat(unsigned short int stat)
+    {
+      std::stringstream out;
+
+      std::string number = std::to_string(stat);
+      out << std::setw(2) << std::setfill('0') << number;
+
+      return out.str();
     }
   }
 }
