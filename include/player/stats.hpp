@@ -2,6 +2,7 @@
 #define STATS_HPP
 
 #include <string>
+#include <algorithm>
 
 namespace Player
 {
@@ -29,6 +30,8 @@ namespace Player
     unsigned short int shooting;
     unsigned short int dribbling;
     unsigned short int defending;
+
+    unsigned short int clamp(unsigned short int value);
   };
 }
 
