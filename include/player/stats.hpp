@@ -8,6 +8,7 @@ namespace Player
   class Stats
   {
   public:
+    Stats() = default;
     Stats(unsigned short int pace, unsigned short int passing, unsigned short int physical, unsigned short int shooting, unsigned short int dribbling, unsigned short int defending);
 
     unsigned short int getPace() const;

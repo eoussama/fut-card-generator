@@ -32,9 +32,43 @@ namespace Cli
         .default_value("all")
         .help("Position of the player")
         .choices("gk", "lb", "lwb", "cb", "rb", "rwb", "lm", "cdm", "cm", "cam", "rm", "lw", "rw", "lf", "cf", "rf", "st", "all");
-    // program.add_argument("stats").nargs(6).default_value(std::vector<int>{50, 50, 50, 50, 50, 50}).help("Stats of the player");
 
-    // auto stats = program.get<std::vector<int>>("stats");
+    program
+        .add_argument("-pac", "--pace")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Pace of the player");
+
+    program
+        .add_argument("-pas", "--passing")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Passing of the player");
+
+    program
+        .add_argument("-phy", "--physical")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Physical of the player");
+
+    program
+        .add_argument("-sho", "--shooting")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Shooting of the player");
+
+    program
+        .add_argument("-dri", "--dribbling")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Dribbling of the player");
+
+    program
+        .add_argument("-def", "--defending")
+        .default_value(50)
+        .scan<'d', int>()
+        .help("Defending of the player");
+
     // std::string imagePath = program.get<std::string>("image_path");
     // std::string countryCode = program.get<std::string>("country_code");
     // std::string positionCode = program.get<std::string>("position_code");
@@ -48,6 +82,14 @@ namespace Cli
       params.logo = program.get<std::string>("logo");
       params.image = program.get<std::string>("image");
       params.position = Player::stringToPosition(program.get<std::string>("position"));
+
+      int pace = program.get<int>("pac");
+      int passing = program.get<int>("pas");
+      int physical = program.get<int>("phy");
+      int shooting = program.get<int>("sho");
+      int dribbling = program.get<int>("dri");
+      int defending = program.get<int>("def");
+      params.stats = Player::Stats(pace, passing, physical, shooting, dribbling, defending);
     }
     catch (const std::runtime_error &err)
     {
