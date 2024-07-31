@@ -94,6 +94,8 @@ namespace Template
       return "SBCP";
     case Code::LEGEND:
       return "Legend";
+    case Code::FS1:
+      return "FS1";
     default:
       return "Unknown";
     }
@@ -189,6 +191,8 @@ namespace Template
       return Code::SBCP;
     else if (code == "legend")
       return Code::LEGEND;
+    else if (code == "fs1")
+      return Code::FS1;
     else
       return Code::UNKNOWN;
   }

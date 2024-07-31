@@ -51,7 +51,8 @@ namespace Template
     CC,
     SBC,
     SBCP,
-    LEGEND
+    LEGEND,
+    FS1
   };
 
   std::string toString(const Code &code);
