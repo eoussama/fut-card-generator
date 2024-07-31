@@ -64,8 +64,7 @@ namespace Core
       }
       catch (const cv::Exception &e)
       {
-        std::cerr << "Error: Could not load font from " << fontPath << std::endl;
-        std::cerr << e.what() << std::endl;
+        throw Exceptions::FailedFontLoad(fontPath);
       }
 
       return {font.size, ft2};
