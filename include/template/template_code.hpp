@@ -62,7 +62,8 @@ namespace Template
     FS8,
     FS9,
     FS10,
-    FS11
+    FS11,
+    OTW
   };
 
   std::string toString(const Code &code);

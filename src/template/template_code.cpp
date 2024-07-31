@@ -116,6 +116,8 @@ namespace Template
       return "FS10";
     case Code::FS11:
       return "FS11";
+    case Code::OTW:
+      return "OTW";
     default:
       return "Unknown";
     }
@@ -233,6 +235,8 @@ namespace Template
       return Code::FS10;
     else if (code == "fs11")
       return Code::FS11;
+    else if (code == "otw")
+      return Code::OTW;
     else
       return Code::UNKNOWN;
   }
