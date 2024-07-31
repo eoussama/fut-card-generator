@@ -95,141 +95,69 @@ namespace Cli
         .scan<'d', int>()
         .help("Defending of the player");
 
-    try
-    {
-      program.parse_args(argc, argv);
+    program.parse_args(argc, argv);
 
-      readOut(program, params);
-      readName(program, params);
-      readLogo(program, params);
-      readType(program, params);
-      readImage(program, params);
-      readStats(program, params);
-      readEdition(program, params);
-      readCountry(program, params);
-      readPosition(program, params);
-      readLanguage(program, params);
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    readOut(program, params);
+    readName(program, params);
+    readLogo(program, params);
+    readType(program, params);
+    readImage(program, params);
+    readStats(program, params);
+    readEdition(program, params);
+    readCountry(program, params);
+    readPosition(program, params);
+    readLanguage(program, params);
 
     return params;
   }
 
   void readName(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      params.name = program.get<std::string>("name");
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    params.name = program.get<std::string>("name");
   }
 
   void readLogo(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      params.logo = program.get<std::string>("logo");
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    params.logo = program.get<std::string>("logo");
   }
 
   void readImage(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      params.image = program.get<std::string>("image");
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    params.image = program.get<std::string>("image");
   }
 
   void readStats(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      int pace = program.get<int>("pac");
-      int passing = program.get<int>("pas");
-      int physical = program.get<int>("phy");
-      int shooting = program.get<int>("sho");
-      int dribbling = program.get<int>("dri");
-      int defending = program.get<int>("def");
+    int pace = program.get<int>("pac");
+    int passing = program.get<int>("pas");
+    int physical = program.get<int>("phy");
+    int shooting = program.get<int>("sho");
+    int dribbling = program.get<int>("dri");
+    int defending = program.get<int>("def");
 
-      params.stats = Player::Stats(pace, passing, physical, shooting, dribbling, defending);
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    params.stats = Player::Stats(pace, passing, physical, shooting, dribbling, defending);
   }
 
   void readCountry(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      std::string countryCode = program.get<std::string>("country");
-      params.country = Player::stringToCountry(countryCode);
+    std::string countryCode = program.get<std::string>("country");
+    params.country = Player::stringToCountry(countryCode);
 
-      if (params.country == Player::Country::UNKNOWN)
-      {
-        throw std::runtime_error("Invalid country code");
-      }
-    }
-    catch (const std::runtime_error &err)
+    if (params.country == Player::Country::UNKNOWN)
     {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
+      throw std::runtime_error("Invalid country code");
     }
   }
 
   void readPosition(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      std::string positionCode = program.get<std::string>("position");
-      params.position = Player::stringToPosition(positionCode);
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    std::string positionCode = program.get<std::string>("position");
+    params.position = Player::stringToPosition(positionCode);
   }
 
   void readOut(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      params.out = program.get<std::string>("out");
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
-    }
+    params.out = program.get<std::string>("out");
   }
 
   void readLanguage(argparse::ArgumentParser &program, Params &params)
@@ -249,41 +177,23 @@ namespace Cli
 
   void readType(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      std::string typeCode = program.get<std::string>("kind");
-      params.type = Template::stringToCode(typeCode);
+    std::string typeCode = program.get<std::string>("kind");
+    params.type = Template::stringToCode(typeCode);
 
-      if (params.type == Template::Code::UNKNOWN)
-      {
-        throw std::runtime_error("Invalid template code");
-      }
-    }
-    catch (const std::runtime_error &err)
+    if (params.type == Template::Code::UNKNOWN)
     {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
+      throw std::runtime_error("Invalid template code");
     }
   }
 
   void readEdition(argparse::ArgumentParser &program, Params &params)
   {
-    try
-    {
-      std::string editionCode = program.get<std::string>("edition");
-      params.edition = Card::stringToEdition(editionCode);
+    std::string editionCode = program.get<std::string>("edition");
+    params.edition = Card::stringToEdition(editionCode);
 
-      if (params.edition == Card::Edition::UNKNOWN)
-      {
-        throw std::runtime_error("Invalid edition code");
-      }
-    }
-    catch (const std::runtime_error &err)
+    if (params.edition == Card::Edition::UNKNOWN)
     {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
+      throw std::runtime_error("Invalid edition code");
     }
   }
 }
