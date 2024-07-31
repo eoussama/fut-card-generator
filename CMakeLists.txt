@@ -12,8 +12,9 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/core
   ${PROJECT_SOURCE_DIR}/include/card
   ${PROJECT_SOURCE_DIR}/include/player
-  ${PROJECT_SOURCE_DIR}/include/generator
   ${PROJECT_SOURCE_DIR}/include/template
+  ${PROJECT_SOURCE_DIR}/include/generator
+  ${PROJECT_SOURCE_DIR}/include/exceptions
   ${PROJECT_SOURCE_DIR}/include/template/font
   ${PROJECT_SOURCE_DIR}/include/template/color
   ${PROJECT_SOURCE_DIR}/include/generator/draw

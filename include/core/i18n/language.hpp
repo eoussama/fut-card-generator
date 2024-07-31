@@ -9,7 +9,8 @@ namespace Core
   {
     enum class Language
     {
-      EN = 1,
+      UNKNOWN = 0,
+      EN,
       FR,
       ES,
       DE,

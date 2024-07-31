@@ -5,6 +5,10 @@
 #include <argparse/argparse.hpp>
 
 #include "params.hpp"
+#include "exceptions/invalidCountryCode.hpp"
+#include "exceptions/invalidEditionCode.hpp"
+#include "exceptions/invalidTemplateCode.hpp"
+#include "exceptions/invalidLanguageCode.hpp"
 
 namespace Cli
 {

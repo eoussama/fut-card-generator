@@ -40,7 +40,7 @@ namespace Core
       else if (language == "pt")
         return Language::PT;
       else
-        return Language::EN;
+        return Language::UNKNOWN;
     }
   }
 }

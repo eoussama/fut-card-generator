@@ -30,7 +30,7 @@ namespace Cli
 
     program.add_argument("-t", "--translation")
         .default_value("en")
-        .choices("en", "fr", "es", "pt", "it", "de")
+        .choices("en", "fr", "es", "pt", "it", "de", "ar")
         .help("Transaltion of the text on the card");
 
     program
@@ -145,7 +145,7 @@ namespace Cli
 
     if (params.country == Player::Country::UNKNOWN)
     {
-      throw std::runtime_error("Invalid country code");
+      throw Exceptions::InvalidCountryCode(countryCode);
     }
   }
 
@@ -162,16 +162,12 @@ namespace Cli
 
   void readLanguage(argparse::ArgumentParser &program, Params &params)
   {
-    try
+    std::string languageCode = program.get<std::string>("translation");
+    params.language = Core::I18N::stringToLanguage(languageCode);
+
+    if (params.language == Core::I18N::Language::UNKNOWN)
     {
-      std::string languageCode = program.get<std::string>("translation");
-      params.language = Core::I18N::stringToLanguage(languageCode);
-    }
-    catch (const std::runtime_error &err)
-    {
-      std::cerr << err.what() << std::endl;
-      std::cerr << program;
-      exit(1);
+      throw Exceptions::InvalidLanguageCode(languageCode);
     }
   }
 
@@ -182,7 +178,7 @@ namespace Cli
 
     if (params.type == Template::Code::UNKNOWN)
     {
-      throw std::runtime_error("Invalid template code");
+      throw Exceptions::InvalidTemplateCode(typeCode);
     }
   }
 
@@ -193,7 +189,7 @@ namespace Cli
 
     if (params.edition == Card::Edition::UNKNOWN)
     {
-      throw std::runtime_error("Invalid edition code");
+      throw Exceptions::InvalidEditionCode(editionCode);
     }
   }
 }
