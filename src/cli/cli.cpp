@@ -17,26 +17,10 @@ namespace Cli
         .help("Path to the output image")
         .default_value("./out.png");
 
-    program.add_argument("-e", "--edition")
-        .default_value("fifa19")
-        .choices("fifa19")
-        .help("Code for the edition of the card");
-
     program
-        .add_argument("-k", "--kind")
-        .default_value("common_bronze")
-        .choices("common_bronze", "common_silver", "common_gold", "rare_bronze", "rare_silver", "rare_gold", "if_bronze", "if_silver", "if_gold", "fc_bronze", "fc_silver", "fc_gold", "motm", "pl_potm", "bl_potm", "futties", "futtiesw", "toty", "toty_n", "el", "el_motm", "el_live", "el_sbc", "el_tott", "common_ucl", "rare_ucl", "ucl_motm", "ucl_live", "ucl_sbc", "ucl_tott", "fsr", "fs", "fsn", "pp", "cb", "rb", "hero", "aw", "fb", "headliners", "cc", "sbc", "sbcp", "legend")
-        .help("Code for the template of the card");
-
-    program.add_argument("-t", "--translation")
-        .default_value("en")
-        .choices("en", "fr", "es", "pt", "it", "de", "ar")
-        .help("Transaltion of the text on the card");
-
-    program
-        .add_argument("-c", "--country")
-        .default_value("ma")
-        .help("Country code of the player");
+        .add_argument("-s", "--show")
+        .help("Show a preview of the card")
+        .flag();
 
     program
         .add_argument("-l", "--logo")
@@ -48,16 +32,32 @@ namespace Cli
         .help("Path to the player's image")
         .default_value("./assets/defaults/person.png");
 
+    program.add_argument("-t", "--translation")
+        .default_value("en")
+        .choices("en", "fr", "es", "pt", "it", "de")
+        .help("Transaltion of the text on the card");
+
+    program.add_argument("-e", "--edition")
+        .default_value("fifa19")
+        .choices("fifa19")
+        .help("Code for the edition of the card");
+
     program
-        .add_argument("-p", "--position")
-        .default_value("all")
-        .help("Position of the player")
-        .choices("gk", "lb", "lwb", "cb", "rb", "rwb", "lm", "cdm", "cm", "cam", "rm", "lw", "rw", "lf", "cf", "rf", "st", "all");
+        .add_argument("-k", "--kind")
+        .default_value("common_bronze")
+        .choices("common_bronze", "common_silver", "common_gold", "rare_bronze", "rare_silver", "rare_gold", "if_bronze", "if_silver", "if_gold", "fc_bronze", "fc_silver", "fc_gold", "motm", "pl_potm", "bl_potm", "futties", "futtiesw", "toty", "toty_n", "el", "el_motm", "el_live", "el_sbc", "el_tott", "common_ucl", "rare_ucl", "ucl_motm", "ucl_live", "ucl_sbc", "ucl_tott", "fsr", "fs", "fsn", "pp", "cb", "rb", "hero", "aw", "fb", "headliners", "cc", "sbc", "sbcp", "legend")
+        .help("Code for the template of the card");
 
     program
         .add_argument("-c", "--country")
         .default_value("ma")
         .help("Country code of the player");
+
+    program
+        .add_argument("-p", "--position")
+        .default_value("all")
+        .help("Position of the player")
+        .choices("gk", "lb", "lwb", "cb", "rb", "rwb", "lm", "cdm", "cm", "cam", "rm", "lw", "rw", "lf", "cf", "rf", "st", "all");
 
     program
         .add_argument("-pac", "--pace")
@@ -94,11 +94,6 @@ namespace Cli
         .default_value(50)
         .scan<'d', int>()
         .help("Defending of the player");
-
-    program
-        .add_argument("-s", "--show")
-        .help("Show a preview of the card")
-        .flag();
 
     program.parse_args(argc, argv);
 
