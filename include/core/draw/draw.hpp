@@ -6,6 +6,7 @@
 #include "assets.hpp"
 #include "i18n/translator.hpp"
 #include "template/font/font_buffers.hpp"
+#include "exceptions/invalidImageRegion.hpp"
 
 namespace Core
 {

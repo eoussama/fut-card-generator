@@ -104,7 +104,7 @@ namespace Core
 
       if (position.x + this->clublogo.cols > this->image.cols || position.y + this->clublogo.rows > this->image.rows)
       {
-        std::cerr << "The club image does not fit within the card at the specified position" << std::endl;
+        throw exceptions::InvalidImageRegion("club");
       }
 
       Ink::add(this->image, this->clublogo, position);
@@ -335,7 +335,7 @@ namespace Core
 
       if (position.x + flag.cols > this->image.cols || position.y + flag.rows > this->image.rows)
       {
-        std::cerr << "The flag image does not fit within the card at the specified position" << std::endl;
+        throw exceptions::InvalidImageRegion("flag");
       }
 
       Ink::add(this->image, flag, position);
@@ -357,7 +357,7 @@ namespace Core
 
       if (position.x + size.width > this->image.cols || position.y + size.height > this->image.rows)
       {
-        std::cerr << "The player image does not fit within the card at the specified position" << std::endl;
+        throw exceptions::InvalidImageRegion("player");
       }
 
       Ink::add(this->image, image, position);
