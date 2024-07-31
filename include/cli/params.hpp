@@ -17,6 +17,7 @@ namespace Cli
   {
     Params() = default;
 
+    bool show;
     std::string out;
     std::string name;
     std::string logo;

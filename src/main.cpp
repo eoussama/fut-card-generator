@@ -15,8 +15,12 @@ int main(int argc, char *argv[])
     Card::Base card = Card::create(params.edition, params.type, params.name, params.country, params.position, image, params.stats.getPace(), params.stats.getPassing(), params.stats.getPhysical(), params.stats.getShooting(), params.stats.getDribbling(), params.stats.getDefending());
     cv::Mat out = Core::Generator::generate(card, clubLogo, params.language);
 
-    Core::Generator::show(out);
     Core::Generator::save(out, params.out);
+
+    if (params.show)
+    {
+      Core::Generator::show(out);
+    }
 
     return 0;
   }

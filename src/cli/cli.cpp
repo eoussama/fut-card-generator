@@ -95,12 +95,18 @@ namespace Cli
         .scan<'d', int>()
         .help("Defending of the player");
 
+    program
+        .add_argument("-s", "--show")
+        .help("Show a preview of the card")
+        .flag();
+
     program.parse_args(argc, argv);
 
     readOut(program, params);
     readName(program, params);
     readLogo(program, params);
     readType(program, params);
+    readShow(program, params);
     readImage(program, params);
     readStats(program, params);
     readEdition(program, params);
@@ -191,5 +197,10 @@ namespace Cli
     {
       throw Exceptions::InvalidEditionCode(editionCode);
     }
+  }
+
+  void readShow(argparse::ArgumentParser &program, Params &params)
+  {
+    params.show = program.get<bool>("show");
   }
 }
