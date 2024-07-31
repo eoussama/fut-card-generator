@@ -26,6 +26,9 @@ include_directories(
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
+find_package(CURL REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
+
 set(LIB_JSON nlohmann_json::nlohmann_json)
 add_subdirectory(external/json)
 include_directories(external/json/include)
@@ -34,13 +37,9 @@ set(LIB_ARGPARSE argparse)
 add_subdirectory(external/argparse)
 include_directories(external/argparse/include)
 
-set(LIB_CURL libcurl)
-add_subdirectory(external/curl)
-include_directories(external/curl/include)
-
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_compile_definitions(${PROJECT_NAME} PRIVATE PROJECT_NAME="${PROJECT_NAME}")
 target_compile_definitions(${PROJECT_NAME} PRIVATE GLOBAL_VERSION="${GLOBAL_VERSION}")
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${LIB_JSON} ${LIB_ARGPARSE} ${LIB_CURL})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${CURL_LIBRARIES} ${LIB_JSON} ${LIB_ARGPARSE})
