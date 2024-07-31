@@ -7,7 +7,10 @@
 #include <opencv2/opencv.hpp>
 
 #include "template/color/color.hpp"
+#include "exceptions/failedDraw.hpp"
 #include "template/font/font_buffer.hpp"
+
+#define SPECIAL_CHARACTERS "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ"
 
 namespace Core
 {
