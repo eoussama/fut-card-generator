@@ -11,6 +11,7 @@
 #include "exceptions/invalidImage.hpp"
 #include "exceptions/failedFontLoad.hpp"
 #include "exceptions/failedImageLoad.hpp"
+#include "exceptions/failedImageDownload.hpp"
 
 namespace Core
 {
@@ -20,7 +21,7 @@ namespace Core
     cv::Mat downloadImage(const std::string &url);
     cv::Mat loadFlag(Player::Country const &country);
     cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition);
-    size_t _WriteCallback(void *contents, size_t size, size_t nmemb, void *userp);
+    size_t _writeCallback(void *contents, size_t size, size_t nmemb, void *userp);
     Template::Font::Buffers loadFonts(Template::Base tmplate, Card::Edition const &edition);
     Template::Font::Buffer loadFont(Template::Font::Base font, Card::Edition const &edition);
   }

@@ -80,7 +80,7 @@ namespace Core
       if (curl)
       {
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, _WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, _writeCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
@@ -88,18 +88,19 @@ namespace Core
 
       if (res != CURLE_OK)
       {
-        std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        throw Exceptions::FailedImageDownload(url);
       }
 
       cv::Mat img = cv::imdecode(buffer, cv::IMREAD_UNCHANGED);
       if (img.empty())
       {
-        std::cerr << "Failed to decode image" << std::endl;
+        throw Exceptions::FailedImageLoad(url);
       }
+
       return img;
     }
 
-    size_t _WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
+    size_t _writeCallback(void *contents, size_t size, size_t nmemb, void *userp)
     {
       ((std::vector<char> *)userp)->insert(((std::vector<char> *)userp)->end(), (char *)contents, (char *)contents + size * nmemb);
       return size * nmemb;
