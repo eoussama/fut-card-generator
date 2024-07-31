@@ -76,6 +76,7 @@ namespace Template
     templates[Code::FS10] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_10"};
     templates[Code::FS11] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_11"};
     templates[Code::OTW] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "otw"};
+    templates[Code::ST_PATRICKS] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_WHISPER), Color::Base(COLOR_ST_PATRICKS)), Font::Code::DIN_PRO_COND, "st_patricks"};
 
     return templates;
   }

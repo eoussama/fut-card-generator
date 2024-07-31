@@ -118,6 +118,8 @@ namespace Template
       return "FS11";
     case Code::OTW:
       return "OTW";
+    case Code::ST_PATRICKS:
+      return "ST PATRICKS";
     default:
       return "Unknown";
     }
@@ -237,6 +239,8 @@ namespace Template
       return Code::FS11;
     else if (code == "otw")
       return Code::OTW;
+    else if (code == "st_patricks")
+      return Code::ST_PATRICKS;
     else
       return Code::UNKNOWN;
   }
