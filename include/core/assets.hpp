@@ -8,6 +8,8 @@
 #include "card.hpp"
 #include "font/font_target.hpp"
 #include "font/font_buffers.hpp"
+#include "exceptions/invalidImage.hpp"
+#include "exceptions/failedImageLoad.hpp"
 
 namespace Core
 {

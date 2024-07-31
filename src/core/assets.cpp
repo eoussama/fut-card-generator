@@ -10,14 +10,12 @@ namespace Core
 
       if (image.empty())
       {
-        std::cerr << "Error: Could not load image from " << path << std::endl;
-        return cv::Mat();
+        throw Exceptions::FailedImageLoad(path);
       }
 
       if (image.type() != CV_8UC4 || image.channels() != 4 || image.dims != 2)
       {
-        std::cerr << "Error: Image does not meet the required properties" << std::endl;
-        return cv::Mat();
+        throw Exceptions::InvalidImage();
       }
 
       return image;
