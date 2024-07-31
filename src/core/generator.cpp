@@ -39,7 +39,7 @@ namespace Core
 
       if (!result)
       {
-        std::cerr << "Error: Could not save the image to " << path << std::endl;
+        throw Exceptions::FailedImageSave(path);
       }
     }
   }

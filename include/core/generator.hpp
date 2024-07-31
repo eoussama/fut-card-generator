@@ -14,6 +14,7 @@
 #include "i18n/language.hpp"
 #include "i18n/translator.hpp"
 #include "template/template.hpp"
+#include "exceptions/failedImageSave.hpp"
 
 namespace Core
 {
