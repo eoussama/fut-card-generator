@@ -96,6 +96,8 @@ namespace Template
       return "Legend";
     case Code::FS1:
       return "FS1";
+    case Code::FS2:
+      return "FS2";
     default:
       return "Unknown";
     }
@@ -193,6 +195,8 @@ namespace Template
       return Code::LEGEND;
     else if (code == "fs1")
       return Code::FS1;
+    else if (code == "fs2")
+      return Code::FS2;
     else
       return Code::UNKNOWN;
   }

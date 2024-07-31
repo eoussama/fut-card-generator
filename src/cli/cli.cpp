@@ -45,7 +45,7 @@ namespace Cli
     program
         .add_argument("-k", "--kind")
         .default_value("common_bronze")
-        .choices("common_bronze", "common_silver", "common_gold", "rare_bronze", "rare_silver", "rare_gold", "if_bronze", "if_silver", "if_gold", "fc_bronze", "fc_silver", "fc_gold", "motm", "pl_potm", "bl_potm", "futties", "futtiesw", "toty", "toty_n", "el", "el_motm", "el_live", "el_sbc", "el_tott", "common_ucl", "rare_ucl", "ucl_motm", "ucl_live", "ucl_sbc", "ucl_tott", "fsr", "fs", "fsn", "pp", "cb", "rb", "hero", "aw", "fb", "headliners", "cc", "sbc", "sbcp", "legend", "fs1")
+        .choices("common_bronze", "common_silver", "common_gold", "rare_bronze", "rare_silver", "rare_gold", "if_bronze", "if_silver", "if_gold", "fc_bronze", "fc_silver", "fc_gold", "motm", "pl_potm", "bl_potm", "futties", "futtiesw", "toty", "toty_n", "el", "el_motm", "el_live", "el_sbc", "el_tott", "common_ucl", "rare_ucl", "ucl_motm", "ucl_live", "ucl_sbc", "ucl_tott", "fsr", "fs", "fsn", "pp", "cb", "rb", "hero", "aw", "fb", "headliners", "cc", "sbc", "sbcp", "legend", "fs1", "fs2")
         .help("Code for the template of the card");
 
     program

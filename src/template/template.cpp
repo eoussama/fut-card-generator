@@ -65,6 +65,7 @@ namespace Template
     templates[Code::SBCP] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_SQUAD_BUILDER_PREMIUM), Color::Base(COLOR_SQUAD_BUILDER_PREMIUM)), Font::Code::DIN_PRO_COND, "sbc_premium"};
     templates[Code::LEGEND] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_LEGEND), Color::Base(COLOR_LEGEND)), Font::Code::DIN_PRO_COND, "legend"};
     templates[Code::FS1] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_1"};
+    templates[Code::FS2] = {Card::Type::STANDARD, std::make_pair(Color::Base(COLOR_FUT_SWAP_REWARDS), Color::Base(COLOR_FUT_SWAP_REWARDS)), Font::Code::DIN_PRO_COND, "fut_swap_2"};
 
     return templates;
   }
