@@ -98,6 +98,24 @@ namespace Template
       return "FS1";
     case Code::FS2:
       return "FS2";
+    case Code::FS3:
+      return "FS3";
+    case Code::FS4:
+      return "FS4";
+    case Code::FS5:
+      return "FS5";
+    case Code::FS6:
+      return "FS6";
+    case Code::FS7:
+      return "FS7";
+    case Code::FS8:
+      return "FS8";
+    case Code::FS9:
+      return "FS9";
+    case Code::FS10:
+      return "FS10";
+    case Code::FS11:
+      return "FS11";
     default:
       return "Unknown";
     }
@@ -197,6 +215,24 @@ namespace Template
       return Code::FS1;
     else if (code == "fs2")
       return Code::FS2;
+    else if (code == "fs3")
+      return Code::FS3;
+    else if (code == "fs4")
+      return Code::FS4;
+    else if (code == "fs5")
+      return Code::FS5;
+    else if (code == "fs6")
+      return Code::FS6;
+    else if (code == "fs7")
+      return Code::FS7;
+    else if (code == "fs8")
+      return Code::FS8;
+    else if (code == "fs9")
+      return Code::FS9;
+    else if (code == "fs10")
+      return Code::FS10;
+    else if (code == "fs11")
+      return Code::FS11;
     else
       return Code::UNKNOWN;
   }

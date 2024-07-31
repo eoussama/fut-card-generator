@@ -54,6 +54,15 @@ namespace Template
     LEGEND,
     FS1,
     FS2,
+    FS3,
+    FS4,
+    FS5,
+    FS6,
+    FS7,
+    FS8,
+    FS9,
+    FS10,
+    FS11
   };
 
   std::string toString(const Code &code);
