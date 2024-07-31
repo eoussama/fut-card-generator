@@ -24,8 +24,8 @@ namespace Cli
 
     program
         .add_argument("-k", "--kind")
-        .default_value("COMMON_BRONZE")
-        .choices("COMMON_BRONZE", "COMMON_SILVER", "COMMON_GOLD", "RARE_BRONZE", "RARE_SILVER", "RARE_GOLD", "IF_BRONZE", "IF_SILVER", "IF_GOLD", "FC_BRONZE", "FC_SILVER", "FC_GOLD", "MOTM", "PL_POTM", "BL_POTM", "FUTTIES", "FUTTIESW", "TOTY", "TOTY_N", "EL", "EL_MOTM", "EL_LIVE", "EL_SBC", "EL_TOTT", "COMMON_UCL", "RARE_UCL", "UCL_MOTM", "UCL_LIVE", "UCL_SBC", "UCL_TOTT", "FSR", "FS", "FSN", "PP", "CB", "RB", "HERO", "AW", "FB", "HEADLINERS", "CC", "SBC", "SBCP", "LEGEND")
+        .default_value("common_bronze")
+        .choices("common_bronze", "common_silver", "common_gold", "rare_bronze", "rare_silver", "rare_gold", "if_bronze", "if_silver", "if_gold", "fc_bronze", "fc_silver", "fc_gold", "motm", "pl_potm", "bl_potm", "futties", "futtiesw", "toty", "toty_n", "el", "el_motm", "el_live", "el_sbc", "el_tott", "common_ucl", "rare_ucl", "ucl_motm", "ucl_live", "ucl_sbc", "ucl_tott", "fsr", "fs", "fsn", "pp", "cb", "rb", "hero", "aw", "fb", "headliners", "cc", "sbc", "sbcp", "legend")
         .help("Code for the template of the card");
 
     program.add_argument("-t", "--translation")

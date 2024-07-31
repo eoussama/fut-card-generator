@@ -101,93 +101,93 @@ namespace Template
 
   Code stringToCode(const std::string &code)
   {
-    if (code == "COMMON_BRONZE")
+    if (code == "common_bronze")
       return Code::COMMON_BRONZE;
-    else if (code == "COMMON_SILVER")
+    else if (code == "common_silver")
       return Code::COMMON_SILVER;
-    else if (code == "COMMON_GOLD")
+    else if (code == "common_gold")
       return Code::COMMON_GOLD;
-    else if (code == "RARE_BRONZE")
+    else if (code == "rare_bronze")
       return Code::RARE_BRONZE;
-    else if (code == "RARE_SILVER")
+    else if (code == "rare_silver")
       return Code::RARE_SILVER;
-    else if (code == "RARE_GOLD")
+    else if (code == "rare_gold")
       return Code::RARE_GOLD;
-    else if (code == "IF_BRONZE")
+    else if (code == "if_bronze")
       return Code::IF_BRONZE;
-    else if (code == "IF_SILVER")
+    else if (code == "if_silver")
       return Code::IF_SILVER;
-    else if (code == "IF_GOLD")
+    else if (code == "if_gold")
       return Code::IF_GOLD;
-    else if (code == "FC_BRONZE")
+    else if (code == "fc_bronze")
       return Code::FC_BRONZE;
-    else if (code == "FC_SILVER")
+    else if (code == "fc_silver")
       return Code::FC_SILVER;
-    else if (code == "FC_GOLD")
+    else if (code == "fc_gold")
       return Code::FC_GOLD;
-    else if (code == "MOTM")
+    else if (code == "motm")
       return Code::MOTM;
-    else if (code == "PL_POTM")
+    else if (code == "pl_potm")
       return Code::PL_POTM;
-    else if (code == "BL_POTM")
+    else if (code == "bl_potm")
       return Code::BL_POTM;
-    else if (code == "FUTTIES")
+    else if (code == "futties")
       return Code::FUTTIES;
-    else if (code == "FUTTIESW")
+    else if (code == "futtiesw")
       return Code::FUTTIESW;
-    else if (code == "TOTY")
+    else if (code == "toty")
       return Code::TOTY;
-    else if (code == "TOTY_N")
+    else if (code == "toty_n")
       return Code::TOTY_N;
-    else if (code == "EL")
+    else if (code == "el")
       return Code::EL;
-    else if (code == "EL_MOTM")
+    else if (code == "el_motm")
       return Code::EL_MOTM;
-    else if (code == "EL_LIVE")
+    else if (code == "el_live")
       return Code::EL_LIVE;
-    else if (code == "EL_SBC")
+    else if (code == "el_sbc")
       return Code::EL_SBC;
-    else if (code == "EL_TOTT")
+    else if (code == "el_tott")
       return Code::EL_TOTT;
-    else if (code == "COMMON_UCL")
+    else if (code == "common_ucl")
       return Code::COMMON_UCL;
-    else if (code == "RARE_UCL")
+    else if (code == "rare_ucl")
       return Code::RARE_UCL;
-    else if (code == "UCL_MOTM")
+    else if (code == "ucl_motm")
       return Code::UCL_MOTM;
-    else if (code == "UCL_LIVE")
+    else if (code == "ucl_live")
       return Code::UCL_LIVE;
-    else if (code == "UCL_SBC")
+    else if (code == "ucl_sbc")
       return Code::UCL_SBC;
-    else if (code == "UCL_TOTT")
+    else if (code == "ucl_tott")
       return Code::UCL_TOTT;
-    else if (code == "FSR")
+    else if (code == "fsr")
       return Code::FSR;
-    else if (code == "FS")
+    else if (code == "fs")
       return Code::FS;
-    else if (code == "FSN")
+    else if (code == "fsn")
       return Code::FSN;
-    else if (code == "PP")
+    else if (code == "pp")
       return Code::PP;
-    else if (code == "CB")
+    else if (code == "cb")
       return Code::CB;
-    else if (code == "RB")
+    else if (code == "rb")
       return Code::RB;
-    else if (code == "HERO")
+    else if (code == "hero")
       return Code::HERO;
-    else if (code == "AW")
+    else if (code == "aw")
       return Code::AW;
-    else if (code == "FB")
+    else if (code == "fb")
       return Code::FB;
-    else if (code == "HEADLINERS")
+    else if (code == "headliners")
       return Code::HEADLINERS;
-    else if (code == "CC")
+    else if (code == "cc")
       return Code::CC;
-    else if (code == "SBC")
+    else if (code == "sbc")
       return Code::SBC;
-    else if (code == "SBCP")
+    else if (code == "sbcp")
       return Code::SBCP;
-    else if (code == "LEGEND")
+    else if (code == "legend")
       return Code::LEGEND;
     else
       return Code::UNKNOWN;
