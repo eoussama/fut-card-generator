@@ -1,4 +1,3 @@
-# Setting up base image
 FROM ubuntu:24.04
 WORKDIR /fut-card-generator
 
