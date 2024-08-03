@@ -7,7 +7,7 @@ project="eoussama"
 username="fut-card-generator"
 image="$username/$project:$tag"
 
-docker build -f ./docker/Dockerfile -t $image .
+docker build -f ./docker/Dockerfile.dev -t $image .
 docker run -it --rm \
   -v "$(pwd)":/fut-card-generator \
   $image
