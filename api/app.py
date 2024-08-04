@@ -21,17 +21,19 @@ def generate():
 	try:
 			cmd = f'./release/fut-card-generator {args}'
 			result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-			output = result.stdout
+			
 			error = result.stderr
+			output = result.stdout
 			return_code = result.returncode
+
+			if return_code == 0:
+				# good
+				return jsonify(True)
+			else:
+				raise Exception(error)
+
 	except Exception as e:
 			return jsonify({"error": str(e)}), 500
-
-	return jsonify({
-			"output": output,
-			"error": error,
-			"return_code": return_code
-	})
 
 if __name__ == '__main__':
 	host = os.getenv('API_HOST')
