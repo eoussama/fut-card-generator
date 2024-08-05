@@ -2,7 +2,7 @@ import os
 import subprocess
 
 from dotenv import load_dotenv
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 
 
 
@@ -19,7 +19,13 @@ def generate():
 	args = data.get('args', '')
 
 	try:
-			cmd = f'./release/fut-card-generator {args}'
+			script_directory = os.path.dirname(os.path.abspath(__file__))
+			parent_directory = os.path.dirname(script_directory)
+			binary_directory = f'{parent_directory}/release'
+
+			out = f'{script_directory}/out.png'
+			cmd = f'{binary_directory}/fut-card-generator {args} -o {out}'
+
 			result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 			
 			error = result.stderr
@@ -27,8 +33,10 @@ def generate():
 			return_code = result.returncode
 
 			if return_code == 0:
-				# good
-				return jsonify(True)
+				if os.path.exists(out):
+					return send_file(out, mimetype='image/png')
+				else:
+					raise Exception('File not found')
 			else:
 				raise Exception(error)
 

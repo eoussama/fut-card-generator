@@ -5,6 +5,7 @@ RUN apt update && apt install -y bash build-essential cmake libopencv-dev libcur
 
 COPY . .
 RUN ./scripts/build.sh
+RUN ./scripts/install.sh
 RUN cd api && python3 -m venv .venv
 RUN cd api && . .venv/bin/activate && pip install -r requirements.txt
 
