@@ -9,6 +9,7 @@
 *.obj
 build/
 release/
+*.tar.gz
 
 # Precompiled Headers
 *.gch
