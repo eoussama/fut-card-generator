@@ -41,6 +41,8 @@ namespace Core
       {
         throw Exceptions::FailedImageSave(path);
       }
+
+      std::cout << "[SUCCESS]: Saved Fut card to " + path << std::endl;
     }
   }
 }

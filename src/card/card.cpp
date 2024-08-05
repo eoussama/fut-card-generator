@@ -11,7 +11,7 @@ namespace Card
   Player::Stats Base::getStats() const { return stats; }
   Player::Base Base::getPlayer() const { return player; }
   Template::Code Base::getTemplateCode() const { return templateCode; }
-  Template::Base Base::getTemplate() const { return Template::init()[templateCode]; }
+  Template::Base Base::getTemplate() const { return Template::init()[getEdition()][templateCode]; }
 
   std::string Base::toString() const
   {

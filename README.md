@@ -33,11 +33,27 @@ Build the project:
 mkdir build
 cd build
 cmake ..
+cmake --build .
 ```
+
+There is also a custom script for doing that, [build.sh](scripts/build.sh).
 
 ### From binary
 
 Download the latest release from the [releases page](https://github.com/eoussama/fut-card-generator/releases).
+
+### From Docker
+
+#### Development
+There is a developement Docker image available, you can use it by executing the [dev.sh](scripts/dev.sh) script.
+
+#### Build
+You can also build and run the binary and forward all the arguments to it by executing the [run.sh](scripts/run.sh) script.
+
+#### API
+A web API image is also available, you can use it by executing the [api.sh](scripts/api.sh) script.
+The container exposes port 5000 and mounts the current directory to `/fut-card-generator`.
+The endpoint is available at `http://localhost:5000/generate`.
 
 ## Usage
 
@@ -181,4 +197,4 @@ Check out [countries.json](./assets/nations/countries.json) for a list of all th
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the __GNU GENERAL PUBLIC 3.0__ License - see the [LICENSE](LICENSE) file for details.

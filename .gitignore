@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+.venv/
 
 # Compiled Object files
 *.slo
@@ -7,6 +8,7 @@
 *.o
 *.obj
 build/
+release/
 
 # Precompiled Headers
 *.gch
@@ -34,6 +36,11 @@ build/
 
 # Assets
 out.png
+
+# API
+api/
+!api/app.py
+!api/requirements.txt
 
 # Misc
 todo.md
