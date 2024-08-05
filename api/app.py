@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return f'API for fut-card-generator v{os.getenv("GLOBAL_VERSION")}'
+	return f'API for fut-card-generator v{os.getenv("GLOBAL_VERSION")}\n'
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -29,7 +29,6 @@ def generate():
 			result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 			
 			error = result.stderr
-			output = result.stdout
 			return_code = result.returncode
 
 			if return_code == 0:
@@ -46,5 +45,7 @@ def generate():
 if __name__ == '__main__':
 	host = os.getenv('API_HOST')
 	port = os.getenv('API_PORT')
+	version = os.getenv('GLOBAL_VERSION')
 
+	print(f'Starting Fut Card Generator {version} API...')
 	app.run(debug=False, host=host, port=port)

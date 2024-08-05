@@ -5,5 +5,6 @@ RUN apt update && apt install -y bash build-essential cmake libopencv-dev libcur
 
 COPY . .
 RUN ./scripts/build.sh
+RUN ./scripts/install.sh
 
-ENTRYPOINT ["./build/fut-card-generator"]
+ENTRYPOINT ["./release/fut-card-generator"]
