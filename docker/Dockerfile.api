@@ -1,0 +1,16 @@
+FROM ubuntu:24.04
+WORKDIR /fut-card-generator
+
+RUN apt update && apt install -y bash build-essential cmake libopencv-dev libcurl4-openssl-dev python3-pip python3.12-venv
+
+COPY . .
+RUN ./scripts/build.sh
+RUN ./scripts/install.sh
+RUN cd api && python3 -m venv .venv
+RUN cd api && . .venv/bin/activate && pip install -r requirements.txt
+
+EXPOSE 5000
+ENV FLASK_APP=app.py
+
+CMD ["bash"]
+ENTRYPOINT ["./scripts/entrypoint.sh"]

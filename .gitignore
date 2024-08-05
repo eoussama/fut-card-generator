@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+.venv/
 
 # Compiled Object files
 *.slo
@@ -35,6 +36,11 @@ release/
 
 # Assets
 out.png
+
+# API
+api/
+!api/app.py
+!api/requirements.txt
 
 # Misc
 todo.md

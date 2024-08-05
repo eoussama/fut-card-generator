@@ -3,8 +3,8 @@
 source .env
 
 tag=$GLOBAL_VERSION
-project="eoussama"
-username="fut-card-generator"
+project="fut-card-generator"
+username="eoussama"
 image="$username/$project:$tag-prod"
 
 docker build -f ./docker/Dockerfile -t $image .
