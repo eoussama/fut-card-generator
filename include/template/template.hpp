@@ -27,7 +27,8 @@ namespace Template
     std::string getBackgroundPath(Card::Edition const &edition);
   };
 
-  typedef std::map<Code, Base> Templates;
+  typedef std::map<Code, Base> EditionTemplates;
+  typedef std::map<Card::Edition, EditionTemplates> Templates;
 
   Templates init();
 }

@@ -79,5 +79,11 @@
     "ranges": "cpp",
     "valarray": "cpp",
     "variant": "cpp"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.venv/*/**": true,
+    "**/.hg/store/**": true
   }
 }
