@@ -42,19 +42,16 @@ class PathHelper:
 
 
   @staticmethod
-  def get_output_path(filename: str) -> str:
+  def get_output_path(generation_path: str, filename: str) -> str:
     """
       Get the output path of the project.
 
       Args:
+        generation_path (str): Path of the generation
         filename (str): Filename of the output file
     """
 
-    generation_path = PathHelper.get_generation_path()
-    generation_path.mkdir(parents=True, exist_ok=True)
-    output_path = f'{generation_path}/{filename}.png'
-    
-    return output_path
+    return f'{generation_path}/{filename}.png'
 
 
 
@@ -67,5 +64,6 @@ class PathHelper:
     root_path = PathHelper.get_root_path()
     unique_hash = hashlib.sha256(f"{uuid.uuid4()}".encode()).hexdigest()
     generation_path = Path(f'{root_path}/api/generations/{unique_hash}')
+    generation_path.mkdir(parents=True, exist_ok=True)
     
     return generation_path

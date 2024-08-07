@@ -4,6 +4,7 @@ import subprocess
 from helpers.args import ArgsHelper
 from helpers.path import PathHelper
 
+from werkzeug.utils import secure_filename
 from flask import request, jsonify, send_file
 
 
@@ -23,13 +24,19 @@ def register_generate(app):
 
     data = request.get_json()
     args = data.get('args', '')
+    club_logo = request.files.get('clubLogo')
+    player_image = request.files.get('playerImage')
 
     try:
       if not ArgsHelper.is_valid(args):
         raise Exception('Invalid arguments')
 
-      output_path = PathHelper.get_output_path('out')
       executable_path = PathHelper.get_executable_path()
+      generation_path = PathHelper.get_generation_path()
+      output_path = PathHelper.get_output_path(generation_path, 'out')
+
+      club_logo_path = None
+      player_image_path = None
 
       command = f'{executable_path} {args} -o {output_path}'
       result = subprocess.run(command, shell=True, capture_output=True, text=True)
