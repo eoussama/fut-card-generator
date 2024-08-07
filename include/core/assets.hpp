@@ -17,7 +17,8 @@ namespace Core
 {
   namespace Assets
   {
-    cv::Mat loadImage(std::string path);
+    cv::Mat loadImage(const std::string &path);
+    cv::Mat readImage(const std::string &uri);
     cv::Mat downloadImage(const std::string &url);
     cv::Mat loadFlag(Player::Country const &country);
     cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition);
