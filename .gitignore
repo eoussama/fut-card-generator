@@ -39,9 +39,10 @@ release/
 out.png
 
 # API
-api/
-!api/app.py
-!api/requirements.txt
+api/.venv/
+api/**/*.pyc
+api/**/*.png
+api/generations/
 
 # Misc
 todo.md

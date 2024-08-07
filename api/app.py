@@ -1,51 +1,17 @@
-import os
-import subprocess
+from flask import Flask
 
-from dotenv import load_dotenv
-from flask import Flask, request, jsonify, send_file
+from models.config import Config
+from routes.index import register_index
+from routes.generate import register_generate
 
 
-
-load_dotenv()
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-	return f'API for fut-card-generator v{os.getenv("GLOBAL_VERSION")}\n'
-
-@app.route('/generate', methods=['POST'])
-def generate():
-	data = request.get_json()
-	args = data.get('args', '')
-
-	try:
-			script_directory = os.path.dirname(os.path.abspath(__file__))
-			parent_directory = os.path.dirname(script_directory)
-			binary_directory = f'{parent_directory}/release'
-
-			out = f'{script_directory}/out.png'
-			cmd = f'{binary_directory}/fut-card-generator {args} -o {out}'
-
-			result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-			
-			error = result.stderr
-			return_code = result.returncode
-
-			if return_code == 0:
-				if os.path.exists(out):
-					return send_file(out, mimetype='image/png')
-				else:
-					raise Exception('File not found')
-			else:
-				raise Exception(error)
-
-	except Exception as e:
-			return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-	host = os.getenv('API_HOST')
-	port = os.getenv('API_PORT')
-	version = os.getenv('GLOBAL_VERSION')
+	app = Flask(__name__)
+	config = Config.from_env()
 
-	print(f'Starting Fut Card Generator {version} API...')
-	app.run(debug=False, host=host, port=port)
+	register_index(app, config)
+	register_generate(app)
+	
+	print(f'Starting Fut Card Generator {config.version} API...')
+	app.run(debug=False, host=config.host, port=config.port)
