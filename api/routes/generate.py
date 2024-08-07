@@ -3,6 +3,7 @@ import subprocess
 
 from helpers.args import ArgsHelper
 from helpers.path import PathHelper
+
 from flask import request, jsonify, send_file
 
 
@@ -27,8 +28,8 @@ def register_generate(app):
       if not ArgsHelper.is_valid(args):
         raise Exception('Invalid arguments')
 
-      executable_path = PathHelper.get_executable_path()
       output_path = PathHelper.get_output_path('out')
+      executable_path = PathHelper.get_executable_path()
 
       command = f'{executable_path} {args} -o {output_path}'
       result = subprocess.run(command, shell=True, capture_output=True, text=True)

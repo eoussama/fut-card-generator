@@ -42,6 +42,7 @@ out.png
 api/.venv/
 api/**/*.pyc
 api/**/*.png
+api/generations/
 
 # Misc
 todo.md

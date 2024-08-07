@@ -19,6 +19,8 @@ class ArgsHelper:
       '-h',
       '-s',
       '-v',
+      '-o',
+      '--out',
       '--help',
       '--show',
       '--version'

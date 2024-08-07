@@ -1,5 +1,9 @@
 import os
 import sys
+import uuid
+import hashlib
+
+from pathlib import Path
 
 
 
@@ -46,7 +50,22 @@ class PathHelper:
         filename (str): Filename of the output file
     """
 
-    root_path = PathHelper.get_root_path()
-    output_path = f'{root_path}/{filename}.png'
+    generation_path = PathHelper.get_generation_path()
+    generation_path.mkdir(parents=True, exist_ok=True)
+    output_path = f'{generation_path}/{filename}.png'
     
     return output_path
+
+
+
+  @staticmethod
+  def get_generation_path():
+    """
+      Get the generation path of a request.
+    """
+
+    root_path = PathHelper.get_root_path()
+    unique_hash = hashlib.sha256(f"{uuid.uuid4()}".encode()).hexdigest()
+    generation_path = Path(f'{root_path}/api/generations/{unique_hash}')
+    
+    return generation_path
