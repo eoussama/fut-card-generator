@@ -4,7 +4,6 @@ import subprocess
 from helpers.args import ArgsHelper
 from helpers.path import PathHelper
 
-from werkzeug.utils import secure_filename
 from flask import request, jsonify, send_file
 
 
@@ -22,8 +21,8 @@ def register_generate(app):
       Generate a card.
     """
 
-    data = request.get_json()
-    args = data.get('args', '')
+    # data = request.get_json()
+    args = request.form['args']
     club_logo = request.files.get('clubLogo')
     player_image = request.files.get('playerImage')
 
@@ -38,7 +37,22 @@ def register_generate(app):
       club_logo_path = None
       player_image_path = None
 
+      if club_logo:
+        club_logo_path = PathHelper.get_secure_path(generation_path, club_logo.filename)
+        club_logo.save(club_logo_path)
+
+      if player_image:
+        player_image_path = PathHelper.get_secure_path(generation_path, player_image.filename)
+        player_image.save(player_image_path)
+
       command = f'{executable_path} {args} -o {output_path}'
+
+      if club_logo_path:
+        command += f' -l {club_logo_path}'
+
+      if player_image_path:
+        command += f' -i {player_image_path}'
+
       result = subprocess.run(command, shell=True, capture_output=True, text=True)
 
       if result.returncode == 0:

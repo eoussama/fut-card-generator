@@ -4,6 +4,7 @@ import uuid
 import hashlib
 
 from pathlib import Path
+from werkzeug.utils import secure_filename
 
 
 
@@ -67,3 +68,19 @@ class PathHelper:
     generation_path.mkdir(parents=True, exist_ok=True)
     
     return generation_path
+  
+
+
+  @staticmethod
+  def get_secure_path(generation_path: str, filename: str) -> str:
+    """
+      Get the secure path of a file.
+
+      Args:
+        path (str): Path of the file
+    """
+
+    file_name = secure_filename(filename)
+    file_path = generation_path / file_name
+
+    return file_path
