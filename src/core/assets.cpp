@@ -4,7 +4,19 @@ namespace Core
 {
   namespace Assets
   {
-    cv::Mat loadImage(std::string path)
+    cv::Mat readImage(const std::string &uri)
+    {
+      if (uri.find("http") == 0)
+      {
+        return downloadImage(uri);
+      }
+      else
+      {
+        return loadImage(uri);
+      }
+    }
+
+    cv::Mat loadImage(const std::string &path)
     {
       cv::Mat image = cv::imread(path, cv::IMREAD_UNCHANGED);
 
@@ -24,7 +36,7 @@ namespace Core
     cv::Mat loadBackground(Template::Base tmplate, Card::Edition const &edition)
     {
       std::string templatePath = tmplate.getBackgroundPath(edition);
-      cv::Mat image = loadImage(templatePath);
+      cv::Mat image = readImage(templatePath);
 
       return image;
     }
