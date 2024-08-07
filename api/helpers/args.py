@@ -6,11 +6,14 @@ class ArgsHelper:
   
 
   @staticmethod
-  def is_valid(args: str):
+  def is_valid(args: str) -> bool:
     """
       Check if the arguments are valid.
 
     """
+
+    if len(args) == 0:
+      return False
 
     invalid_args = [
       '-h',

@@ -2,6 +2,7 @@ import os
 import subprocess
 
 from helpers.args import ArgsHelper
+from helpers.path import PathHelper
 from flask import request, jsonify, send_file
 
 
@@ -26,25 +27,19 @@ def register_generate(app):
       if not ArgsHelper.is_valid(args):
         raise Exception('Invalid arguments')
 
-      script_directory = os.path.dirname(os.path.abspath(__file__))
-      parent_directory = os.path.dirname(script_directory)
-      binary_directory = f'{parent_directory}/release'
+      executable_path = PathHelper.get_executable_path()
+      output_path = PathHelper.get_output_path('out')
 
-      out = f'{script_directory}/out.png'
-      cmd = f'{binary_directory}/fut-card-generator {args} -o {out}'
+      command = f'{executable_path} {args} -o {output_path}'
+      result = subprocess.run(command, shell=True, capture_output=True, text=True)
 
-      result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-      
-      error = result.stderr
-      return_code = result.returncode
-
-      if return_code == 0:
-        if os.path.exists(out):
-          return send_file(out, mimetype='image/png')
+      if result.returncode == 0:
+        if os.path.exists(output_path):
+          return send_file(output_path, mimetype='image/png')
         else:
           raise Exception('File not found')
       else:
-        raise Exception(error)
+        raise Exception(result.stderr)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
