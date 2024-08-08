@@ -11,6 +11,29 @@
     <img src="https://img.shields.io/github/languages/code-size/eoussama/fut-card-generator" />
 </p>
 
+## Index
+
+* [Description](#description)
+* [Installation](#installation)
+  * [From source](#from-source)
+  * [From binary](#from-binary)
+  * [From Docker](#from-docker)
+    * [Development](#development)
+    * [Build](#build)
+    * [API](#api)
+* [Usage](#usage)
+  * [Options](#options)
+    * [Translations](#translations)
+    * [Editions](#editions)
+    * [Positions](#positions)
+    * [Kinds](#kinds)
+    * [Country Codes](#country-codes)
+* [API](#api)
+  * [Routes](#routes)
+    * [GET](#get)
+    * [POST](#post)
+* [License](#license)
+
 ## Description
 
 Fut Card Generator is a command line tool and library to generate custom Fut cards.
