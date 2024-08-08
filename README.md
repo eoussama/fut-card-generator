@@ -195,6 +195,41 @@ Check out [countries.json](./assets/nations/countries.json) for a list of all th
 
 > Note: All parameters should be lowercase, that goes especially for the country codes.
 
+## API
+
+The API can be started by running the Flask script at `api/app.py`.
+There is also a docker image available ([Dockerfile.api](docker/Dockerfile.api)), you can use it by executing the [api.sh](scripts/api.sh) script.
+
+The API is available at `http://localhost:5000`.
+
+### Routes
+
+#### [GET] `/`
+
+Returns the API version.
+
+#### [POST] `/generate`
+
+Generates a card.
+
+This route accepts the following parameters:
+
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
+| `args` | Arguments to pass to the executable | String | N/A |
+| `clubLogo` | Club logo image | File | N/A |
+| `playerImage` | Player image | File | N/A |
+
+Example:
+
+```bash
+curl -X POST \
+  http://localhost:5000/generate \
+  -F 'args=-n "Player" -e fifa19 -k ma -p all -pace 50 -pas 50 -phy 50 -sho 50 -dri 50 -def 50' \
+  -F 'clubLogo=@./assets/clubs/1.png' \
+  -F 'playerImage=@./assets/defaults/person.png'
+```
+
 ## License
 
 This project is licensed under the __GNU GENERAL PUBLIC 3.0__ License - see the [LICENSE](LICENSE) file for details.
