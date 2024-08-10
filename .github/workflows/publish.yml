@@ -25,7 +25,7 @@ jobs:
         run: |
           set -o allexport
           source .env
-          echo "VERSION=${VERSION}-api" >> $GITHUB_ENV
+          echo "VERSION=${GLOBAL_VERSION}-api" >> $GITHUB_ENV
           set +o allexport
 
       - name: Build and push
