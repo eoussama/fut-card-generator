@@ -11,6 +11,29 @@
     <img src="https://img.shields.io/github/languages/code-size/eoussama/fut-card-generator" />
 </p>
 
+## Index
+
+* [Description](#description)
+* [Installation](#installation)
+  * [From source](#from-source)
+  * [From binary](#from-binary)
+  * [From Docker](#from-docker)
+    * [Development](#development)
+    * [Build](#build)
+    * [API](#api)
+* [Usage](#usage)
+  * [Options](#options)
+    * [Translations](#translations)
+    * [Editions](#editions)
+    * [Positions](#positions)
+    * [Kinds](#kinds)
+    * [Country Codes](#country-codes)
+* [API](#api)
+  * [Routes](#routes)
+    * [GET](#get)
+    * [POST](#post)
+* [License](#license)
+
 ## Description
 
 Fut Card Generator is a command line tool and library to generate custom Fut cards.
@@ -194,6 +217,41 @@ The following are the options available
 Check out [countries.json](./assets/nations/countries.json) for a list of all the country codes.
 
 > Note: All parameters should be lowercase, that goes especially for the country codes.
+
+## API
+
+The API can be started by running the Flask script at `api/app.py`.
+There is also a docker image available ([Dockerfile.api](docker/Dockerfile.api)), you can use it by executing the [api.sh](scripts/api.sh) script.
+
+The API is available at `http://localhost:5000`.
+
+### Routes
+
+#### [GET] `/`
+
+Returns the API version.
+
+#### [POST] `/generate`
+
+Generates a card.
+
+This route accepts the following parameters:
+
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
+| `args` | Arguments to pass to the executable | String | N/A |
+| `clubLogo` | Club logo image | File | N/A |
+| `playerImage` | Player image | File | N/A |
+
+Example:
+
+```bash
+curl -X POST \
+  http://localhost:5000/generate \
+  -F 'args=-n "Player" -e fifa19 -k ma -p all -pace 50 -pas 50 -phy 50 -sho 50 -dri 50 -def 50' \
+  -F 'clubLogo=@./assets/clubs/1.png' \
+  -F 'playerImage=@./assets/defaults/person.png'
+```
 
 ## License
 

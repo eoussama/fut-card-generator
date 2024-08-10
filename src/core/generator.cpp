@@ -15,9 +15,9 @@ namespace Core
       I18N::Translator translator(language);
       Draw::Base draw(card, tmplate, fonts, dimentions, clubLogo, translator, image);
 
-      draw.text();
-      draw.lines();
       draw.images();
+      draw.lines();
+      draw.text();
 
       return image;
     }
