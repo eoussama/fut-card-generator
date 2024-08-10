@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 rm -rf release
 rm -rf fut-card-generator.tar.gz
 

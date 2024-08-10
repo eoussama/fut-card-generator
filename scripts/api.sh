@@ -8,7 +8,4 @@ username="eoussama"
 image="$username/$project:$tag-api"
 
 docker build -f ./docker/Dockerfile.api -t $image .
-docker run -it --rm \
-  -p 5000:5000 \
-  -v "$(pwd)":/fut-card-generator \
-  $image
+docker run -it --rm -p 5000:5000 $image
