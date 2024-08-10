@@ -25,5 +25,9 @@ class ArgsHelper:
       '--show',
       '--version'
     ]
+    print(invalid_args, args.split(' '))
+    for arg in args.split(' '):
+      if arg in invalid_args:
+        return False
 
-    return all(arg not in args for arg in invalid_args)
+    return True
