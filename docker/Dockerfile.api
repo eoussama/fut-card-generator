@@ -4,6 +4,7 @@ WORKDIR /fut-card-generator
 RUN apt update && apt install -y bash build-essential cmake libopencv-dev libcurl4-openssl-dev python3-pip python3.12-venv
 
 COPY . .
+RUN ./scripts/clean.sh
 RUN ./scripts/build.sh
 RUN ./scripts/install.sh
 RUN cd api && python3 -m venv .venv
