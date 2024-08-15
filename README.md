@@ -92,24 +92,24 @@ The following are the options available
 
 | Option | Abbreviation | Default | Description |
 | --- | --- | --- | --- |
-| `--help` | -h | N/A | Show help message |
-| `--version` | -v | N/A | Show version |
-| `--name` | -n | N/A | Player name |
-| `--out` | -o | out.png | Output file path |
-| `--show` | -s | false | Flag whether to preview the card after generation | |
-| `--logo` | -l | ./assets/logo.png | Path to the logo of the player | |
-| `--image` | -i | ./assets/image.png | Path to the image of the player | |
-| `--translation` | -t | [en](#translations) | Transaltion of the text on the card | |
-| `--edition` | -e | [fifa19](#editions) | Code for the edition of the fut card to generate | |
-| `--kind` | -k | [common_bronze](#kinds) | Code for the template of the card to generate | |
-| `--country` | -c | [ma](#country-codes) | Country code of the player | |
-| `--position` | -p | [all](#positions) | Position of the player on the card | |
-| `--pace` | -pac | 50 | Pace of the player on the card | |
-| `--passing` | -pas | 50 | Passing of the player on the card | |
-| `--physical` | -phy | 50 | Physical of the player on the card | |
-| `--shooting` | -sho | 50 | Skill of the player on the card | |
-| `--dribbling` | -dri | 50 | Dribbling of the player on the card | |
-| `--defending` | -def | 50 | Defense of the player on the card | |
+| `--help` | `-h` | N/A | Show help message |
+| `--version` | `-v` | N/A | Show version |
+| `--name` | `-n` | N/A | Player name |
+| `--out` | `-o` | out.png | Output file path |
+| `--show` | `-s` | false | Flag whether to preview the card after generation | |
+| `--logo` | `-l` | ./assets/logo.png | Path to the logo of the player | |
+| `--image` | `-i` | ./assets/image.png | Path to the image of the player | |
+| `--translation` | `-t` | [en](#translations) | Transaltion of the text on the card | |
+| `--edition` | `-e` | [fifa19](#editions) | Code for the edition of the fut card to generate | |
+| `--kind` | `-k` | [common_bronze](#kinds) | Code for the template of the card to generate | |
+| `--country` | `-c` | [ma](#country-codes) | Country code of the player | |
+| `--position` | `-p` | [all](#positions) | Position of the player on the card | |
+| `--pace` | `-pac` | 50 | Pace of the player on the card | |
+| `--passing` | `-pas` | 50 | Passing of the player on the card | |
+| `--physical` | `-phy` | 50 | Physical of the player on the card | |
+| `--shooting` | `-sho` | 50 | Skill of the player on the card | |
+| `--dribbling` | `-dri` | 50 | Dribbling of the player on the card | |
+| `--defending` | `-def` | 50 | Defense of the player on the card | |
 
 #### Translations
 
