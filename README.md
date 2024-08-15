@@ -78,6 +78,8 @@ A web API image is also available, you can use it by executing the [api.sh](scri
 The container exposes port 5000 and mounts the current directory to `/fut-card-generator`.
 The endpoint is available at `http://localhost:5000/generate`.
 
+Or you can pull a pre build image from [Docker Hub](https://hub.docker.com/r/eoussama/fut-card-generator).
+
 ## Usage
 
 ```bash
