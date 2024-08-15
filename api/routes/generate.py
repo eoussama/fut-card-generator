@@ -21,7 +21,6 @@ def register_generate(app):
       Generate a card.
     """
 
-    # data = request.get_json()
     args = request.form['args']
     club_logo = request.files.get('clubLogo')
     player_image = request.files.get('playerImage')
