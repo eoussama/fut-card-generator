@@ -64,7 +64,7 @@ class PathHelper:
 
     root_path = PathHelper.get_root_path()
     unique_hash = hashlib.sha256(f"{uuid.uuid4()}".encode()).hexdigest()
-    generation_path = Path(f'{root_path}/api/generations/{unique_hash}')
+    generation_path = Path(f'{root_path}/api/tmp/{unique_hash}')
     generation_path.mkdir(parents=True, exist_ok=True)
     
     return generation_path
